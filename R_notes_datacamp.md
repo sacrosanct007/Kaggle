@@ -421,7 +421,7 @@ unclass(today)
 ```
 
 ```
-## [1] 17939
+## [1] 17940
 ```
 
 ```r
@@ -433,7 +433,7 @@ unclass(now)
 ```
 
 ```
-## [1] 1550004493
+## [1] 1550092603
 ```
 
 Create and format dates
@@ -709,5 +709,752 @@ Watch out: Once you skip some lines, you also skip the first line that can conta
 # Import 5 observations from potatoes.txt: potatoes_fragment
 #potatoes_fragment <- read_tsv("potatoes.txt", skip = 6, n_max = 5, col_names = properties)
 ```
+
+col_types
+You can also specify which types the columns in your imported data frame should have. You can do this with col_types. If set to NULL, the default, functions from the readr package will try to find the correct types themselves. You can manually set the types with a string, where each character denotes the class of the column: character, double, integer and logical. _ skips the column as a whole.
+
+
+```r
+# readr is already loaded
+
+# Column names
+properties <- c("area", "temp", "size", "storage", "method",
+                "texture", "flavor", "moistness")
+
+# Import all data, but force all columns to be character: potatoes_char
+# potatoes_char <- read_tsv("potatoes.txt", col_types = "cccccccc", col_names = properties)
+```
+
+col_types with collectors
+Another way of setting the types of the imported columns is using collectors. Collector functions can be passed in a list() to the col_types argument of read_ functions to tell them how to interpret values in a column.
+
+For a complete list of collector functions, you can take a look at the collector documentation. For this exercise you will need two collector functions:
+
+col_integer(): the column should be interpreted as an integer.
+col_factor(levels, ordered = FALSE): the column should be interpreted as a factor with levels.
+
+
+```r
+# readr is already loaded
+
+# The collectors you will need to import the data
+# fac <- col_factor(levels = c("Beef", "Meat", "Poultry"))
+# int <- col_integer()
+
+# Edit the col_types argument to import the data correctly: hotdogs_factor
+# hotdogs_factor <- read_tsv("hotdogs.txt",
+#                           col_names = c("type", "calories", "sodium"),
+#                           col_types = list(fac,int, int))
+```
+fread
+You still remember how to use read.table(), right? Well, fread() is a function that does the same job with very similar arguments. It is extremely easy to use and blazingly fast!
+
+
+```r
+# load the data.table package
+library(data.table)
+
+# Import potatoes.csv with fread(): potatoes
+# potatoes<-fread('potatoes.csv')
+```
+Now that you know the basics about fread(), you should know about two arguments of the function: drop and select, to drop or select variables of interest.
+
+Suppose you have a dataset that contains 5 variables and you want to keep the first and fifth variable, named "a" and "e". The following options will all do the trick:
+
+fread("path/to/file.txt", drop = 2:4)
+fread("path/to/file.txt", select = c(1, 5))
+fread("path/to/file.txt", drop = c("b", "c", "d"))
+fread("path/to/file.txt", select = c("a", "e"))
+
+# Importing excel
+
+find out which sheets are available in the workbook. You can use the excel_sheets() function for this.
+
+
+```r
+# Load the readxl package
+library(readxl)
+```
+
+```
+## Warning: package 'readxl' was built under R version 3.5.2
+```
+
+```r
+# Print the names of all worksheets
+# excel_sheets("urbanpop.xlsx")
+```
+
+data <- read_excel("data.xlsx", sheet = "my_sheet")
+This call simply imports the sheet with the name "my_sheet" from the "data.xlsx" file. You can also pass a number to the sheet argument; this will cause read_excel() to import the sheet with the given sheet number. sheet = 1 will import the first sheet, sheet = 2 will import the second sheet, and so on.
+
+my_workbook <- lapply(excel_sheets("data.xlsx"),
+                      read_excel,
+                      path = "data.xlsx")
+                      
+The read_excel() function is called multiple times on the "data.xlsx" file and each sheet is loaded in one after the other. The result is a list of data frames, each data frame representing one of the sheets in data.xlsx.
+
+
+```r
+# The readxl package is already loaded
+
+# Read all Excel sheets with lapply(): pop_list
+# pop_list=lapply(excel_sheets("urbanpop.xlsx"),read_excel,path="urbanpop.xlsx")
+```
+The col_names argument
+Apart from path and sheet, there are several other arguments you can specify in read_excel(). One of these arguments is called col_names.
+
+By default it is TRUE, denoting whether the first row in the Excel sheets contains the column names. If this is not the case, you can set col_names to FALSE. In this case, R will choose column names for you. You can also choose to set col_names to a character vector with names for each column. It works exactly the same as in the readr package.
+
+
+```r
+# The readxl package is already loaded
+
+# Import the first Excel sheet of urbanpop_nonames.xlsx (R gives names): pop_a
+# pop_a=read_excel("urbanpop_nonames.xlsx",col_names=FALSE)
+
+# Import the first Excel sheet of urbanpop_nonames.xlsx (specify col_names): pop_b
+cols <- c("country", paste0("year_", 1960:1966))
+# pop_b=read_excel("urbanpop_nonames.xlsx",col_names=cols)
+```
+
+The skip argument
+Another argument that can be very useful when reading in Excel files that are less tidy, is skip. With skip, you can tell R to ignore a specified number of rows inside the Excel sheets you're trying to pull data from. Have a look at this example:
+
+read_excel("data.xlsx", skip = 15)
+In this case, the first 15 rows in the first sheet of "data.xlsx" are ignored.
+
+
+```r
+# The readxl package is already loaded
+
+# Import the second sheet of urbanpop.xlsx, skipping the first 21 rows: urbanpop_sel
+# urbanpop_sel<-read_excel('urbanpop.xlsx',sheet=2,col_names=FALSE, skip=21)
+```
+
+
+```r
+# Load the gdata package
+library(gdata)
+```
+
+```
+## Warning: package 'gdata' was built under R version 3.5.2
+```
+
+```
+## gdata: Unable to locate valid perl interpreter
+## gdata: 
+## gdata: read.xls() will be unable to read Excel XLS and XLSX files
+## gdata: unless the 'perl=' argument is used to specify the location
+## gdata: of a valid perl intrpreter.
+## gdata: 
+## gdata: (To avoid display of this message in the future, please
+## gdata: ensure perl is installed and available on the executable
+## gdata: search path.)
+```
+
+```
+## gdata: Unable to load perl libaries needed by read.xls()
+## gdata: to support 'XLX' (Excel 97-2004) files.
+```
+
+```
+## 
+```
+
+```
+## gdata: Unable to load perl libaries needed by read.xls()
+## gdata: to support 'XLSX' (Excel 2007+) files.
+```
+
+```
+## 
+```
+
+```
+## gdata: Run the function 'installXLSXsupport()'
+## gdata: to automatically download and install the perl
+## gdata: libaries needed to support Excel XLS and XLSX formats.
+```
+
+```
+## 
+## Attaching package: 'gdata'
+```
+
+```
+## The following objects are masked from 'package:data.table':
+## 
+##     first, last
+```
+
+```
+## The following object is masked from 'package:stats':
+## 
+##     nobs
+```
+
+```
+## The following object is masked from 'package:utils':
+## 
+##     object.size
+```
+
+```
+## The following object is masked from 'package:base':
+## 
+##     startsWith
+```
+
+```r
+# Import the second sheet of urbanpop.xls: urban_pop
+# urban_pop=read.xls('urbanpop.xls',sheet=2)
+```
+Connect to a workbook
+When working with XLConnect, the first step will be to load a workbook in your R session with loadWorkbook(); this function will build a "bridge" between your Excel file and your R session.
+
+
+```r
+# urbanpop.xlsx is available in your working directory
+
+# Load the XLConnect package
+# library(XLConnect)
+
+# Build connection to urbanpop.xlsx: my_book
+# my_book<-loadWorkbook('urbanpop.xlsx')
+
+# Print out the class of my_book
+# class(my_book)
+```
+Just as readxl and gdata, you can use XLConnect to import data from Excel file into R.
+
+To list the sheets in an Excel file, use getSheets(). To actually import data from a sheet, you can use readWorksheet(). Both functions require an XLConnect workbook object as the first argument.
+
+
+```r
+# XLConnect is already available
+
+# Build connection to urbanpop.xlsx
+# my_book <- loadWorkbook("urbanpop.xlsx")
+
+# List the sheets in my_book
+# getSheets(my_book)
+
+# Import the second sheet in my_book
+# readWorksheet(my_book, sheet=2)
+
+# Import columns 3, 4, and 5 from second sheet in my_book: urbanpop_sel
+# urbanpop_sel <- readWorksheet(my_book, sheet = 2,startCol=3, endCol=5)
+
+# Import first column from second sheet in my_book: countries
+# countries<-readWorksheet(my_book,sheet=2, startCol=1, endCol=1)
+
+# cbind() urbanpop_sel and countries together: selection
+# selection<-cbind(countries,urbanpop_sel)
+```
+
+Add worksheet
+Where readxl and gdata were only able to import Excel data, XLConnect's approach of providing an actual interface to an Excel file makes it able to edit your Excel files from inside R
+
+
+```r
+# Add a worksheet to my_book, named "data_summary"
+# createSheet(my_book,name="data_summary")
+
+# Use getSheets() on my_book
+# getSheets(my_book)
+```
+
+Populate worksheet
+The first step of creating a sheet is done; let's populate it with some data now! summ, a data frame with some summary statistics on the two Excel sheets is already coded so you can take it from there.
+
+
+```r
+# XLConnect is already available
+
+# Build connection to urbanpop.xlsx
+# my_book <- loadWorkbook("urbanpop.xlsx")
+
+# Add a worksheet to my_book, named "data_summary"
+# createSheet(my_book, "data_summary")
+
+# Create data frame: summ
+# sheets <- getSheets(my_book)[1:3]
+# dims <- sapply(sheets, function(x) dim(readWorksheet(my_book, sheet = x)), USE.NAMES = FALSE)
+# summ <- data.frame(sheets = sheets,
+  #                 nrows = dims[1, ],
+   #                ncols = dims[2, ])
+
+# Add data in summ to "data_summary" sheet
+# writeWorksheet(my_book,summ,sheet="data_summary")
+
+# Save workbook as summary.xlsx
+# saveWorkbook(my_book,"summary.xlsx")
+```
+
+Renaming sheets
+Come to think of it, "data_summary" is not an ideal name. As the summary of these excel sheets is always data-related, you simply want to name the sheet "summary".
+
+
+```r
+# my_book is available
+
+# Rename "data_summary" sheet to "summary"
+# renameSheet(my_book,"data_Summary","summary")
+
+# Print out sheets of my_book
+# getSheets(my_book)
+
+# Save workbook to "renamed.xlsx"
+# saveWorkbook(my_book,"renamed.xlsx")
+```
+Removing sheets
+After presenting the new Excel sheet to your peers, it appears not everybody is a big fan. Why summarize sheets and store the info in Excel if all the information is implicitly available? To hell with it, just remove the entire fourth sheet!
+
+
+```r
+# Remove the fourth sheet
+# removeSheet(my_book,"summary")
+
+
+# Save workbook to "clean.xlsx"
+# saveWorkbook(my_book,"clean.xlsx")
+```
+
+
+
+***
+***
+***
+***
+*************
+# Importing data in R (part2)
+*************
+***
+***
+***
+***
+***
+
+
+
+# Importing data from databases
+The first step to import data from a SQL database is creating a connection to it. 
+dbConnect() creates a connection between your R session and a SQL database. The first argument has to be a DBIdriver object, that specifies how connections are made and how data is mapped between R and the database. Specifically for MySQL databases, you can build such a driver with RMySQL::MySQL().
+
+If the MySQL database is a remote database hosted on a server, you'll also have to specify the following arguments in dbConnect(): dbname, host, port, user and password. Most of these details have already been provided.
+
+
+```r
+# Load the DBI package
+library("DBI")
+```
+
+```
+## Warning: package 'DBI' was built under R version 3.5.2
+```
+
+```r
+# Edit dbConnect() call
+#con <- dbConnect(RMySQL::MySQL(), 
+          #       dbname = "tweater", 
+           #      host = "courses.csrrinzqubik.us-east-1.rds.amazonaws.com", 
+            #     port = 3306,
+             #    user = "student",
+              #   password = "datacamp")
+```
+
+List the database tables
+After you've successfully connected to a remote MySQL database, the next step is to see what tables the database contains. You can do this with the dbListTables() function.
+
+
+```r
+# Build a vector of table names: tables
+# tables<-dbListTables(con)
+```
+
+Import users
+The database contains data on a more tasty version of Twitter, namely Tweater.  There are three tables: users, tweats, and comments that have relations among them. 
+Let's start by importing the data on the users into your R session. You do this with the dbReadTable() function. Simply pass it the connection object (con), followed by the name of the table you want to import. The resulting object is a standard R data frame.
+
+
+```r
+# Import the users table from tweater: users
+# users<-dbReadTable(con,"users")
+```
+
+Finish the lapply() function to import the users, tweats and comments tables in a single call. The result, a list of data frames, will be stored in the variable tables.
+
+
+```r
+# Get table names
+# table_names <- dbListTables(con)
+
+# Import all tables
+# tables <- lapply(table_names, dbReadTable, conn = con)
+```
+
+ it's a good idea to send SQL queries to your database, and only import the data you actually need into R.
+
+dbGetQuery() is what you need. As usual, you first pass the connection object to it. The second argument is an SQL query in the form of a character string. This example selects the age variable from the people dataset where gender equals "male":
+
+dbGetQuery(con, "SELECT age FROM people WHERE gender = 'male'")
+A connection to the tweater database has already been coded for you.
+
+
+```r
+# Import tweat_id column of comments where user_id is 1: elisabeth
+# elisabeth<- dbGetQuery(con, "select tweat_id from comments where user_id=1")
+
+
+
+# Create a data frame, short, that selects the id and name columns from the users table where the number of characters in the name is strictly less than 5.
+# short<-dbGetQuery(con,"select id, name from users where char_length(name)<5")
+```
+
+*Send - Fetch - Clear*
+
+You've used dbGetQuery() multiple times now. This is a virtual function from the DBI package, but is actually implemented by the RMySQL package. Behind the scenes, the following steps are performed:
+
+Sending the specified query with dbSendQuery();
+Fetching the result of executing the query on the database with dbFetch();
+Clearing the result with dbClearResult().
+Let's not use dbGetQuery() this time and implement the steps above. This is tedious to write, but it gives you the ability to fetch the query's result in chunks rather than all at once. You can do this by specifying the n argument inside dbFetch().
+
+*Connect to the database*
+library(DBI)
+con <- dbConnect(RMySQL::MySQL(),
+                 dbname = "tweater",
+                 host = "courses.csrrinzqubik.us-east-1.rds.amazonaws.com",
+                 port = 3306,
+                 user = "student",
+                 password = "datacamp")
+
+*Send query to the database*
+res <- dbSendQuery(con, "SELECT * FROM comments WHERE user_id > 4")
+
+Use dbFetch() twice. In the first call, import only two records of the query result by setting the n argument to 2. In the second call, import all remaining queries (don't specify n). In both calls, simply print the resulting data frames.
+
+*Use dbFetch() twice*
+dbFetch(res,n=2)
+dbFetch(res)
+
+
+*Clear res with dbClearResult().*
+dbClearResult(res)
+
+Every time you connect to a database using dbConnect(), you're creating a new connection to the database you're referencing. RMySQL automatically specifies a maximum of open connections and closes some of the connections for you, but still: it's always polite to manually disconnect from the database afterwards. You do this with the dbDisconnect() function.
+
+*Disconnect from the database*
+dbDisconnect(con)
+
+
+
+# Importing data from web
+
+
+```r
+# Load the readr package
+library(readr)
+```
+
+```
+## Warning: package 'readr' was built under R version 3.5.2
+```
+
+```r
+# Import the csv file: pools
+url_csv <- "http://s3.amazonaws.com/assets.datacamp.com/production/course_1478/datasets/swimming_pools.csv"
+
+
+# Import the txt file: potatoes
+url_delim <- "http://s3.amazonaws.com/assets.datacamp.com/production/course_1478/datasets/potatoes.txt"
+# pools<-read_csv(url_csv)
+# potatoes<-read_tsv(url_delim)
+```
+
+Load the readxl and gdata package
+library(readxl)
+library(gdata)
+
+Specification of url: url_xls
+url_xls <- "http://s3.amazonaws.com/assets.datacamp.com/production/course_1478/datasets/latitude.xls"
+
+Import the .xls file with gdata: excel_gdata
+excel_gdata<-read.xls(url_xls)
+
+Download file behind URL, name it local_latitude.xls
+download.file(url_xls,'local_latitude.xls')
+
+Import the local .xls file with readxl: excel_readxl
+excel_readxl<-read_excel('local_latitude.xls')
+
+
+*Downloading other types of files*
+
+There's more: with download.file() you can download any kind of file from the web, using HTTP and HTTPS: images, executable files, but also .RData files. An RData file is very efficient format to store R data.
+
+
+```r
+# https URL to the wine RData file.
+url_rdata <- "https://s3.amazonaws.com/assets.datacamp.com/production/course_1478/datasets/wine.RData"
+
+# Download the wine file to your working directory
+download.file(url_rdata, "wine_local.RData")
+
+# Load the wine data into your workspace using load()
+# load("wine_local.RData")
+
+# Print out the summary of the wine data
+# summary(wine)
+```
+
+Downloading a file from the Internet means sending a GET request and receiving the file you asked for. Internally, all the previously discussed functions use a GET request to download files.
+
+httr provides a convenient function, GET() to execute this GET request. The result is a response object, that provides easy access to the status code, content-type and, of course, the actual content.
+
+
+```r
+# Load the httr package
+library(httr)
+```
+
+```
+## Warning: package 'httr' was built under R version 3.5.2
+```
+
+```r
+# Get the url, save response to resp
+# url <- "http://www.example.com/"
+# resp<-GET(url)
+
+# Print resp
+# resp
+
+# Get the raw content of resp: raw_content
+# raw_content<-content(resp,as="raw")
+
+# Print the head of raw_content
+# head(raw_content)
+```
+
+From JSON to R
+In the simplest setting, fromJSON() can convert character strings that represent JSON data into a nicely structured R list.
+
+
+```r
+library(jsonlite)
+
+# wine_json is a JSON
+wine_json <- '{"name":"Chateau Migraine", "year":1997, "alcohol_pct":12.4, "color":"red", "awarded":false}'
+
+# Convert wine_json into a list: wine
+wine<-fromJSON(wine_json)
+```
+Change the assignment of json1 such that the R vector after conversion contains the numbers 1 up to 6, in ascending order. Next, call fromJSON() on json1.
+
+Adapt the code for json2 such that it's converted to a named list with two elements: a, containing the numbers 1, 2 and 3 and b, containing the numbers 4, 5 and 6. Next, call fromJSON() on json2.
+
+```r
+# jsonlite is already loaded
+
+# Challenge 1
+json1 <- '[1, 2,3, 4,5, 6]'
+fromJSON(json1)
+```
+
+```
+## [1] 1 2 3 4 5 6
+```
+
+```r
+# Challenge 2
+json2 <- '{"a": [1, 2, 3],"b":[4,5,6]}'
+fromJSON(json2)
+```
+
+```
+## $a
+## [1] 1 2 3
+## 
+## $b
+## [1] 4 5 6
+```
+Remove characters from json1 to build a 2 by 2 matrix containing only 1, 2, 3 and 4. Call fromJSON() on json1.
+Add characters to json2 such that the data frame in which the json is converted contains an additional observation in the last row. For this observations, a equals 5 and b equals 6. Call fromJSON() one last time, on json2.
+
+
+```r
+# jsonlite is already loaded
+
+# Challenge 1
+json1 <- '[[1, 2], [3, 4]]'
+fromJSON(json1)
+```
+
+```
+##      [,1] [,2]
+## [1,]    1    2
+## [2,]    3    4
+```
+
+```r
+# Challenge 2
+json2 <- '[{"a": 1, "b": 2}, {"a": 3, "b": 4},{"a":5,"b":6}]'
+fromJSON(json2)
+```
+
+```
+##   a b
+## 1 1 2
+## 2 3 4
+## 3 5 6
+```
+
+Apart from converting JSON to R with fromJSON(), you can also use toJSON() to convert R data to a JSON format. In its most basic use, you simply pass this function an R object to convert to a JSON. The result is an R object of the class json, which is basically a character string representing that JSON.
+
+
+```r
+# Convert the data file according to the requirements
+# water_json<-toJSON(water)
+```
+
+Minify and prettify
+JSONs can come in different formats. Take these two JSONs, that are in fact exactly the same: the first one is in a minified format, the second one is in a pretty format with indentation, whitespace and new lines:
+
+ Mini
+{"a":1,"b":2,"c":{"x":5,"y":6}}
+
+ Pretty
+{
+  "a": 1,
+  "b": 2,
+  "c": {
+    "x": 5,
+    "y": 6
+  }
+}
+Unless you're a computer, you surely prefer the second version. However, the standard form that toJSON() returns, is the minified version, as it is more concise. You can adapt this behavior by setting the pretty argument inside toJSON() to TRUE. If you already have a JSON string, you can use prettify() or minify() to make the JSON pretty or as concise as possible.
+
+
+```r
+# jsonlite is already loaded
+
+# Convert mtcars to a pretty JSON: pretty_json
+# pretty_json<-toJSON(mtcars,pretty=TRUE)
+
+# Print pretty_json
+# pretty_json
+
+# Minify pretty_json: mini_json
+# mini_json<-minify(pretty_json)
+
+# Print mini_json
+# mini_json
+```
+
+
+# Importing data from statistical softwares
+
+Import SAS data with haven
+haven is an extremely easy-to-use package to import data from three software packages: SAS, STATA and SPSS. Depending on the software, you use different functions:
+
+SAS: read_sas()
+STATA: read_dta() (or read_stata(), which are identical)
+SPSS: read_sav() or read_por(), depending on the file type.
+All these functions take one key argument: the path to your local file. In fact, you can even pass a URL; haven will then automatically download the file for you before importing it.
+
+
+```r
+# Load the haven package
+library(haven)
+```
+
+```
+## Warning: package 'haven' was built under R version 3.5.2
+```
+
+```r
+# Import sales.sas7bdat: sales
+# sales<-read_sas('sales.sas7bdat')
+
+# Display the structure of sales
+# str(sales)
+```
+
+Import STATA data with haven
+Next up are STATA data files; you can use read_dta() for these.
+
+When inspecting the result of the read_dta() call, you will notice that one column will be imported as a labelled vector, an R equivalent for the common data structure in other statistical environments. In order to effectively continue working on the data in R, it's best to change this data into a standard R class. To convert a variable of the class labelled to a factor, you'll need haven's as_factor() function.
+
+
+```r
+# haven is already loaded
+
+# Import the data from the URL: sugar
+# sugar<-read_dta('http://assets.datacamp.com/production/course_1478/datasets/trade.dta')
+
+# Structure of sugar
+# str(sugar)
+
+# Convert values in Date column to dates
+# sugar$Date<-as.Date(as_factor(sugar$Date))
+```
+
+Import SPSS data with haven
+The haven package can also import data files from SPSS. Again, importing the data is pretty straightforward. Depending on the SPSS data file you're working with, you'll need either read_sav() - for .sav files - or read_por() - for .por files.
+
+
+```r
+# haven is already loaded
+
+# Import person.sav: traits
+# traits<-read_sav('person.sav')
+
+# foreign is already loaded
+
+# Import international.sav as a data frame: demo
+# demo<-read.spss('international.sav',to.data.frame=TRUE)
+```
+Import STATA data with foreign 
+
+The foreign package offers a simple function to import and read STATA data: read.dta().
+
+
+```r
+# Load the foreign package
+library(foreign)
+
+# Import florida.dta and name the resulting data frame florida
+# florida<-read.dta('florida.dta')
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

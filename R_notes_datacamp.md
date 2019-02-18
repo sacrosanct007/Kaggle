@@ -433,7 +433,7 @@ unclass(now)
 ```
 
 ```
-## [1] 1550092603
+## [1] 1550100007
 ```
 
 Create and format dates
@@ -1430,30 +1430,171 @@ library(foreign)
 # florida<-read.dta('florida.dta')
 ```
 
+***
+***
+***
+***
+*************
+# Cleaning data in R 
+*************
+***
+***
+***
+***
+***
 
 
+Getting a feel for your data
+
+Check the class of bmi
+class(bmi)
+
+Check the dimensions of bmi
+dim(bmi)
+
+View the column names of bmi
+names(bmi)
+
+ glimpse() 
+ function from dplyr is a slightly cleaner alternative to str(). str() and glimpse() give you a preview of your data, which may reveal issues with the way columns are labelled, how variables are encoded, etc.
 
 
+Check the structure of bmi
+str(bmi)
+
+Load dplyr
+library(dplyr)
+
+Check the structure of bmi, the dplyr way
+glimpse(bmi)
 
 
+View a summary of bmi
+summary(bmi)
+
+Visualizing your data
+
+Histogram of BMIs from 2008
+hist(bmi$Y2008)
+
+Scatter plot comparing BMIs from 1980 to those from 2008
+plot(bmi$Y1980,bmi$Y2008)
 
 
+*Tidy data- tidyr*
 
 
+Gathering columns into key-value pairs
+The most important function in tidyr is gather(). It should be used when you have columns that are not variables and you want to collapse them into key-value pairs.
+
+Apply the gather() function to bmi, saving the result to bmi_long. This will create two new columns:
+year, containing as values what are currently column headers
+bmi_val, the actual BMI values
+
+Apply gather() to bmi and save the result as bmi_long
+bmi_long <- gather(bmi, year, bmi_val, -Country)
+
+View the first 20 rows of the result
+head(bmi_long,20)
 
 
+Spreading key-value pairs into columns
+The opposite of gather() is spread(), which takes key-values pairs and spreads them across multiple columns. This is useful when values in a column should actually be column names (i.e. variables). It can also make data more compact and easier to read.
+
+spread(long_df, my_key, my_val)
 
 
+Separating columns
+The separate() function allows you to separate one column into multiple columns. Unless you tell it otherwise, it will attempt to separate on any character that is not a letter or number. You can also specify a specific separator using the sep argument.
 
 
+```r
+# Apply separate() to bmi_cc
+# bmi_cc_clean <- separate(bmi_cc, col = Country_ISO, into = c("Country", "ISO"), sep = "/")
+```
 
 
+Uniting columns
+The opposite of separate() is unite(), which takes multiple columns and pastes them together. By default, the contents of the columns will be separated by underscores in the new column, but this behavior can be altered via the sep argument.
+
+We've loaded the treatments data into your workspace again, but this time the year_mo column has been separated into year and month. The original column can be recreated by putting year and month back together:
+
+unite(treatments, year_mo, year, month)
 
 
+```r
+# Apply unite() to bmi_cc_clean
+# bmi_cc <- unite(bmi_cc_clean, Country_ISO, c('Country','ISO'), sep = "-")
+```
 
 
+*Spread the columns*
 
 
+```r
+## tidyr is already loaded for you
+
+# View first 50 rows of census_long
+# head(census_long,50)
+# str(census_long)
+
+# Spread the type column
+# census_long2 <- spread(census_long,type,amount)
+
+# View first 20 rows of census_long2
+# head(census_long2,20)
+```
+
+
+*Conversion of variable types*
+
+Make this evaluate to "character"
+class(as.character(TRUE))
+
+Make this evaluate to "numeric"
+class(as.numeric("8484.00"))
+
+Make this evaluate to "integer"
+class(as.integer(99))
+
+Make this evaluate to "factor"
+class(as.factor("factor"))
+
+
+*Working with dates*
+
+Dates can be a challenge to work with in any programming language, but thanks to the lubridate package, working with dates in R isn't so bad. Since this course is about cleaning data, we only cover the most basic functions from lubridate to help us standardize the format of dates and times in our data.
+
+As you saw in the video, these functions combine the letters y, m, d, h, m, s, which stand for year, month, day, hour, minute, and second, respectively. The order of the letters in the function should match the order of the date/time you are attempting to read in, although not all combinations are valid. 
+
+
+```r
+# Load the lubridate package
+# library(lubridate)
+
+# Parse as date
+# dmy("17 Sep 2015")
+
+# Parse as date and time (with no seconds!)
+# mdy_hm("July 15, 2012 12:56")
+
+# Coerce dob to a date (with no time)
+# students2$dob <- ymd(students2$dob)
+
+# Coerce nurse_visit to a date and time
+# students2$nurse_visit <- ymd_hms(students2$nurse_visit)
+```
+
+
+Trimming and padding strings
+One common issue that comes up when cleaning data is the need to remove leading and/or trailing white space. The str_trim() function from stringr makes it easy to do this while leaving intact the part of the string that you actually want.
+
+> str_trim("  this is a test     ")
+[1] "this is a test"
+A similar issue is when you need to pad strings to make them a certain number of characters wide. One example is if you had a bunch of employee ID numbers, some of which begin with one or more zeros. When reading these data in, you find that the leading zeros have been dropped somewhere along the way (probably because the variable was thought to be numeric and in that case, leading zeros would be unnecessary.)
+
+> str_pad("24493", width = 7, side = "left", pad = "0")
+[1] "0024493"
 
 
 

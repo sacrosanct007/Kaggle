@@ -87,6 +87,7 @@ The function factor() will encode the vector as a factor:
 factor_sex_vector <- factor(sex_vector)
 
 temperature_vector <- c("High", "Low", "High","Low", "Medium")
+
 factor_temperature_vector <- factor(temperature_vector, order = TRUE, levels = c("Low", "Medium", "High"))
 
 ## Data frame
@@ -94,8 +95,10 @@ factor_temperature_vector <- factor(temperature_vector, order = TRUE, levels = c
 You construct a data frame with the data.frame() function. As arguments, you pass the vectors from before: they will become the different columns of your data frame. Because every column has the same length, the vectors you pass should also have the same length. But don't forget that it is possible (and likely) that they contain different types of data.
 
 name <- c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune")
+
 type <- c("Terrestrial planet", "Terrestrial planet", "Terrestrial planet", 
           "Terrestrial planet", "Gas giant", "Gas giant", "Gas giant", "Gas giant")
+
 diameter <- c(0.382, 0.949, 1, 0.532, 11.209, 9.449, 4.007, 3.883)
 
 
@@ -421,7 +424,7 @@ unclass(today)
 ```
 
 ```
-## [1] 17940
+## [1] 17944
 ```
 
 ```r
@@ -433,7 +436,7 @@ unclass(now)
 ```
 
 ```
-## [1] 1550100007
+## [1] 1550472121
 ```
 
 Create and format dates
@@ -1586,16 +1589,992 @@ As you saw in the video, these functions combine the letters y, m, d, h, m, s, w
 ```
 
 
-Trimming and padding strings
+*Trimming and padding strings*
+
 One common issue that comes up when cleaning data is the need to remove leading and/or trailing white space. The str_trim() function from stringr makes it easy to do this while leaving intact the part of the string that you actually want.
 
-> str_trim("  this is a test     ")
+ str_trim("  this is a test     ")
 [1] "this is a test"
 A similar issue is when you need to pad strings to make them a certain number of characters wide. One example is if you had a bunch of employee ID numbers, some of which begin with one or more zeros. When reading these data in, you find that the leading zeros have been dropped somewhere along the way (probably because the variable was thought to be numeric and in that case, leading zeros would be unnecessary.)
 
-> str_pad("24493", width = 7, side = "left", pad = "0")
+ str_pad("24493", width = 7, side = "left", pad = "0")
 [1] "0024493"
 
+*Upper and lower case*
 
+In addition to trimming and padding strings, you may need to adjust their case from time to time. Making strings uppercase or lowercase is very straightforward in (base) R thanks to toupper() and tolower(). Each function takes exactly one argument: the character string (or vector/column of strings) to be converted to the desired case.
+
+*Finding and replacing strings*
+
+The stringr package provides two functions that are very useful for finding and/or replacing patterns in strings: str_detect() and str_replace().
+
+Like all functions in stringr, the first argument of each is the string of interest. The second argument of each is the pattern of interest. In the case of str_detect(), this is the pattern we are searching for. In the case of str_replace(), this is the pattern we want to replace. Finally, str_replace() has a third argument, which is the string to replace with.
+
+
+
+```r
+# Detect all dates of birth (dob) in 1997
+# str_detect(students3$dob,"1997")
+
+# In the sex column, replace "F" with "Female" ...
+# students3$sex <- str_replace(students3$sex,"F","Female")
+
+# ... and "M" with "Male"
+# students3$sex <- str_replace(students3$sex,"M","Male") 
+```
+
+*Finding missing values*
+
+Call is.na() on the full social_df to spot all NAs
+is.na(social_df)
+
+Use the any() function to ask whether there are any NAs in the data
+any(is.na(social_df))
+
+View a summary() of the dataset
+summary(social_df)
+
+Call table() on the status column
+table(social_df$status)
+
+*Dealing with missing values*
+
+The stringr package is preloaded.
+
+Use complete.cases() to see which rows have no missing values
+complete.cases(social_df)
+
+Use na.omit() to remove all rows with any missing values
+na.omit(social_df)
+
+
+***
+***
+***
+***
+*************
+# Importing & Cleaning data in R 
+*************
+***
+***
+***
+***
+***
+
+Find the row number of the incorrect value: i
+i=which(mbta6$Boat>30)
+
+
+Gather columns of mbta3: mbta4
+mbta4<-gather(mbta3,month,thou_riders,-mode)
+
+
+Spread the contents of mbta4: mbta5
+mbta5<-spread(mbta4,mode,thou_riders)
+
+
+Remove all periods in state column
+att5$state <- str_replace_all(att5$state,"\\.","")
+
+
+***
+***
+***
+***
+*************
+# Writing functions in R 
+*************
+***
+***
+***
+***
+***
+*Scoping*
+
+y <- 10
+f <- function(x) {
+  x + y
+}
+
+What will f(10) return?
+20
+
+***
+
+f <- function(x) {
+  y <- 5
+  x + y
+}
+f(5)
+
+Typing y will result in an error.
+
+***
+
+* Missing Values*
+
+
+```r
+typeof(NULL)
+```
+
+```
+## [1] "NULL"
+```
+
+```r
+length(NULL)
+```
+
+```
+## [1] 0
+```
+
+```r
+typeof(NA)
+```
+
+```
+## [1] "logical"
+```
+
+```r
+length(NA)
+```
+
+```
+## [1] 1
+```
+
+```r
+x<-c(1,2,3,NA,5)
+x
+```
+
+```
+## [1]  1  2  3 NA  5
+```
+
+```r
+is.na(x)
+```
+
+```
+## [1] FALSE FALSE FALSE  TRUE FALSE
+```
+Null is often used to indicate the absence of a vector.
+
+N.A is used to indicate the absence of a value in a vector, a.k.a missing value.
+
+#Subsetting lists
+
+There are a few ways to subset a list. Throughout the course we'll mostly use double bracket ([[]]) subsetting by index and by name.
+
+That is, my_list[[1]] extracts the first element of the list my_list, and my_list[["name"]] extracts the element in my_list that is called name.
+
+
+```r
+# 2nd element in tricky_list
+# tricky_list
+# typeof(tricky_list[[2]])
+
+# Element called x in tricky_list
+# typeof(tricky_list[["x"]])
+
+# 2nd element inside the element called x in tricky_list
+# typeof(tricky_list[["x"]][[2]])
+```
+
+
+*Exploring lists*
+
+
+Calling names() on a list will give you names at the top level of the list and str() will give you a full description of the entire list (which can sometimes be a little overwhelming).
+
+Use names() and str() on the model element
+names(tricky_list$model)
+str(tricky_list$model)
+
+#A safer way to create the sequence
+Let's take a look at the sequence component of our for loop:
+
+i in 1:ncol(df)
+Each time our for loop iterates, i takes the next value in 1:ncol(df). This is a pretty common model for a sequence: a sequence of consecutive integers designed to index over one dimension of our data.
+
+What might surprise you is that this isn't the best way to generate such a sequence, especially when you are using for loops inside your own functions. Let's look at an example where df is an empty data frame:
+
+df <- data.frame()
+1:ncol(df)
+
+for (i in 1:ncol(df)) {
+  print(median(df[[i]]))
+}
+Our sequence is now the somewhat non-sensical: 1, 0. You might think you wouldn't be silly enough to use a for loop with an empty data frame, but once you start writing your own functions, there's no telling what the input will be.
+
+A better method is to use the seq_along() function. This function generates a sequence along the index of the object passed to it, but handles the empty case much better.
+
+
+ Replace the 1:ncol(df) sequence
+for (i in seq_along(df)) {
+  print(median(df[[i]]))
+}
+
+ Change the value of df
+df<-data.frame()
+
+ Repeat for loop to verify there is no error
+for (i in seq_along(df)) {
+  print(median(df[[i]]))
+}
+
+
+# Keeping output
+Our for loop does a good job displaying the column medians, but we might want to store these medians in a vector for future use.
+
+Before you start the loop, you must always allocate sufficient space for the output, let's say an object called output. This is very important for efficiency: if you grow the for loop at each iteration (e.g. using c()), your for loop will be very slow.
+
+
+```r
+# Create new double vector: output
+# output<-vector(mode="double", length=ncol(df))
+
+# Alter the loop
+# for (i in seq_along(df)) {
+  # Change code to store result in output
+# output[i]<- median(df[[i]])
+#}
+```
+
+ Define example vectors x and y
+x <- c( 1, 2, NA, 3, NA)
+y <- c(NA, 3, NA, 3,  4)
+
+ Count how many elements are missing in both x and y
+z<-is.na(x)&is.na(y)
+sum(z)
+
+# Return statements
+One of your colleagues has noticed if you pass mean_ci() an empty vector it returns a confidence interval with missing values at both ends (try it: mean_ci(numeric(0))). In this case, they decided it would make more sense to produce a warning "x was empty" and return c(-Inf, Inf) and have edited the function to be:
+
+mean_ci <- function(x, level = 0.95) {
+  if (length(x) == 0) {
+    warning("`x` was empty", call. = FALSE)
+    interval <- c(-Inf, Inf)
+  } else { 
+    se <- sd(x) / sqrt(length(x))
+    alpha <- 1 - level
+    interval <- mean(x) + 
+      se * qnorm(c(alpha / 2, 1 - alpha / 2))
+  }
+  interval
+}
+
+It is also bad practice to use cat() for anything other than a print() method (a function designed just to display output). Having an important message just print to the screen makes it very hard for other people who might be programming with your function to capture the output and handle it appropriately.
+
+The official R way to supply simple diagnostic information is the message() function. The unnamed arguments are pasted together with no separator (and no need for a newline at the end) and by default are printed to the screen.
+
+replace_missings <- function(x, replacement) {
+  is_miss <- is.na(x)
+  x[is_miss] <- replacement
+  
+  # Rewrite to use message()
+  message(sum(is_miss),"missings replaced by the value " ,replacement,"\n")
+  x
+}
+
+replace_missings(df$z,0)
+
+
+#Using a function as an argument
+
+
+```r
+#col_summary <- function(df, fun) {
+ # output <- numeric(ncol(df))
+  #for (i in seq_along(df)) {
+   # output[[i]] <- fun(df[[i]])
+  #}
+  #output
+#}
+```
+
+The map functions
+All the map functions in purrr take a vector, .x, as the first argument, then return .f applied to each element of .x. The type of object that is returned is determined by function suffix (the part after _):
+
+map() returns a list or data frame
+map_lgl() returns a logical vector
+map_int() returns a integer vector
+map_dbl() returns a double vector
+map_chr() returns a character vector
+Let's repeat our column summaries using a map function instead of our col_summary() function.
+
+
+
+```r
+# Load the purrr package
+# library(purrr)
+
+# Use map_dbl() to find column means
+# map_dbl(df,mean)
+# Use map_dbl() to column medians
+# map_dbl(df,median)
+# Use map_dbl() to find column standard deviations
+# map_dbl(df,sd)
+```
+The ... argument to the map functions
+The map functions use the ... ("dot dot dot") argument to pass along additional arguments to .f each time it’s called. For example, we can pass the trim argument to the mean() function:
+
+map_dbl(df, mean, trim = 0.5)
+Multiple arguments can be passed along using commas to separate them. For example, we can also pass the na.rm argument to mean():
+
+map_dbl(df, mean, trim = 0.5, na.rm = TRUE)
+
+
+If you know what type of output you expect, you are better to use the corresponding map function. That way, if you expect one thing and get another, you'll know immediately because the map function will return an error.
+
+For example, try running:
+
+map_lgl(df, mean)
+The map functions are what we call type consistent. This means you know exactly what type of output to expect regardless of the input. map_lgl() either returns either a logical vector or an error. map_dbl() returns either a double or an error.
+
+
+*Using anonymous function and shortcuts with map funcn*
+
+
+```r
+# Rewrite to call an anonymous function
+# map(cyl, function(df) lm(mpg~wt,data=df))
+
+#Shortcut
+# map(cyl,~lm(mpg~wt, data=.))
+```
+Using a string
+There are also some useful shortcuts that come in handy when you want to subset each element of the .x argument. If the .f argument to a map function is set equal to a string, let's say "name", then purrr extracts the "name" element from every element of .x.
+
+This is a really common situation you find yourself in when you work with nested lists. For example, if we have a list of where every element contains an a and b element:
+
+list_of_results <- list(
+  list(a = 1, b = "A"), 
+  list(a = 2, b = "C"), 
+  list(a = 3, b = "D")
+)
+We might want to pull out the a element from every entry. We could do it with the string shortcut like this:
+
+map(list_of_results, "a")
+
+
+```r
+# Save the result from the previous exercise to the variable models
+# models<-map(cyl, ~ lm(mpg ~ wt, data = .))
+# str(models)
+
+# Use map and coef to get the coefficients for each model: coefs
+# coefs<-map(models,coef)
+# coefs
+
+# Use string shortcut to extract the wt coefficient 
+# map(coefs,2)
+```
+
+Using a numeric vector
+Another useful shortcut for subsetting is to pass a numeric vector as the .f argument. This works just like passing a string but subsets by index rather than name. For example, with your previous list_of_results:
+
+list_of_results <- list(
+  list(a = 1, b = "A"), 
+  list(a = 2, b = "C"), 
+  list(a = 3, b = "D")
+)
+Another way to pull out the a element from each list, is to pull out the first element:
+
+map(list_of_results, 1)
+
+
+*Putting it together with pipes*
+
+purrr also includes a pipe operator: %>%. The pipe operator is another shortcut that saves typing, but also increases readability. The explanation of the pipe operator is quite simple: x %>% f(y) is another way of writing f(x, y). 
+
+mtcars %>% 
+  split(mtcars$cyl) %>%
+  map(~ lm(mpg ~ wt, data = .)) %>%
+  map(coef) %>% 
+  map_dbl("wt")
+  
+  
+ Rewrite to be a single command using pipes 
+ summaries <- map(models, summary)
+ map_dbl(summaries, "r.squared")
+models %>% map(summary) %>% map_dbl("r.squared")
+
+
+# Advanced inputs and outputs
+
+*Creating a safe function*
+
+safely() takes a function as an argument and it returns a function as its output. The function that is returned is modified so it never throws an error (and never stops the rest of your computation!).
+
+Instead, it always returns a list with two elements:
+
+1. result is the original result. If there was an error, this will be NULL.
+
+2. error is an error object. If the operation was successful this will be NULL.
+
+
+```r
+#install.packages("purrr")
+
+#unloadNamespace("purrr")   # or lapply()-ing as you attempted with `detach`
+#update.packages("purrr")
+library(purrr) 
+```
+
+```
+## Warning: package 'purrr' was built under R version 3.5.2
+```
+
+```
+## 
+## Attaching package: 'purrr'
+```
+
+```
+## The following object is masked from 'package:jsonlite':
+## 
+##     flatten
+```
+
+```
+## The following object is masked from 'package:gdata':
+## 
+##     keep
+```
+
+```
+## The following object is masked from 'package:data.table':
+## 
+##     transpose
+```
+
+```r
+#library(purrr)
+# Create safe_readLines() by passing readLines() to safely()
+safe_readLines<-safely(readLines)
+
+?readLines
+```
+
+```
+## starting httpd help server ...
+```
+
+```
+##  done
+```
+
+```r
+# Call safe_readLines() on "http://example.org"
+safe_readLines("http://example.org")
+```
+
+```
+## $result
+##  [1] "<!doctype html>"                                                                                      
+##  [2] "<html>"                                                                                               
+##  [3] "<head>"                                                                                               
+##  [4] "    <title>Example Domain</title>"                                                                    
+##  [5] ""                                                                                                     
+##  [6] "    <meta charset=\"utf-8\" />"                                                                       
+##  [7] "    <meta http-equiv=\"Content-type\" content=\"text/html; charset=utf-8\" />"                        
+##  [8] "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />"                       
+##  [9] "    <style type=\"text/css\">"                                                                        
+## [10] "    body {"                                                                                           
+## [11] "        background-color: #f0f0f2;"                                                                   
+## [12] "        margin: 0;"                                                                                   
+## [13] "        padding: 0;"                                                                                  
+## [14] "        font-family: \"Open Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;"                
+## [15] "        "                                                                                             
+## [16] "    }"                                                                                                
+## [17] "    div {"                                                                                            
+## [18] "        width: 600px;"                                                                                
+## [19] "        margin: 5em auto;"                                                                            
+## [20] "        padding: 50px;"                                                                               
+## [21] "        background-color: #fff;"                                                                      
+## [22] "        border-radius: 1em;"                                                                          
+## [23] "    }"                                                                                                
+## [24] "    a:link, a:visited {"                                                                              
+## [25] "        color: #38488f;"                                                                              
+## [26] "        text-decoration: none;"                                                                       
+## [27] "    }"                                                                                                
+## [28] "    @media (max-width: 700px) {"                                                                      
+## [29] "        body {"                                                                                       
+## [30] "            background-color: #fff;"                                                                  
+## [31] "        }"                                                                                            
+## [32] "        div {"                                                                                        
+## [33] "            width: auto;"                                                                             
+## [34] "            margin: 0 auto;"                                                                          
+## [35] "            border-radius: 0;"                                                                        
+## [36] "            padding: 1em;"                                                                            
+## [37] "        }"                                                                                            
+## [38] "    }"                                                                                                
+## [39] "    </style>    "                                                                                     
+## [40] "</head>"                                                                                              
+## [41] ""                                                                                                     
+## [42] "<body>"                                                                                               
+## [43] "<div>"                                                                                                
+## [44] "    <h1>Example Domain</h1>"                                                                          
+## [45] "    <p>This domain is established to be used for illustrative examples in documents. You may use this"
+## [46] "    domain in examples without prior coordination or asking for permission.</p>"                      
+## [47] "    <p><a href=\"http://www.iana.org/domains/example\">More information...</a></p>"                   
+## [48] "</div>"                                                                                               
+## [49] "</body>"                                                                                              
+## [50] "</html>"                                                                                              
+## 
+## $error
+## NULL
+```
+
+```r
+# Call safe_readLines() on "http://asdfasdasdkfjlda"
+safe_readLines("http://asdfasdasdkfjlda")
+```
+
+```
+## Warning in file(con, "r"): InternetOpenUrl failed: 'The server name or
+## address could not be resolved'
+```
+
+```
+## $result
+## NULL
+## 
+## $error
+## <simpleError in file(con, "r"): cannot open the connection>
+```
+
+```r
+urls <- list(
+  example = "http://example.org",
+  rproj = "http://www.r-project.org",
+  asdf = "http://asdfasdasdkfjlda"
+)
+
+# Define safe_readLines()
+safe_readLines <- safely(readLines)
+
+# Use the safe_readLines() function with map(): html
+html <- map(urls, safe_readLines)
+```
+
+```
+## Warning in file(con, "r"): InternetOpenUrl failed: 'The server name or
+## address could not be resolved'
+```
+
+```r
+# Call str() on html
+str(html)
+```
+
+```
+## List of 3
+##  $ example:List of 2
+##   ..$ result: chr [1:50] "<!doctype html>" "<html>" "<head>" "    <title>Example Domain</title>" ...
+##   ..$ error : NULL
+##  $ rproj  :List of 2
+##   ..$ result: chr [1:122] "<!DOCTYPE html>" "<html lang=\"en\">" "  <head>" "    <meta charset=\"utf-8\">" ...
+##   ..$ error : NULL
+##  $ asdf   :List of 2
+##   ..$ result: NULL
+##   ..$ error :List of 2
+##   .. ..$ message: chr "cannot open the connection"
+##   .. ..$ call   : language file(con, "r")
+##   .. ..- attr(*, "class")= chr [1:3] "simpleError" "error" "condition"
+```
+
+```r
+# Extract the result from one of the successful elements
+html[["example"]][["result"]]
+```
+
+```
+##  [1] "<!doctype html>"                                                                                      
+##  [2] "<html>"                                                                                               
+##  [3] "<head>"                                                                                               
+##  [4] "    <title>Example Domain</title>"                                                                    
+##  [5] ""                                                                                                     
+##  [6] "    <meta charset=\"utf-8\" />"                                                                       
+##  [7] "    <meta http-equiv=\"Content-type\" content=\"text/html; charset=utf-8\" />"                        
+##  [8] "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />"                       
+##  [9] "    <style type=\"text/css\">"                                                                        
+## [10] "    body {"                                                                                           
+## [11] "        background-color: #f0f0f2;"                                                                   
+## [12] "        margin: 0;"                                                                                   
+## [13] "        padding: 0;"                                                                                  
+## [14] "        font-family: \"Open Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;"                
+## [15] "        "                                                                                             
+## [16] "    }"                                                                                                
+## [17] "    div {"                                                                                            
+## [18] "        width: 600px;"                                                                                
+## [19] "        margin: 5em auto;"                                                                            
+## [20] "        padding: 50px;"                                                                               
+## [21] "        background-color: #fff;"                                                                      
+## [22] "        border-radius: 1em;"                                                                          
+## [23] "    }"                                                                                                
+## [24] "    a:link, a:visited {"                                                                              
+## [25] "        color: #38488f;"                                                                              
+## [26] "        text-decoration: none;"                                                                       
+## [27] "    }"                                                                                                
+## [28] "    @media (max-width: 700px) {"                                                                      
+## [29] "        body {"                                                                                       
+## [30] "            background-color: #fff;"                                                                  
+## [31] "        }"                                                                                            
+## [32] "        div {"                                                                                        
+## [33] "            width: auto;"                                                                             
+## [34] "            margin: 0 auto;"                                                                          
+## [35] "            border-radius: 0;"                                                                        
+## [36] "            padding: 1em;"                                                                            
+## [37] "        }"                                                                                            
+## [38] "    }"                                                                                                
+## [39] "    </style>    "                                                                                     
+## [40] "</head>"                                                                                              
+## [41] ""                                                                                                     
+## [42] "<body>"                                                                                               
+## [43] "<div>"                                                                                                
+## [44] "    <h1>Example Domain</h1>"                                                                          
+## [45] "    <p>This domain is established to be used for illustrative examples in documents. You may use this"
+## [46] "    domain in examples without prior coordination or asking for permission.</p>"                      
+## [47] "    <p><a href=\"http://www.iana.org/domains/example\">More information...</a></p>"                   
+## [48] "</div>"                                                                                               
+## [49] "</body>"                                                                                              
+## [50] "</html>"
+```
+
+```r
+# Extract the error from the element that was unsuccessful
+html[["asdf"]][["error"]]
+```
+
+```
+## <simpleError in file(con, "r"): cannot open the connection>
+```
+purrr provides a function *transpose()* that reshapes a list so the inner-most level becomes the outer-most level. In otherwords, it turns a list-of-lists "inside-out". Consider the following list:
+
+nested_list <- list(
+   x1 = list(a = 1, b = 2),
+   x2 = list(a = 3, b = 4)
+)
+If I need to extract the a element in x1, I could do nested_list[["x1"]][["a"]]. However, if I transpose the list first, the order of subsetting reverses. That is, to extract the same element I could also do transpose(nested_list)[["a"]][["x1"]].
+
+This is really handy for safe output, since we can grab all the results or all the errors really easily.
+
+
+```r
+# Define safe_readLines() and html
+safe_readLines <- safely(readLines)
+html <- map(urls, safe_readLines)
+```
+
+```
+## Warning in file(con, "r"): InternetOpenUrl failed: 'The server name or
+## address could not be resolved'
+```
+
+```r
+# Examine the structure of transpose(html)
+str(transpose(html))
+```
+
+```
+## List of 2
+##  $ result:List of 3
+##   ..$ example: chr [1:50] "<!doctype html>" "<html>" "<head>" "    <title>Example Domain</title>" ...
+##   ..$ rproj  : chr [1:122] "<!DOCTYPE html>" "<html lang=\"en\">" "  <head>" "    <meta charset=\"utf-8\">" ...
+##   ..$ asdf   : NULL
+##  $ error :List of 3
+##   ..$ example: NULL
+##   ..$ rproj  : NULL
+##   ..$ asdf   :List of 2
+##   .. ..$ message: chr "cannot open the connection"
+##   .. ..$ call   : language file(con, "r")
+##   .. ..- attr(*, "class")= chr [1:3] "simpleError" "error" "condition"
+```
+
+```r
+# Extract the results: res
+res<-transpose(html)[["result"]]
+
+# Extract the errors: errs
+errs<-transpose(html)[["error"]]
+
+# Create a logical vector is_ok
+
+is_ok<-map_lgl(errs,is_null)
+is_ok
+```
+
+```
+## example   rproj    asdf 
+##    TRUE    TRUE   FALSE
+```
+# Generating distributions from random number
+
+To get started, let's imagine simulating 5 random numbers from a Normal distribution. You can do this in R with the rnorm() function. For example, to generate 5 random numbers from a Normal distribution with mean zero, we can do:
+
+rnorm(n = 5)
+
+Now, imagine you want to do this three times, but each time with a different sample size. You already know how! Let's use the map() function to get it done.
+
+
+
+```r
+# Create a list n containing the values: 5, 10, and 20
+n=list(5,10,20)
+
+# Call map() on n with rnorm() to simulate three samples
+map(n,rnorm)
+```
+
+```
+## [[1]]
+## [1] -1.3417615  0.0519748 -0.1958029 -0.7300134  0.6401205
+## 
+## [[2]]
+##  [1] -0.5707287 -0.9838935 -1.7143063  1.1627489 -1.1127000  0.6180758
+##  [7] -0.9165190  0.0402821 -1.3038617 -1.0059500
+## 
+## [[3]]
+##  [1] -1.05801289  0.92551869  0.87166927  1.47747485  1.52638013
+##  [6] -0.20870940 -0.56042340  0.25612572 -2.67509088  1.14615701
+## [11]  0.97985629 -1.48752641  1.10168719  1.44138267 -0.75138766
+## [16] -1.95791365 -0.61421668 -0.84531317  0.08746406 -0.59846786
+```
+
+
+Mapping over two arguments
+Ok, but now imagine we don't just want to vary the sample size, we also want to vary the mean. The mean can be specified in rnorm() by the argument mean. Now there are two arguments to rnorm() we want to vary: n and mean.
+
+The map2() function is designed exactly for this purpose; it allows iteration over two objects. The first two arguments to map2() are the objects to iterate over and the third argument .f is the function to apply.
+
+Let's use map2() to simulate three samples with different sample sizes and different means.
+
+
+```r
+# Initialize n
+n <- list(5, 10, 20)
+
+# Create a list mu containing the values: 1, 5, and 10
+mu<-list(1,5,10)
+
+# Edit to call map2() on n and mu with rnorm() to simulate three samples
+map2(n,mu, rnorm)
+```
+
+```
+## [[1]]
+## [1]  1.3744482  1.8271114  2.1689307  0.5284518 -0.5893583
+## 
+## [[2]]
+##  [1] 4.737223 6.247949 3.921540 4.288046 5.082928 4.816445 4.898979
+##  [8] 5.193287 4.304484 4.428485
+## 
+## [[3]]
+##  [1]  8.670663  9.982479  9.980055 12.339468 10.597024 10.250345 11.242660
+##  [8]  9.718108 11.269327  9.737402 11.744926  8.758713  8.516799 10.226860
+## [15] 11.184310 10.635861 10.280362  9.046797  9.890405  9.764491
+```
+
+*Mapping over more than two arguments*
+
+But wait, there's another argument to rnorm() we might want to vary: sd, the standard deviation of the Normal distribution. You might think there is a map3() function, but there isn't. Instead purrr provides a pmap() function that iterates over 2 or more arguments.
+
+First, let's take a look at pmap() for the situation we just solved: iterating over two arguments. Instead of providing each item to iterate over as arguments, pmap() takes a list of arguments as its input. For example, we could replicate our previous example, iterating over both n and mu with the following:
+
+n <- list(5, 10, 20)
+mu <- list(1, 5, 10)
+
+pmap(list(n, mu), rnorm)
+Notice how we had to put our two items to iterate over (n and mu) into a list.
+
+Let's expand this code to iterate over varying standard deviations too.
+
+
+```r
+# Initialize n and mu
+n <- list(5, 10, 20)
+mu <- list(1, 5, 10)
+
+# Create a sd list with the values: 0.1, 1 and 0.1
+sd<-list(0.1,1,0.1)
+
+# Edit this call to pmap() to iterate over the sd list as well
+pmap(list(n, mu,sd), rnorm)
+```
+
+```
+## [[1]]
+## [1] 1.0921935 0.9872207 1.1402555 1.1255533 0.9907698
+## 
+## [[2]]
+##  [1] 5.253527 5.248850 5.740677 5.931844 5.873190 6.608200 3.843704
+##  [8] 4.729233 5.555029 4.306336
+## 
+## [[3]]
+##  [1]  9.966626 10.096638 10.029827  9.889566  9.958556 10.077126 10.055494
+##  [8] 10.034069 10.111019 10.057380 10.022176 10.085324 10.020038 10.152987
+## [15]  9.828527 10.094534  9.945544 10.091763  9.949760 10.005610
+```
+
+```r
+# Name the elements of the argument list to avoid unintended argument matching by R
+pmap(list(mean=mu, n=n,sd= sd), rnorm)
+```
+
+```
+## [[1]]
+## [1] 0.9739431 0.9077373 1.1124901 1.0523422 1.0099651
+## 
+## [[2]]
+##  [1] 6.055198 5.239026 5.917405 4.917266 5.321663 5.473891 4.042628
+##  [8] 5.284445 4.929436 5.910254
+## 
+## [[3]]
+##  [1]  9.849407 10.047202 10.081700 10.016428  9.864099  9.948780  9.821699
+##  [8]  9.952303 10.011058  9.961023  9.825675  9.800133  9.982778  9.939992
+## [15] 10.004868 10.053300 10.085598  9.957487 10.060283  9.921180
+```
+
+*Mapping over functions and their arguments*
+
+Sometimes it's not the arguments to a function you want to iterate over, but a set of functions themselves. Imagine that instead of varying the parameters to rnorm() we want to simulate from different distributions, say, using rnorm(), runif(), and rexp(). How do we iterate over calling these functions?
+
+In purrr, this is handled by the invoke_map() function. The first argument is a list of functions. In our example, something like:
+
+funs <- list("rnorm", "runif", "rexp")
+The second argument specifies the arguments to the functions. In the simplest case, all the functions take the same argument, and we can specify it directly, relying on ... to pass it to each function. In this case, call each function with the argument n = 5:
+
+invoke_map(funs, n = 5)
+In more complicated cases, the functions may take different arguments, or we may want to pass different values to each function. In this case, we need to supply invoke_map() with a list, where each element specifies the arguments to the corresponding function.
+
+Let's use this approach to simulate three samples from the following three distributions: Normal(10, 1), Uniform(0, 5), and Exponential(5).
+
+
+
+```r
+# Define list of functions
+f <- list("rnorm", "runif", "rexp")
+
+# Parameter list for rnorm()
+rnorm_params <- list(mean = 10)
+
+# Add a min element with value 0 and max element with value 5
+runif_params <- list(min=0,max=5)
+
+# Add a rate element with value 5
+rexp_params <- list(rate=5)
+
+# Define params for each function
+params <- list(
+  rnorm_params,
+  runif_params,
+  rexp_params
+)
+
+# Call invoke_map() on f supplying params as the second argument
+invoke_map(f,params, n = 5)
+```
+
+```
+## [[1]]
+## [1]  9.841433 10.026573 11.322116  9.160825  9.242927
+## 
+## [[2]]
+## [1] 2.550724 4.899223 2.711561 2.247953 1.222930
+## 
+## [[3]]
+## [1] 0.4409812 0.2377184 0.0391427 0.1913878 0.1952179
+```
+
+*Walk*
+
+walk() operates just like map() except it's designed for functions that don't return anything. You use walk() for functions with side effects like printing, plotting or saving.
+
+Let's check that our simulated samples are in fact what we think they are by plotting a histogram for each one.
+
+
+```r
+# Define list of functions
+f <- list(Normal = "rnorm", Uniform = "runif", Exp = "rexp")
+
+# Define params
+params <- list(
+  Normal = list(mean = 10),
+  Uniform = list(min = 0, max = 5),
+  Exp = list(rate = 5)
+)
+
+# Assign the simulated samples to sims
+sims<-invoke_map(f, params, n = 50)
+
+# Use walk() to make a histogram of each element in sims
+walk(sims,hist)
+```
+
+![](R_notes_datacamp_files/figure-html/unnamed-chunk-59-1.png)<!-- -->![](R_notes_datacamp_files/figure-html/unnamed-chunk-59-2.png)<!-- -->![](R_notes_datacamp_files/figure-html/unnamed-chunk-59-3.png)<!-- -->
+Walking over two or more arguments
+
+Those histograms were pretty good, but they really needed better breaks for the bins on the x-axis. That means we need to vary two arguments to hist(): x and breaks. Remember map2()? That allowed us to iterate over two arguments. Guess what? There is a walk2(), too!
+
+Let's use walk2() to improve those histograms with better breaks.
+
+
+```r
+# Replace "Sturges" with reasonable breaks for each sample
+breaks_list <- list(
+  Normal = seq(6,16,0.5),
+  Uniform = seq(0,5,0.25),
+  Exp = seq(0,1.5,0.1)
+)
+
+# Use walk2() to make histograms with the right breaks
+walk2(sims,breaks_list,hist)
+```
+
+![](R_notes_datacamp_files/figure-html/unnamed-chunk-60-1.png)<!-- -->![](R_notes_datacamp_files/figure-html/unnamed-chunk-60-2.png)<!-- -->![](R_notes_datacamp_files/figure-html/unnamed-chunk-60-3.png)<!-- -->
+Let's start by writing our own function find_breaks(), which copies the default breaks in the ggplot2 package: break the range of the data in 30 bins.
+
+How do we start? Simple, of course! Here's a snippet of code that works for the first sample:
+
+rng <- range(sims[[1]], na.rm = TRUE)
+seq(rng[1], rng[2], length.out = 30)
+
+Turn this snippet into find_breaks()
+find_breaks<-function(x){
+  rng <- range(x, na.rm = TRUE)
+ return( seq(rng[1], rng[2], length.out = 30))
+  
+}
+
+Call find_breaks() on sims[[1]]
+find_breaks(sims[[1]])
+
+Now that we have find_breaks(), we can find nice breaks for all the samples using map(). Then, pass the result into walk2() to get nice (but custom breaks) for our samples.
+
+Use map() to iterate find_breaks() over sims: nice_breaks
+nice_breaks<-map(sims,find_breaks)
+
+Use nice_breaks as the second argument to walk2()
+walk2(sims,nice_breaks,hist)
+
+
+> Increase sample size to 1000
+sims <- invoke_map(f, params, n = 1000)
+
+> Compute nice_breaks (don't change this)
+nice_breaks <- map(sims, find_breaks)
+
+> Create a vector nice_titles
+nice_titles=c('Normal(10, 1)','Uniform(0, 5)','Exp(5)')
+
+> Use pwalk() instead of walk2()
+pwalk(list(x=sims,breaks=nice_breaks,main=nice_titles),hist,xlab="")
 
 

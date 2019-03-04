@@ -424,7 +424,7 @@ unclass(today)
 ```
 
 ```
-## [1] 17944
+## [1] 17958
 ```
 
 ```r
@@ -436,7 +436,7 @@ unclass(now)
 ```
 
 ```
-## [1] 1550472121
+## [1] 1551681496
 ```
 
 Create and format dates
@@ -2059,18 +2059,7 @@ library(purrr)
 # Create safe_readLines() by passing readLines() to safely()
 safe_readLines<-safely(readLines)
 
-?readLines
-```
 
-```
-## starting httpd help server ...
-```
-
-```
-##  done
-```
-
-```r
 # Call safe_readLines() on "http://example.org"
 safe_readLines("http://example.org")
 ```
@@ -2180,7 +2169,7 @@ str(html)
 ##   ..$ result: chr [1:50] "<!doctype html>" "<html>" "<head>" "    <title>Example Domain</title>" ...
 ##   ..$ error : NULL
 ##  $ rproj  :List of 2
-##   ..$ result: chr [1:122] "<!DOCTYPE html>" "<html lang=\"en\">" "  <head>" "    <meta charset=\"utf-8\">" ...
+##   ..$ result: chr [1:123] "<!DOCTYPE html>" "<html lang=\"en\">" "  <head>" "    <meta charset=\"utf-8\">" ...
 ##   ..$ error : NULL
 ##  $ asdf   :List of 2
 ##   ..$ result: NULL
@@ -2287,7 +2276,7 @@ str(transpose(html))
 ## List of 2
 ##  $ result:List of 3
 ##   ..$ example: chr [1:50] "<!doctype html>" "<html>" "<head>" "    <title>Example Domain</title>" ...
-##   ..$ rproj  : chr [1:122] "<!DOCTYPE html>" "<html lang=\"en\">" "  <head>" "    <meta charset=\"utf-8\">" ...
+##   ..$ rproj  : chr [1:123] "<!DOCTYPE html>" "<html lang=\"en\">" "  <head>" "    <meta charset=\"utf-8\">" ...
 ##   ..$ asdf   : NULL
 ##  $ error :List of 3
 ##   ..$ example: NULL
@@ -2335,17 +2324,17 @@ map(n,rnorm)
 
 ```
 ## [[1]]
-## [1] -1.3417615  0.0519748 -0.1958029 -0.7300134  0.6401205
+## [1] -0.9728645  0.4425917 -1.2892499  0.6149665 -0.3633317
 ## 
 ## [[2]]
-##  [1] -0.5707287 -0.9838935 -1.7143063  1.1627489 -1.1127000  0.6180758
-##  [7] -0.9165190  0.0402821 -1.3038617 -1.0059500
+##  [1]  1.3647653 -0.3595058 -1.0374293 -0.4258191  1.5316664  0.3863813
+##  [7]  0.4274028 -0.7773659 -0.8888093  0.2265935
 ## 
 ## [[3]]
-##  [1] -1.05801289  0.92551869  0.87166927  1.47747485  1.52638013
-##  [6] -0.20870940 -0.56042340  0.25612572 -2.67509088  1.14615701
-## [11]  0.97985629 -1.48752641  1.10168719  1.44138267 -0.75138766
-## [16] -1.95791365 -0.61421668 -0.84531317  0.08746406 -0.59846786
+##  [1] -0.84808076 -0.07251390 -1.49921477 -0.12468959  0.66419056
+##  [6]  2.23847280  0.03826905 -0.60848377 -0.71809917 -0.83187869
+## [11]  0.49107499  0.62668232  0.55672858 -1.26266961 -0.84867088
+## [16]  0.63613624 -0.13946774 -0.74375349 -0.22337896 -1.78655020
 ```
 
 
@@ -2370,16 +2359,16 @@ map2(n,mu, rnorm)
 
 ```
 ## [[1]]
-## [1]  1.3744482  1.8271114  2.1689307  0.5284518 -0.5893583
+## [1]  0.5274836  1.7188571 -0.9368527  1.3423366  0.4139206
 ## 
 ## [[2]]
-##  [1] 4.737223 6.247949 3.921540 4.288046 5.082928 4.816445 4.898979
-##  [8] 5.193287 4.304484 4.428485
+##  [1] 2.730597 4.444823 5.639543 4.580485 6.221202 3.898713 4.807997
+##  [8] 7.042658 5.678519 5.626140
 ## 
 ## [[3]]
-##  [1]  8.670663  9.982479  9.980055 12.339468 10.597024 10.250345 11.242660
-##  [8]  9.718108 11.269327  9.737402 11.744926  8.758713  8.516799 10.226860
-## [15] 11.184310 10.635861 10.280362  9.046797  9.890405  9.764491
+##  [1]  9.942699  9.436667 12.053470  9.947464 10.822020  9.049786  9.945485
+##  [8] 10.038709  9.631275 10.438787  8.888608  9.170726  9.286786 10.304534
+## [15] 10.528856  8.978667  9.989225  8.968055 10.429099 11.196336
 ```
 
 *Mapping over more than two arguments*
@@ -2411,16 +2400,16 @@ pmap(list(n, mu,sd), rnorm)
 
 ```
 ## [[1]]
-## [1] 1.0921935 0.9872207 1.1402555 1.1255533 0.9907698
+## [1] 0.9523341 1.0221567 0.8883189 1.0738107 1.0165388
 ## 
 ## [[2]]
-##  [1] 5.253527 5.248850 5.740677 5.931844 5.873190 6.608200 3.843704
-##  [8] 4.729233 5.555029 4.306336
+##  [1] 5.663966 3.770578 4.505499 4.268507 6.024813 3.341942 4.474288
+##  [8] 3.580896 6.629194 4.326493
 ## 
 ## [[3]]
-##  [1]  9.966626 10.096638 10.029827  9.889566  9.958556 10.077126 10.055494
-##  [8] 10.034069 10.111019 10.057380 10.022176 10.085324 10.020038 10.152987
-## [15]  9.828527 10.094534  9.945544 10.091763  9.949760 10.005610
+##  [1]  9.885161 10.113068  9.997426 10.093910 10.100190 10.298230  9.831162
+##  [8] 10.166276  9.903217  9.847665  9.943042 10.125281  9.949697 10.081704
+## [15] 10.096308  9.895229  9.897866 10.093890  9.936105 10.047277
 ```
 
 ```r
@@ -2430,16 +2419,16 @@ pmap(list(mean=mu, n=n,sd= sd), rnorm)
 
 ```
 ## [[1]]
-## [1] 0.9739431 0.9077373 1.1124901 1.0523422 1.0099651
+## [1] 1.007131 1.013622 0.886320 0.889111 0.922846
 ## 
 ## [[2]]
-##  [1] 6.055198 5.239026 5.917405 4.917266 5.321663 5.473891 4.042628
-##  [8] 5.284445 4.929436 5.910254
+##  [1] 5.606829 4.675418 6.456480 6.077477 3.708307 4.491423 5.846769
+##  [8] 4.881985 4.191069 4.975156
 ## 
 ## [[3]]
-##  [1]  9.849407 10.047202 10.081700 10.016428  9.864099  9.948780  9.821699
-##  [8]  9.952303 10.011058  9.961023  9.825675  9.800133  9.982778  9.939992
-## [15] 10.004868 10.053300 10.085598  9.957487 10.060283  9.921180
+##  [1] 10.186523 10.006012 10.165155  9.965696 10.247884  9.924335 10.003611
+##  [8]  9.989274  9.897193 10.075180 10.094278 10.009688  9.860797 10.026709
+## [15]  9.856760 10.033039  9.930194 10.153094  9.895780  9.857097
 ```
 
 *Mapping over functions and their arguments*
@@ -2484,13 +2473,13 @@ invoke_map(f,params, n = 5)
 
 ```
 ## [[1]]
-## [1]  9.841433 10.026573 11.322116  9.160825  9.242927
+## [1] 8.587549 9.056295 9.065292 5.751119 8.777002
 ## 
 ## [[2]]
-## [1] 2.550724 4.899223 2.711561 2.247953 1.222930
+## [1] 2.5681268 3.8006002 0.4744579 3.1512123 2.3652375
 ## 
 ## [[3]]
-## [1] 0.4409812 0.2377184 0.0391427 0.1913878 0.1952179
+## [1] 0.29531182 0.09490729 0.01617137 0.11054905 0.17907537
 ```
 
 *Walk*
@@ -2577,4 +2566,1790 @@ nice_titles=c('Normal(10, 1)','Uniform(0, 5)','Exp(5)')
 > Use pwalk() instead of walk2()
 pwalk(list(x=sims,breaks=nice_breaks,main=nice_titles),hist,xlab="")
 
+One of the nice things about the walk() functions is that they return the object you passed to them. This means they can easily be used in pipelines (a pipeline is just a short way of saying "a statement with lots of pipes").
 
+> Pipe this along to map(), using summary() as .f
+
+sims %>%
+  walk(hist) %>%
+map(summary)
+
+
+# Robust Functions
+
+*Three main problems:*
+1. Type unstable functions- functions returns different type of output for different inputs.
+2. Non standard evaluation- ggplot2 and dplyr
+3. Hidden arguments-stringsAsFactors
+
+
+Using stopifnot() is a quick way to have your function stop, if a condition isn't met. stopifnot() takes logical expressions as arguments and if any are FALSE an error will occur.
+
+
+```r
+# Define troublesome x and y
+x <- c(NA, NA, NA)
+y <- c( 1, NA, NA, NA)
+
+both_na <- function(x, y) {
+  # Add stopifnot() to check length of x and y
+  stopifnot(length(x)==length(y))
+  
+  sum(is.na(x) & is.na(y))
+}
+
+# Call both_na() on x and y
+# both_na(x, y)---> this throws error
+```
+
+An informative error is even better
+Using stop() instead of stopifnot() allows you to specify a more informative error message. Recall the general pattern for using stop() is:
+
+if (condition) {
+  stop("Error", call. = FALSE)
+}
+
+Writing good error messages is an important part of writing a good function! We recommend your error tells the user what should be true, not what is false. For example, here a good error would be "x and y must have the same length", rather than the bad error "x and y don't have the same length".
+
+
+```r
+# Define troublesome x and y
+x <- c(NA, NA, NA)
+y <- c( 1, NA, NA, NA)
+
+both_na <- function(x, y) {
+  # Replace condition with logical
+  if (length(x)!=length(y)) {
+    # Replace "Error" with better message
+    stop("x and y must have the same length", call. = FALSE)
+  }  
+  
+  sum(is.na(x) & is.na(y))
+}
+
+# Call both_na() 
+# both_na(x, y)----> it will throw error that x and y should be of same length.
+```
+
+A different kind of surprise: side effects
+
+Side effects describe the things that happen when you run a function that alters the state of your R session. If foo() is a function with no side effects (a.k.a. pure), then when we run x <- foo(), the only change we expect is that the variable x now has a new value. No other variables in the global environment should be changed or created, no output should be printed, no plots displayed, no files saved, no options changed. We know exactly the changes to the state of the session just by reading the call to the function.
+
+
+*Type unstable functions*
+
+Single bracket subsetting.
+
+sapply() is another common offender returning unstable types. The type of output returned from sapply() depends on the type of input.
+
+Consider the following data frame and two calls to sapply():
+
+
+```r
+df <- data.frame(
+  a = 1L,
+  b = 1.5,
+  y = Sys.time(),
+  z = ordered(1)
+)
+
+A <- sapply(df[1:4], class) 
+B <- sapply(df[3:4], class)
+
+str(A)
+```
+
+```
+## List of 4
+##  $ a: chr "integer"
+##  $ b: chr "numeric"
+##  $ y: chr [1:2] "POSIXct" "POSIXt"
+##  $ z: chr [1:2] "ordered" "factor"
+```
+
+```r
+str(B)
+```
+
+```
+##  chr [1:2, 1:2] "POSIXct" "POSIXt" "ordered" "factor"
+##  - attr(*, "dimnames")=List of 2
+##   ..$ : NULL
+##   ..$ : chr [1:2] "y" "z"
+```
+
+Here A will be a list and B a character matrix
+
+Using purrr solves the problem
+This unpredictable behaviour is a sign that you shouldn't rely on sapply() inside your own functions.
+
+So, what do you do? Use alternate functions that are type consistent! And you already know a whole set: the map() functions in purrr.
+
+In this example, when we call class() on the columns of the data frame we are expecting character output, so our function of choice should be: map_chr():
+
+
+df <- data.frame(
+  a = 1L,
+  b = 1.5,
+  y = Sys.time(),
+  z = ordered(1)
+)
+
+A <- map_chr(df[1:4], class) 
+
+B <- map_chr(df[3:4], class)
+
+Except that gives us errors. This is a good thing! It alerts us that our assumption (that class() would return purely character output) is wrong.
+
+Let's look at a couple of solutions. First, we could use map() instead of map_chr(). Our result will always be a list, no matter the input.
+
+
+A type consistent solution
+If we wrap our solution into a function, we can be confident that this function will always return a list because we've used a type consistent function, map():
+
+col_classes <- function(df) {
+  map(df, class)
+}
+But what if you wanted this function to always return a character string?
+
+One option would be to decide what should happen if class() returns something longer than length 1. For example, we might simply take the first element of the vector returned by class().
+
+
+```r
+col_classes <- function(df) {
+  # Assign list output to class_list
+  class_list<-map(df, class)
+  
+  # Use map_chr() to extract first element in class_list
+  map_chr(class_list,1)
+}
+
+# Check that our new function is type consistent
+df %>% col_classes() %>% str()
+```
+
+```
+##  Named chr [1:4] "integer" "numeric" "POSIXct" "ordered"
+##  - attr(*, "names")= chr [1:4] "a" "b" "y" "z"
+```
+
+```r
+df[3:4] %>% col_classes() %>% str()
+```
+
+```
+##  Named chr [1:2] "POSIXct" "ordered"
+##  - attr(*, "names")= chr [1:2] "y" "z"
+```
+
+```r
+df[1:2] %>% col_classes() %>% str()
+```
+
+```
+##  Named chr [1:2] "integer" "numeric"
+##  - attr(*, "names")= chr [1:2] "a" "b"
+```
+
+Or fail early if something goes wrong
+Another option would be to simply fail. We could rely on map_chr()'s type consistency to fail for us:
+
+col_classes <- function(df) {
+  map_chr(df, class)
+}
+
+df %>% col_classes() %>% str()
+
+
+
+```r
+col_classes <- function(df) {
+  class_list <- map(df, class)
+  
+  # Add a check that no element of class_list has length > 1
+  if (any(map_dbl(class_list,length)>1)) {
+    stop("Some columns have more than one class", call. = FALSE)
+  }
+  
+  # Use flatten_chr() to return a character vector
+  flatten_chr(class_list)
+}
+
+# Check that our new function is type consistent
+# df %>% col_classes() %>% str()---- this throws error
+# df[3:4] %>% col_classes() %>% str()---- this throws error
+df[1:2] %>% col_classes() %>% str()
+```
+
+```
+##  chr [1:2] "integer" "numeric"
+```
+
+
+* Non standard evaluation functions*
+
+Programming with NSE functions
+Let's take a look at a function that uses the non-standard evaluation (NSE) function filter() from the dplyr package:
+
+big_x <- function(df, threshold) {
+  dplyr::filter(df, x > threshold)
+}
+This big_x() function attempts to return all rows in df where the x column exceeds a certain threshold. Let's get a feel for how it might be used.
+
+># Use big_x() to find rows in diamonds_sub where x > 7
+
+big_x(diamonds_sub,7)
+
+When things go wrong
+Now, let's see how this function might fail. There are two instances in which the non-standard evaluation of filter() could cause surprising results:
+
+The x column doesn't exist in df.
+There is a threshold column in df.
+Let's illustrate these failures. In each case we'll use big_x() in the same way as the previous exercise, so we should expect the same output. However, not only do we get unexpected outputs, there is no indication (i.e. error message) that lets us know something might have gone wrong.
+
+What to do?
+To avoid the problems caused by non-standard evaluation functions, you could avoid using them. In our example, we could achieve the same results by using standard subsetting (i.e. []) instead of filter(). For more insight into dealing with NSE and how to write your own non-standard evaluation functions, we recommend reading Hadley's vignette on the topic. Also, programming with the NSE functions in dplyr will be easier in a future version.
+
+If you do need to use non-standard evaluation functions, it's up to you to provide protection against the problem cases. That means you need to know what the problem cases are, to check for them, and to fail explicitly.
+
+To see what that might look like, let's rewrite big_x() to fail for our problem cases.
+
+big_x <- function(df, threshold) {
+  > Write a check for x not being in df
+  
+  if(!"x" %in% names(df)){
+    stop("df must contain variable called x",call.=FALSE)
+  }
+   
+   if ("threshold" %in% names(df)){
+     stop("df must not contain variable called threshold",call.=FALSE)
+   }
+  
+  
+  >Write a check for threshold being in df
+  
+  dplyr::filter(df, x > threshold)
+}
+
+
+
+*Hidden Arguments*
+
+
+A hidden dependence
+A classic example of a hidden dependence is the stringsAsFactors argument to the read.csv() function (and a few other data frame functions.)
+
+When you see the following code, you don't know exactly what the result will be:
+
+pools <- read.csv("swimming_pools.csv")
+That's because if the argument stringsAsFactors isn't specified, it inherits its value from getOption("stringsAsFactors"), a global option that a user may change.
+
+Just to prove that this is the case, let's illustrate the problem.
+
+> Read in the swimming_pools.csv to pools
+
+pools <- read.csv("swimming_pools.csv")
+
+> Examine the structure of pools
+
+str(pools)
+
+
+> Change the global stringsAsFactors option to FALSE
+
+options(stringsAsFactors = FALSE)
+
+> Read in the swimming_pools.csv to pools2
+
+pools2 <- read.csv("swimming_pools.csv")
+
+> Examine the structure of pools2
+
+str(pools2)
+
+Legitimate use of options
+In general, you want to avoid having the return value of your own functions depend on any global options. That way, you and others can reason about your functions without needing to know the current state of the options.
+
+It is, however, okay to have side effects of a function depend on global options. For example, the print() function uses getOption("digits") as the default for the digits argument. This gives users some control over how results are displayed, but doesn't change the underlying computation.
+
+Let's take a look at an example function that uses a global default sensibly. The print.lm() function has the options digits with default max(3, getOption("digits") - 3)
+We've fit a regression model of fuel efficiency on weight using the mtcars dataset.
+
+Use summary() to take a look at the fitted regression model. Pay particular attention to number of decimal places reported.
+Set the global digits option to 2: options(digits = 2).
+Take another look at the fitted model using summary(). Notice the number of decimal places has changed, but there is no change to the underlying fit object.
+
+> Fit a regression model
+
+fit <- lm(mpg ~ wt, data = mtcars)
+
+> Look at the summary of the model
+
+summary(fit)
+
+> Set the global digits option to 2
+
+options(digits = 2)
+
+> Take another look at the summary
+
+summary(fit)
+
+
+  
+***
+***
+***
+***
+*************
+# Data Manipulation in R with dplyr
+*************
+***
+***
+***
+***
+***
+
+dplyr allows you to combine speed of C with convenience of R to access data. 
+
+*Load the dplyr package*
+library(dplyr)
+
+tbl (tibble) is a special type of data frame in dplyr.
+
+
+```r
+#convert hflighyts database to tibble for ease of analysis.
+# hflights<-tbl_df(hflights)
+
+# now this will show only important variables in tibble and only some observations.
+# head(hflights)
+
+# glimpse provides more information on tibble such as variable type.
+# glimpse(hflights)
+
+# to convert from tibble to data frame
+# as.data.frame(hflights)
+```
+
+Convert data.frame to tibble
+As explained, a tbl (pronounced tibble) is just a special kind of data.frame. They make your data easier to look at, but also easier to work with. On top of this, it is straightforward to derive a tbl from a data.frame structure using as_tibble().
+
+The tbl format changes how R displays your data, but it does not change the data's underlying data structure. A tbl inherits the original class of its input, in this case, a data.frame. This means that you can still manipulate the tbl as if it were a data.frame. In other words, you can do anything with the hflights tbl that you could do with the hflights data.frame.
+
+
+Changing labels of hflights, part 1 of 2
+A bit of cleaning would be a good idea since the UniqueCarrier variable of hflights uses a confusing code system.
+
+To do this, let's work with a lookup table, that comes in the form of a named vector. When you subset the lookup table with a character string (like the character strings in UniqueCarrier), R will return the values of the lookup table that correspond to the names in the character string. To see how this works, run following code in the console:
+
+
+```r
+two <- c("AA", "AS")
+lut <- c("AA" = "American", 
+         "AS" = "Alaska", 
+         "B6" = "JetBlue")
+two <- lut[two]
+two
+```
+
+```
+##         AA         AS 
+## "American"   "Alaska"
+```
+
+> Both the dplyr and hflights packages are loaded into workspace
+
+lut <- c("AA" = "American", "AS" = "Alaska", "B6" = "JetBlue", "CO" = "Continental", 
+         "DL" = "Delta", "OO" = "SkyWest", "UA" = "United", "US" = "US_Airways", 
+         "WN" = "Southwest", "EV" = "Atlantic_Southeast", "F9" = "Frontier", 
+         "FL" = "AirTran", "MQ" = "American_Eagle", "XE" = "ExpressJet", "YV" = "Mesa")
+
+> Add the Carrier column to hflights
+
+hflights$Carrier <- lut[hflights$UniqueCarrier]
+
+> Glimpse at hflights
+
+glimpse(hflights)
+
+Changing labels of hflights, part 2 of 2
+
+Let's try a similar thing, but this time to change the labels in the CancellationCode column. This column lists reasons why a flight was cancelled using a non-informative alphabetical code. Execute
+
+unique(hflights$CancellationCode)
+A lookup table lut has already been created for you, that converts the alphabetical codes into more meaningful strings.
+
+
+
+```r
+# The hflights tbl you built in the previous exercise is available in the workspace.
+
+# The lookup table
+# lut <- c("A" = "carrier", "B" = "weather", "C" = "FFA", "D" = "security", "E" = "not cancelled")
+
+# Add the Code column
+# hflights$Code <-lut[hflights$CancellationCode] 
+
+# Glimpse at hflights
+# glimpse(hflights)
+```
+
+# The five verbs and their meaning
+The dplyr package contains five key data manipulation functions, also called verbs:
+
+select(), which returns a subset of the columns,
+filter(), that is able to return a subset of the rows,
+arrange(), that reorders the rows according to single or multiple variables,
+mutate(), used to add columns from existing data,
+summarize(), which reduces each group to a single row by calculating aggregate measures.
+
+
+
+> select
+
+You can also use : to select a range of variables and - to exclude some variables, similar to indexing a data.frame with square brackets. You can use both variable's names as well as integer indexes. This call selects the four first variables except for the second one of a data frame df:
+
+select(df, 1:4, -2)
+select() does not change the data frame it is called on; you have to explicitly assign the result of select() to a variable to store the result.
+
+Helper functions for variable selection
+
+dplyr comes with a set of helper functions that can help you select groups of variables inside a select() call:
+
+starts_with("X"): every name that starts with "X",
+ends_with("X"): every name that ends with "X",
+contains("X"): every name that contains "X",
+matches("X"): every name that matches "X", where "X" can be a regular expression,
+num_range("x", 1:5): the variables named x01, x02, x03, x04 and x05,
+one_of(x): every name that appears in x, which should be a character vector.
+Pay attention here: When you refer to columns directly inside select(), you don't use quotes. If you use the helper functions, you do use quotes.
+
+
+
+> Print out a tbl containing just ArrDelay and DepDelay
+
+select(hflights,contains("Delay"))
+
+> Print out a tbl as described in the second instruction, using both helper functions and variable names
+
+select(hflights, one_of('UniqueCarrier','FlightNum','TailNum','Cancelled','CancellationCode'))
+
+
+> Print out a tbl as described in the third instruction, using only helper functions.
+
+select(hflights, contains('Time'),contains('Delay'))
+
+
+
+> Mutating is creating
+
+mutate() is the second of five data manipulation functions you will get familiar with in this course. mutate() creates new columns which are added to a copy of the dataset.
+
+Take this example that adds a new column, z, which is the element-wise sum of the columns x and y, to the data frame df:
+
+mutate(df, z = x + y)
+mutate(my_df, x = a + b, y = x + c)
+
+
+
+>Filter
+
+Logical operators
+R comes with a set of logical operators that you can use inside filter():
+
+x < y, TRUE if x is less than y
+x <= y, TRUE if x is less than or equal to y
+x == y, TRUE if x equals y
+x != y, TRUE if x does not equal y
+x >= y, TRUE if x is greater than or equal to y
+x > y, TRUE if x is greater than y
+x %in% c(a, b, c), TRUE if x is in the vector c(a, b, c)
+The following example filters df such that only the observations for which a is positive, are kept:
+
+filter(df, a > 0)
+
+R also comes with a set of boolean operators that you can use to combine multiple logical tests into a single test. These include & (and), | (or), and ! (not). Instead of using the & operator, you can also pass several logical tests to filter(), separated by commas. 
+
+
+
+> Arrange
+
+arrange() can be used to rearrange rows according to any type of data. If you pass arrange() a character variable, for example, R will rearrange the rows in alphabetical order according to values of the variable. If you pass a factor variable, R will rearrange the rows according to the order of the levels in your factor (running levels() on the variable reveals this order).
+
+By default, arrange() arranges the rows from smallest to largest. Rows with the smallest value of the variable will appear at the top of the data set. You can reverse this behavior with the desc() function. 
+
+
+Arrange according to carrier and decreasing departure delays
+arrange(hflights,UniqueCarrier,desc(DepDelay))
+
+
+> Summarize
+
+Print out a summary with variables min_dist and max_dist
+summarise(hflights, min_dist=min(Distance),max_dist=max(Distance))
+
+Aggregate functions
+You can use any function you like in summarize() so long as the function can take a vector of data and return a single number. R contains many aggregating functions, as dplyr calls them:
+
+min(x) - minimum value of vector x.
+max(x) - maximum value of vector x.
+mean(x) - mean value of vector x.
+median(x) - median value of vector x.
+quantile(x, p) - pth quantile of vector x.
+sd(x) - standard deviation of vector x.
+var(x) - variance of vector x.
+IQR(x) - Inter Quartile Range (IQR) of vector x.
+diff(range(x)) - total range of vector x.
+
+
+dplyr aggregate functions
+dplyr provides several helpful aggregate functions of its own, in addition to the ones that are already defined in R. These include:
+
+first(x) - The first element of vector x.
+last(x) - The last element of vector x.
+nth(x, n) - The nth element of vector x.
+n() - The number of rows in the data.frame or group of observations that summarize() describes.
+n_distinct(x) - The number of unique values in vector x.
+Next to these dplyr-specific functions, you can also turn a logical test into an aggregating function with sum() or mean(). A logical test returns a vector of TRUE's and FALSE's. When you apply sum() or mean() to such a vector, R coerces each TRUE to a 1 and each FALSE to a 0. sum() then represents the total number of observations that passed the test; mean() represents the proportion.
+
+
+
+
+```r
+# Generate summarizing statistics for hflights
+# summarise(hflights, n_obs = n(), n_carrier = n_distinct(UniqueCarrier), n_dest = n_distinct(Dest))
+
+# All American Airline flights
+# aa <- filter(hflights, UniqueCarrier == "American")
+
+# Generate summarizing statistics for aa 
+# summarise(aa, n_flights = n(), n_canc = sum(Cancelled == 1),avg_delay = mean(ArrDelay, na.rm = TRUE))
+```
+
+
+> Group_by
+
+Make an ordered per-carrier summary of hflights
+hflights %>%
+  group_by(UniqueCarrier) %>%
+  summarise(p_canc = mean(Cancelled==1)*100,
+            avg_delay = mean(ArrDelay,na.rm=TRUE)) %>%
+  arrange(avg_delay, p_canc)
+
+
+You can also combine group_by() with mutate(). When you mutate grouped data, mutate() will calculate the new variables independently for each group. This is particularly useful when mutate() uses the rank() function, that calculates within-group rankings. rank() takes a group of values and calculates the rank of each value within the group, e.g.
+
+rank(c(21, 22, 24, 23))
+has output
+
+[1] 1 2 4 3
+As with arrange(), rank() ranks values from the smallest to the largest.
+
+
+
+Ordered overview of average arrival delays per carrier
+hflights %>% filter(ArrDelay>0 & !is.na(ArrDelay)) %>%
+group_by(UniqueCarrier) %>%
+summarise(avg=mean(ArrDelay)) %>%
+mutate(rank=rank(avg)) %>%
+arrange(rank)
+
+
+Find the most visited destination for each carrier
+hflights %>%
+  group_by(UniqueCarrier,Dest) %>%
+  summarise(n=n()) %>%
+  mutate(rank=rank(desc(n))) %>%
+  filter(rank==1)
+  
+  
+> Dplyr with databases
+
+dplyr deals with different types
+hflights2 is a copy of hflights that is saved as a data table. hflights2 was made available in the background using the following code:
+
+library(data.table)
+hflights2 <- as.data.table(hflights)
+hflights2 contains all of the same information as hflights, but the information is stored in a different data structure. You can see this structure by typing hflights2 at the command line.
+
+Even though hflights2 is a different data structure, you can use the same dplyr functions to manipulate hflights2 as you used to manipulate hflights.
+
+ hflights2 is pre-loaded as a data.table
+str(hflights2)
+
+ Use summarise to calculate n_carrier
+hflights2 %>% summarise(n_carrier=n_distinct(UniqueCarrier))
+
+
+
+> dplyr and mySQL databases
+
+DataCamp hosts a mySQL database with data about flights that departed from New York City in 2013. The data is similar to the data in hflights, but it does not contain information about cancellations or diversions. With the tbl() function, we already created a reference to a table in this information.
+
+Although nycflights is a reference to data that lives outside of R, you can use the dplyr commands on them as usual. Behind the scenes, dplyr will convert the commands to the database's native language (in this case, SQL), and return the results. This allows you to pull data that is too large to fit in R: only the fraction of the data that you need will actually be downloaded into R, which will usually fit into R without memory issues.  
+
+ Set up a connection to the mysql database
+my_db <- src_mysql(dbname = "dplyr", 
+                   host = "courses.csrrinzqubik.us-east-1.rds.amazonaws.com", 
+                   port = 3306, 
+                   user = "student",
+                   password = "datacamp")
+
+ Reference a table within that source: nycflights
+nycflights <- tbl(my_db, "dplyr")
+
+
+glimpse at nycflights
+glimpse(nycflights)
+
+ Ordered, grouped summary of nycflights
+  nycflights %>% group_by(carrier) %>% summarise(n_flights=n(),
+  avg_delay=mean(arr_delay)) %>% arrange(avg_delay)
+
+
+ 
+***
+***
+***
+***
+*************
+# Joining data in R with dplyr
+*************
+***
+***
+***
+***
+***
+
+*A basic join*
+As Garrett mentioned in the video, left_join() is the basic join function in dplyr. You can use it whenever you want to augment a data frame with information from another data frame.
+
+For example, left_join(x, y) joins y to x. The second dataset you specify is joined to the first dataset. Keep that in mind as you go through the course.
+
+Use right_join() to create bands3, a new dataset that contains the same information as bands2.
+Use setequal() to check that the datasets are the same.
+
+> Finish the code below to recreate bands3 with a right join
+
+bands2 <- left_join(bands, artists, by = c("first", "last"))
+bands3 <- right_join(artists,bands,by=c("first","last"))
+
+> Check that bands3 is equal to bands2
+
+setequal(bands2,bands3)
+
+You can think of inner joins as the most strict type of join: they only retain observations that appear in both datasets. In contrast, full joins are the most permissive type of join: they return all of the data that appears in both datasets (often resulting in many missing values).
+
+> Join albums to songs using inner_join()
+
+inner_join(songs, albums, "album" )
+
+> Join bands to artists using full_join()
+
+full_join(artists,bands, c("first","last"))
+
+
+Pipes
+
+> Find guitarists in bands dataset (don't change)
+
+temp <- left_join(bands, artists, by = c("first", "last"))
+temp <- filter(temp, instrument == "Guitar")
+select(temp, first, last, band)
+
+> Reproduce code above using pipes
+
+bands %>% 
+left_join(artists,by=c("first","last")) %>%
+filter(instrument=="Guitar") %>%
+  select(first,last,band)
+
+
+Semi Join
+
+Apply a semi-join
+As you saw in the video, semi-joins provide a concise way to filter data from the first dataset based on information in a second dataset.
+
+For example, the code in the editor uses semi_join() to create a data frame of the artists in artists who have written a song in songs.
+
+> View the output of semi_join()
+
+artists %>% 
+  semi_join(songs, by = c("first", "last"))
+
+> Create the same result
+
+artists %>% 
+  right_join(songs, by = c("first", "last")) %>% 
+  filter(!is.na(instrument) ) %>% 
+  select(first, last, instrument)
+  
+  
+Exploring with semi-joins
+Semi-joins provide a useful way to explore the connections between multiple tables of data.
+
+For example, you can use a semi-join to determine the number of albums in the albums dataset that were made by a band in the bands dataset.
+
+albums %>% 
+  # Collect the albums made by a band
+  semi_join(bands, by="band") %>% 
+  # Count the albums made by a band
+  nrow()
+  
+  We've attempted to rewrite this semi-join as a filter. Will it return the same results?
+
+tracks %>% semi_join(
+  matches,
+  by = c("band", "year", "first")
+)
+
+tracks %>% filter(
+  (band == "The Beatles" & 
+     year == 1964 & first == "Paul") |
+    (band == "The Beatles" & 
+       year == 1965 & first == "John") |
+    (band == "Simon and Garfunkel" & 
+       year == 1966 & first == "Paul")
+)
+
+
+
+Anti join
+
+Use an anti_join() to return the rows of artists for which you don't have any bands info. Note: Don't forget to mention the by argument.
+
+> Return rows of artists that don't have bands info
+
+artists %>% 
+  anti_join(bands, by=c("first","last"))
+  
+  
+  Anti-joins with anti_join() also provide a great way to diagnose joins that go wrong.
+
+For example, they can help you zero-in on rows that have capitalization or spelling errors in the keys. These things will make your primary and secondary keys appear different to R, even though you know they refer to the same thing.
+
+labels describes the record labels of the albums in albums. Compare the spellings of album names in labels with the names in albums. Are any of the album names of labels mis-entered? Use anti_join() to check. Note: Don't forget to mention the by argument.
+
+> Check whether album names in labels are mis-entered
+
+labels %>% 
+  anti_join(albums, by="album")
+  
+  
+*Set operations*
+  
+  aerosmith %>% 
+  # Create the new dataset using a set operation
+union(greatest_hits)   %>% 
+  # Count the total number of songs
+  nrow()
+  
+  
+  # Create the new dataset using a set operation
+aerosmith %>% 
+  intersect(greatest_hits)
+  
+  Use a set operation to create a dataset of songs in live that are not in greatest_hits.
+  
+  # Create the new dataset using a set operation
+live_songs %>% setdiff(greatest_songs)
+
+
+
+> Select songs from live and greatest_hits
+
+live_songs <- live %>% select(song)
+greatest_songs <- greatest_hits %>% select(song)
+
+> Return the songs that only exist in one dataset
+
+all_songs<-union(live_songs,greatest_songs)
+common_songs<-intersect(greatest_songs,live_songs)
+all_songs %>% setdiff(common_songs)
+
+
+Use identical() to determine whether definitive and complete contain the same songs in the same order.
+Use setequal() to determine whether definitive and complete contain the same songs in any order.
+Use setdiff() to see which songs (if any) are in definitive but not complete.
+Use setdiff() to see which songs (if any) are in complete but not definitive.
+
+> Check if same order: definitive and complete
+
+identical(definitive,complete)
+
+> Check if any order: definitive and complete
+
+setequal(definitive,complete)
+
+> Songs in definitive but not complete
+
+setdiff(definitive, complete)
+
+
+*bind_rows() and bind_cols() are faster than rbind() and cbind().*
+
+> Bind side_one and side_two into a single dataset
+
+side_one %>% 
+  bind_rows(side_two)
+  
+  
+  What is the biggest risk when using bind_cols()?
+  Observations may not align across the rows of your data frames.
+  
+  
+  Use data_frame() to combine hank_year, hank_song, and hank_peak into a data frame that has the column names year, song, and peak; in that order.
+  
+  > Make combined data frame using data_frame()
+
+data_frame(
+year=hank_year,song=hank_song,peak=hank_peak) %>% 
+> Extract songs where peak equals 1
+
+  filter(peak==1)
+  
+  
+  R's data frames can store important information in the row.names attribute. This is not a tidy way to store data, but it does happen quite commonly. If the primary key of your dataset is stored in row.names, you will have trouble joining it to other datasets.
+
+For example, stage_songs contains information about songs that appear in musicals. However, it stores the primary key (song name) in the row.names attribute. As a result, you cannot access the key with a join function.
+
+One way to remedy this problem is to use the function rownames_to_column() from the tibble package. rownames_to_column() returns a copy of a dataset with the row names added to the data as a column.
+
+ Load the tibble package
+library(tibble)
+
+stage_songs %>% 
+  # Add row names as a column named song
+  rownames_to_column("song") %>% 
+  # Left join stage_writers to stage_songs
+  left_join(stage_writers,by="song")
+  
+  
+  *Missing keys*
+  
+> Remove NA's from key before joining
+
+two_songs %>% 
+  filter(!is.na(movie))%>% 
+  inner_join(singers, by = "movie")
+  
+  
+Often the same column name will be used by two datasets to refer to different things. For example, the data frame movie_studios uses name to refer to the name of a movie studio. movie_years uses name to refer to the name of an actor.
+
+You could join these datasets (they describe the same movies), but you wouldn't want to use the name column to do so!
+
+dplyr will ignore duplicate column names if you set the by argument and do not include the duplicated name in the argument. When you do this, dplyr will treat the columns in the normal fashion, but it will add .x and .y to the duplicated names to help you tell the columns apart.
+
+movie_years %>% 
+  # Left join movie_studios to movie_years
+  left_join(movie_studios, by = "movie") %>% 
+  # Rename the columns: artist and studio
+  rename(artist = name.x, studio = name.y)
+  
+Just as the same name can refer to different things in different datasets, different names can refer to the same thing. For example, elvis_movies and elvis_songs both describe movies starring Elvis Presley, but each uses a different column name to describe the name of the movie.
+
+
+x %>% left_join(y, by = c("x.name1" = "y.name2"))
+dplyr will make the join and retain the names in the primary dataset. 
+
+
+
+elvis_movies %>% 
+  *Left join elvis_songs to elvis_movies by this column*
+  left_join(elvis_songs,by=c("name"="movie")) %>% 
+  *Rename columns*
+  rename(movie=name,song=name.y)
+  
+  
+  
+*Join multiple tables*
+
+purrr's reduce() function is very useful for joining together multiple datasets. Let's practice using it with three new datasets.
+
+supergroups lists the members of several "supergroup" bands, which are bands made from the members of other famous bands. more_bands lists the original band membership of many musicians, including those in supergroups. And more_artists lists the instruments that various artists played.
+
+Can you join these datasets into a single, coherent dataset?
+
+> Load the purrr library
+
+library(purrr)
+
+> Place supergroups, more_bands, and more_artists into a list
+
+list(supergroups, more_bands, more_artists) %>% 
+  # Use reduce to join together the contents of the list
+  reduce(left_join,by=c("first","last"))
+  
+  
+  Filter multiple tables
+Nice work! The job of reduce() is to apply a function in an iterative fashion to many datasets. As a result, reduce() works well with all of the dplyr join functions.
+
+For example, you can use reduce() to filter observations with a filtering join.
+
+list(more_artists, more_bands, supergroups) %>% 
+  # Return rows of more_artists in all three datasets
+  reduce(semi_join,by=c("first","last"))
+  
+  
+  lahmanNames %>% 
+  # Bind the data frames
+bind_rows(.id="dataframe") %>%
+  # Filter the results
+  filter(var=="playerID") %>% 
+  # Extract the dataframe variable
+  `$`(dataframe)
+  
+  
+  
+   use distinct() to find unique rows for all columns in a table. You can also find unique rows for specific columns using the following syntax:
+
+tbl %>%
+  # Find unique rows of columns a,b, and c
+  distinct(a, b, c)
+  
+  
+  
+ 
+***
+***
+***
+***
+*************
+# Intro to SQL for data science
+*************
+***
+***
+***
+***
+***
+
+ 
+***
+***
+***
+***
+*************
+# data visualization with gg plot 1
+*************
+***
+***
+***
+***
+***
+
+Before you begin, you need to add a new column called Flower that contains a unique identifier for each row in the data frame. This is because you'll rearrange the data frame afterwards and you need to keep track of which row, or which specific flower, each value came from. It's done for you, no need to add anything yourself.
+gather() rearranges the data frame by specifying the columns that are categorical variables with a - notation. In this case, Species and Flower are categorical. Complete the command.
+separate() splits up the new key column, which contains the former headers, according to .. The new column names "Part" and "Measure" are given in a character vector.
+The last step is to use spread() to distribute the new Measure column and associated value column into two columns.
+
+> Load the tidyr package
+
+library(tidyr)
+
+> Add column with unique ids (don't need to change)
+
+iris$Flower <- 1:nrow(iris)
+
+> Fill in the ___ to produce to the correct iris.wide dataset
+
+iris.wide <- iris %>%
+  gather(key, value, -Species, -Flower)  %>%
+  separate(key, c("Part","Measure"), "\\.") %>%
+  spread(Measure, value)
+  head(iris.wide)
+
+
+These are the aesthetics you can consider within aes() in this chapter: x, y, color, fill, size, alpha, labels and shape.
+
+  
+> Expand to draw text with label rownames(mtcars) and color red
+
+ggplot(mtcars, aes(x = wt, y = mpg, fill = cyl,color="red")) +geom_text(aes(label=(rownames(mtcars))))
+
+
+scale_x_discrete() takes as its only argument the x-axis label: "Cylinders".
+scale_y_continuous() takes as its only argument the y-axis label: "Number".
+scale_fill_manual() fixes the legend. The first argument is the title of the legend: "Transmission". Next, values and labels are set to predefined values for you. These are the colors and the labels in the legend.
+
+
+ The base layer, cyl.am, is available for you
+ Add geom (position = "stack" by default)
+cyl.am + 
+  geom_bar()
+
+ Fill - show proportion
+cyl.am + 
+  geom_bar(position = "fill")
+
+ Dodging - principles of similarity and proximity
+cyl.am +
+  geom_bar(position = "dodge") 
+
+ Clean up the axes with scale_ functions
+val = c("#E41A1C", "#377EB8")
+lab = c("Manual", "Automatic")
+cyl.am +
+  geom_bar(position = "dodge") +
+  scale_x_discrete("Cylinders") + 
+  scale_y_continuous('Number') +
+  scale_fill_manual("Transmission", 
+                    values = val,
+                    labels = lab) 
+                    
+1 - Create jittered plot of mtcars, mpg onto x, 0 onto y
+ggplot(mtcars, aes(x =mpg, y =0)) +
+  geom_jitter()
+
+ggplot(mtcars, aes(x =mpg, y =0)) +
+  scale_y_continuous(limits=c(-2,2))+geom_jitter()
+  
+  
+  
+  Histograms
+Histograms are one of the most common and intuitive ways of showing distributions. In this exercise you'll use the mtcars data frame to explore typical variations of simple histograms. But first, some background:
+
+The x axis/aesthetic: The documentation for geom_histogram() states the argument stat = "bin" as a default. Recall that histograms cut up a continuous variable into discrete bins - that's what the stat "bin" is doing. You always get 30 evenly-sized bins by default, which is specified with the default argument binwidth = range/30. This is a pretty good starting point if you don't know anything about the variable being ploted and want to start exploring.
+
+The y axis/aesthetic: geom_histogram() only requires one aesthetic: x. But there is clearly a y axis on your plot, so where does it come from? Actually, there is a variable mapped to the y aesthetic, it's called ..count... When geom_histogram() executed the binning statistic (see above), it not only cut up the data into discrete bins, but it also counted how many values are in each bin. So there is an internal data frame where this information is stored. The .. calls the variable count from this internal data frame. This is what appears on the y aesthetic. But it gets better! The density has also been calculated. This is the proportional frequency of this bin in relation to the whole data set. You use ..density.. to access this information.
+
+
+  # 2 - Plot 1, plus set binwidth to 1 in the geom layer
+ggplot(mtcars, aes(x = mpg)) +
+  geom_histogram(binwidth=1)
+
+> 3 - Plot 2, plus MAP ..density.. to the y aesthetic (i.e. in a second aes() function)
+
+ggplot(mtcars, aes(x = mpg)) +
+  geom_histogram(binwidth=1,aes(y=..density..))
+  
+Position
+In the previous chapter you saw that there are lots of ways to position scatter plots. Likewise, the geom_bar() and geom_histogram() geoms also have a position argument, which you can use to specify how to draw the bars of the plot.
+
+Three position arguments will be introduced here:
+
+stack: place the bars on top of each other. Counts are used. This is the default position.
+fill: place the bars on top of each other, but this time use proportions.
+dodge: place the bars next to each other. Counts are used.
+
+ggplot(mtcars, aes(x =cyl, fill = am)) +
+  geom_bar(position="dodge")
+
+
+Notice how you can set the color palette used to fill the bars with scale_fill_brewer(). For a full list of possible color sets, have a look at ?brewer.pal.
+
+> Example of how to use a brewed color palette
+
+ggplot(mtcars, aes(x = cyl, fill = am)) +
+  geom_bar() +
+  scale_fill_brewer(palette = "Set1")
+
+
+
+Using qplot
+For simple exploratory plots, there are a variety of functions available. ggplot2 offers a powerful and diverse array of functions, but qplot() allows for quick and dirty plots. Plus, you should also be familiar with basic plotting notation.
+
+The old way (shown)
+plot(mpg ~ wt, data = mtcars) # formula notation
+with(mtcars, plot(wt, mpg)) # x, y notation
+
+Using ggplot:
+ggplot(mtcars, aes(x=wt, y=mpg)) +
+  geom_point()
+
+Using qplot:
+qplot(wt, mpg, data = mtcars)
+
+
+>basic qplot scatter plot:
+
+qplot(wt, mpg, data = mtcars)
+
+> Categorical variable mapped onto size:
+
+cyl
+qplot(wt, mpg, data = mtcars, size = factor(cyl))
+
+gear
+qplot(wt, mpg, data = mtcars, size = factor(gear))
+
+
+> Continuous variable mapped onto col:
+
+hp
+qplot(wt, mpg, data = mtcars, color = hp)
+
+qsec
+qplot(wt, mpg, data = mtcars, color = qsec)
+
+> qplot() with geom set to jitter manually
+
+qplot(x=factor(cyl),y=factor(vs),data=mtcars,geom="jitter")
+
+
+
+ 
+***
+***
+***
+***
+*************
+# data visualization with gg plot 2
+*************
+***
+***
+***
+***
+***
+
+
+ggplot(mtcars, aes(x = wt, y = mpg)) +
+  geom_point()+geom_smooth(method="lm",se=FALSE)
+  
+  # Plot 1: Jittered scatter plot, add a linear model (lm) smooth
+ggplot(Vocab, aes(x = education, y = vocabulary)) +
+  geom_jitter(alpha = 0.2) +
+  stat_smooth(method="lm",se=FALSE) # smooth
+  
+  
+  Another useful stat function is stat_sum(). This function calculates the total number of overlapping observations and is another good alternative to overplotting.
+  
+  # Plot 1: Jittering only
+p <- ggplot(Vocab, aes(x = education, y = vocabulary)) +
+  geom_jitter(alpha = 0.2)
+
+# Plot 2: Add stat_sum
+p +
+ stat_sum() # sum statistic
+
+# Basic ggplot() command, coded for you
+p <- ggplot(mtcars, aes(x = wt, y = hp, col = am)) + geom_point() + geom_smooth()
+
+# Add scale_x_continuous()
+p+scale_x_continuous(limits=c(3,6),expand=c(0,0))
+
+# Add coord_cartesian(): the proper way to zoom in
+p+coord_cartesian(xlim=c(3,6))
+
+
+# Basic scatter plot
+p <- ggplot(mtcars, aes(x = wt, y = mpg)) +
+  geom_point()
+
+# 1 - Separate rows according to transmission type, am
+p +
+  facet_grid(am ~ .)
+
+# 2 - Separate columns according to cylinders, cyl
+p +
+  facet_grid(. ~ cyl)
+  
+  
+
+ 
+***
+***
+***
+***
+*************
+# working with dates in R
+*************
+***
+***
+***
+***
+***
+
+  
+  
+   R doesn't know something is a date unless you tell it. If you have a character string that represents a date in the ISO 8601 standard you can turn it into a Date using the as.Date() function. Just pass the character string (or a vector of character strings) as the first argument.
+   
+   
+# Store April 10 2014 as a Date
+april_10_2014 <- as.Date("2014-04-10")
+
+Some functions that read in data will automatically recognize and parse dates in a variety of formats. In particular the import functions, like read_csv(), in the readr package will recognize dates in a few common formats.
+
+There is also the anytime() function in the anytime package whose sole goal is to automatically parse strings as dates regardless of the format.
+
+# Load the readr package
+library(readr)
+
+# Use read_csv() to import rversions.csv
+releases <- read_csv("rversions.csv")
+
+# Examine the structure of the date column
+str(releases$date)
+
+# Load the anytime package
+library(anytime)
+
+# Various ways of writing Sep 10 2009
+sep_10_2009 <- c("September 10 2009", "2009-09-10", "10 Sep 2009", "09-10-2009")
+
+# Use anytime() to parse sep_10_2009
+anytime(sep_10_2009)
+
+Plotting
+If you plot a Date on the axis of a plot, you expect the dates to be in calendar order, and that's exactly what happens with plot() or ggplot().
+
+In this exercise you'll make some plots with the R version releases data from the previous exercises using ggplot2. There are two big differences when a Date is on an axis:
+
+If you specify limits they must be Date objects.
+
+To control the behavior of the scale you use the scale_x_date() function.
+
+library(ggplot2)
+
+# Set the x axis to the date column
+ggplot(releases, aes(x = date, y = type)) +
+  geom_line(aes(group = 1, color = factor(major)))
+
+# Limit the axis to between 2010-01-01 and 2014-01-01
+ggplot(releases, aes(x = date, y = type)) +
+  geom_line(aes(group = 1, color = factor(major))) +
+  xlim(as.Date("2010-01-01"), as.Date("2014-01-01"))
+
+# Specify breaks every ten years and labels with "%Y"
+ggplot(releases, aes(x = date, y = type)) +
+  geom_line(aes(group = 1, color = factor(major))) +
+  scale_x_date(date_breaks = "10 years", date_labels = "%Y")
+  
+  
+  Arithmetic and logical operators
+Since Date objects are internally represented as the number of days since 1970-01-01 you can do basic math and comparisons with dates. You can compare dates with the usual logical operators (<, ==, > etc.), find extremes with min() and max(), and even subtract two dates to find out the time between them.
+
+# Find the largest date
+last_release_date <- max(releases$date)
+
+# Filter row for last release
+last_release <- filter(releases, date==last_release_date)
+
+# Print last_release
+last_release
+
+# How long since last release?
+Sys.Date() - last_release_date
+
+
+Getting datetimes into R
+Just like dates without times, if you want R to recognize a string as a datetime you need to convert it, although now you use as.POSIXct(). as.POSIXct() expects strings to be in the format YYYY-MM-DD HH:MM:SS.
+
+The only tricky thing is that times will be interpreted in local time based on your machine's set up. You can check your timezone with Sys.timezone(). If you want the time to be interpreted in a different timezone, you just set the tz argument of as.POSIXct()
+
+# Use as.POSIXct to enter the datetime 
+as.POSIXct("2010-10-01 12:12:00")
+
+# Use as.POSIXct again but set the timezone to `"America/Los_Angeles"`
+as.POSIXct("2010-10-01 12:12:00", tz ="America/Los_Angeles")
+
+# Use read_csv to import rversions.csv
+releases <- read_csv("rversions.csv")
+
+# Examine structure of datetime column
+str(releases$datetime)
+
+
+Selecting the right parsing function
+lubridate provides a set of functions for parsing dates of a known order. For example, ymd() will parse dates with year first, followed by month and then day. The parsing is flexible, for example, it will parse the m whether it is numeric (e.g. 9 or 09), a full month name (e.g. September), or an abbreviated month name (e.g. Sep).
+
+All the functions with y, m and d in any order exist. If your dates have times as well, you can use the functions that start with ymd, dmy, mdy or ydm and are followed by any of _h, _hm or _hms.
+
+To see all the functions available look at ymd() for dates and ymd_hms() for datetimes.
+
+library(lubridate)
+
+# Parse x 
+x <- "2010 September 20th" # 2010-09-20
+ymd(x)
+
+# Parse y 
+y <- "02.01.2010"  # 2010-01-02
+dmy(y)
+
+# Parse z 
+z <- "Sep, 12th 2010 14:00"  # 2010-09-12T14:00
+mdy_hm(z)
+
+Specifying an order with `parse_date_time()`
+What about if you have something in a really weird order like dym_msh? There's no named function just for that order, but that is where parse_date_time() comes in. parse_date_time() takes an additional argument orders where you can specify the order of the components in the date.
+
+For example, to parse "2010 September 20th" you could say parse_date_time("2010 September 20th", orders = "ymd") and that would be equivalent to using the ymd() function from the previous exercise.
+
+One advantage of parse_date_time() is that you can use more format characters. For example, you can specify weekday names with a, I for 12 hour time, am/pm indicators with p and many others. You can see a whole list on the help page ?parse_date_time.
+
+Another big advantage is that you can specify a vector of orders, and that allows parsing of dates where multiple formats might be used.
+
+# Specify an order string to parse x
+x <- "Monday June 1st 2010 at 4pm"
+parse_date_time(x, orders = "amdyIp")
+
+# Specify order to include both "mdy" and "dmy"
+two_orders <- c("October 7, 2001", "October 13, 2002", "April 13, 2003", 
+  "17 April 2005", "23 April 2017")
+parse_date_time(two_orders, orders = c("mdy","dmy"))
+
+# Specify order to include "dOmY", "OmY" and "Y"
+short_dates <- c("11 December 1282", "May 1372", "1253")
+parse_date_time(short_dates, orders = c("dOmY","OmY","Y"))
+
+
+library(lubridate)
+library(readr)
+library(dplyr)
+library(ggplot2)
+
+# Import CSV with read_csv()
+akl_daily_raw <- read_csv("akl_weather_daily.csv")
+
+# Print akl_daily_raw
+akl_daily_raw
+
+# Parse date 
+akl_daily <- akl_daily_raw %>%
+  mutate(date = ymd(date))
+
+# Print akl_daily
+akl_daily
+
+# Plot to check work
+ggplot(akl_daily, aes(x = date, y = max_temp)) +
+  geom_line() 
+  
+  The hourly data is a little different. The date information is spread over three columns year, month and mday, so you'll need to use make_date() to combine them.
+
+Then the time information is in a separate column again, time. It's quite common to find date and time split across different variables. One way to construct the datetimes is to paste the date and time together and then parse them. You'll do that in this exercise
+
+library(lubridate)
+library(readr)
+library(dplyr)
+library(ggplot2)
+
+# Import "akl_weather_hourly_2016.csv"
+akl_hourly_raw <- read_csv("akl_weather_hourly_2016.csv")
+
+# Print akl_hourly_raw
+akl_hourly_raw
+
+# Use make_date() to combine year, month and mday 
+akl_hourly  <- akl_hourly_raw  %>% 
+  mutate(date = make_date(year = year, month = month, day = mday))
+
+# Parse datetime_string 
+akl_hourly <- akl_hourly  %>% 
+  mutate(
+    datetime_string = paste(date, time, sep = "T"),
+    datetime = ymd_hms(datetime_string)
+  )
+
+# Print date, time and datetime columns of akl_hourly
+akl_hourly %>% select(date, time, datetime)
+
+
+What can you extract?
+As you saw in the video, components of a datetime can be extracted by lubridate functions with the same name like year(), month(), day(), hour(), minute() and second(). They all work the same way just pass in a datetime or vector of datetimes.
+
+There are also a few useful functions that return other aspects of a datetime like if it occurs in the morning am(), during daylight savings dst(), in a leap_year(), or which quarter() or semester() it occurs in.
+
+# Examine the head() of release_time
+head(release_time)
+
+# Examine the head() of the months of release_time
+head(month(release_time))
+
+# Extract the month of releases 
+month(release_time) %>% table()
+
+# Extract the year of releases
+year(release_time) %>% table()
+
+# How often is the hour before 12 (noon)?
+mean(hour(release_time) < 12)
+
+# How often is the release in am?
+mean(am(release_time))
+  
+  
+  Adding useful labels
+In the previous exercise you found the month of releases:
+
+head(month(release_time))
+and received numeric months in return. Sometimes it's nicer (especially for plotting or tables) to have named months. Both the month() and wday() (day of the week) functions have additional arguments label and abbr to achieve just that. Set label = TRUE to have the output labelled with month (or weekday) names, and abbr = FALSE for those names to be written in full rather than abbreviated.
+
+For example, try running:
+
+head(month(release_time, label = TRUE, abbr = FALSE))
+Practice by examining the popular days of the week for R releases.
+
+library(ggplot2)
+
+# Use wday() to tabulate release by day of the week
+wday(releases$datetime) %>% table()
+
+# Add label = TRUE to make table more readable
+wday(releases$datetime, label=TRUE) %>% table()
+
+ round_date() rounds a date to the nearest value, floor_date() rounds down, and ceiling_date() rounds up.
+
+All three take a unit argument which specifies the resolution of rounding. You can specify "second", "minute", "hour", "day", "week", "month", "bimonth", "quarter", "halfyear", or "year". Or, you can specify any multiple of those units, e.g. "5 years", "3 minutes" etc.
+
+
+
+r_3_4_1 <- ymd_hms("2016-05-03 07:13:28 UTC")
+
+# Round down to day
+floor_date(r_3_4_1, unit = "day")
+
+# Round to nearest 5 minutes
+round_date(r_3_4_1, unit = "5 minutes")
+
+# Round up to week 
+ceiling_date(r_3_4_1, unit = "week")
+
+# Subtract r_3_4_1 rounded down to day
+r_3_4_1 - round_date(r_3_4_1, unit = "day")
+
+
+To get finer control over a difference between datetimes use the base function difftime(). For example instead of time1 - time2, you use difftime(time1, time2).
+
+difftime() takes an argument units which specifies the units for the difference. Your options are "secs", "mins", "hours", "days", or "weeks".
+
+# The date of landing and moment of step
+date_landing <- mdy("July 20, 1969")
+moment_step <- mdy_hms("July 20, 1969, 02:56:15", tz = "UTC")
+
+# How many days since the first man on the moon?
+difftime(today(),date_landing, units = "days")
+
+# How many seconds since the first man on the moon?
+difftime(now(),moment_step, units = "secs")
+
+
+Adding or subtracting a time span to a datetime
+A common use of time spans is to add or subtract them from a moment in time. For, example to calculate the time one day in the future from mar_11 (from the previous exercises), you could do either of:
+
+mar_11 + days(1)
+mar_11 + ddays(1)
+Try them in the console, you get different results! But which one is the right one? It depends on your intent. If you want to account for the fact that time units, in this case days, have different lengths (i.e. due to daylight savings), you want a period days(). If you want the time 86400 seconds in the future you use a duration ddays().
+
+Generating sequences of datetimes
+By combining addition and multiplication with sequences you can generate sequences of datetimes. For example, you can generate a sequence of periods from 1 day up to 10 days with,
+
+1:10 * days(1)
+Then by adding this sequence to a specific datetime, you can construct a sequence of datetimes from 1 day up to 10 days into the future
+
+today() + 1:10 * days(1)
+
+What should ymd("2018-01-31") + months(1) return? Should it be 30, 31 or 28 days in the future? Try it. In general lubridate returns the same day of the month in the next month, but since the 31st of February doesn't exist lubridate returns a missing value, NA.
+
+There are alternative addition and subtraction operators: %m+% and %m-% that have different behavior. Rather than returning an NA for a non-existent date, they roll back to the last existing date.
+
+# A sequence of 1 to 12 periods of 1 month
+month_seq <- 1:12 * months(1)
+
+# Add 1 to 12 months to jan_31
+jan_31 + month_seq 
+
+# Replace + with %m+%
+jan_31 %m+% month_seq
+
+# Replace + with %m-%
+jan_31 %m-% month_seq
+
+
+You can create an interval by using the operator %--% with two datetimes. For example ymd("2001-01-01") %--% ymd("2001-12-31") creates an interval for the year of 2001.
+
+Once you have an interval you can find out certain properties like its start, end and length with int_start(), int_end() and int_length() respectively.
+
+The operator %within% tests if the datetime (or interval) on the left hand side is within the interval of the right hand side. For example, if y2001 is the interval covering the year 2001,
+
+y2001 <- ymd("2001-01-01") %--% ymd("2001-12-31")
+Then ymd("2001-03-30") %within% y2001 will return TRUE and ymd("2002-03-30") %within% y2001 will return FALSE.
+
+int_overlaps() performs a similar test, but will return true if two intervals overlap at all.
+
+
+Intervals are the most specific way to represent a span of time since they retain information about the exact start and end moments. They can be converted to periods and durations exactly: it's possible to calculate both the exact number of seconds elapsed between the start and end date, as well as the perceived change in clock time.
+
+To do so you use the as.period(), and as.duration() functions, parsing in an interval as the only argument.
+
+# New columns for duration and period
+monarchs <- monarchs %>%
+  mutate(
+    duration = as.duration(reign),
+    period = as.period(reign)) 
+    
+    
+    Setting the timezone
+If you import a datetime and it has the wrong timezone, you can set it with force_tz(). Pass in the datetime as the first argument and the appropriate timezone to the tzone argument.
+
+To view a datetime in another timezone use with_tz(). The syntax of with_tz() is the same as force_tz(), passing a datetime and set the tzone argument to the desired timezone. Unlike force_tz(), with_tz() isn't changing the underlying moment of time, just how it is displayed.
+
+For example, the difference between now() displayed in the "America/Los_Angeles" timezone and and "Pacific/Auckland" timezone is 0:
+
+now <- now()
+with_tz(now, "America/Los_Angeles") - 
+  with_tz(now,  "Pacific/Auckland")
+
+
+To view a datetime in another timezone use with_tz(). The syntax of with_tz() is the same as force_tz(), passing a datetime and set the tzone argument to the desired timezone. Unlike force_tz(), with_tz() isn't changing the underlying moment of time, just how it is displayed.
+
+For example, the difference between now() displayed in the "America/Los_Angeles" timezone and and "Pacific/Auckland" timezone is 0:
+
+now <- now()
+with_tz(now, "America/Los_Angeles") - 
+  with_tz(now,  "Pacific/Auckland")
+  
+  
+ the hms package provides an hms class of object for holding times without dates, and the best place to start would be with as.hms().
+
+
+Fast parsing with `fasttime`
+The fasttime package provides a single function fastPOSIXct(), designed to read in datetimes formatted according to ISO 8601. Because it only reads in one format, and doesn't have to guess a format, it is really fast!
+
+# Use fastPOSIXct() to parse dates
+fastPOSIXct(dates) %>% str()
+
+Fast parsing with `lubridate::fast_strptime`
+lubridate provides its own fast datetime parser: fast_strptime(). Instead of taking an order argument like parse_date_time() it takes a format argument and the format must comply with the strptime() style.
+
+# Parse dates with fast_strptime
+fast_strptime(dates, 
+    format = "%Y-%m-%dT%H:%M:%SZ") %>% str()
+
+
+An easy way to output dates is to use the stamp() function in lubridate. stamp() takes a string which should be an example of how the date should be formatted, and returns a function that can be used to format dates.
+
+# Create a stamp based on "Sep 20 2017"
+date_stamp <- stamp("Sep 20 2017")
+
+# Print date_stamp
+date_stamp
+
+# Call date_stamp on today()
+date_stamp(today())
+
+# Create and call a stamp based on "09/20/2017"
+stamp("09/20/2017")(today())
+
+
+
+
+
+ 
+***
+***
+***
+***
+*************
+# introduction to data
+*************
+***
+***
+***
+***
+***
+
+# Load data
+data(email50)
+
+The droplevels() function removes unused levels of factor variables from our dataset. As we saw in the video, it's often useful to determine which levels are unused (i.e. contain zero values) with the table() function.
+
+# Table of the number variable
+table(email50_big$number)
+
+# Drop levels
+email50_big$number <- droplevels(email50_big$number)
+
+# Another table of the number variable
+table(email50_big$number)
+
+
+Combining levels of a different factor
+Another common way of creating a new variable based on an existing one is by combining levels of a categorical variable. For example, the email50 dataset has a categorical variable called number with levels "none", "small", and "big", but suppose we're only interested in whether an email contains a number. In this exercise, we will create a variable containing this information and also visualize it
+
+# Create number_yn column in email50
+email50_fortified <- email50 %>%
+  mutate(number_yn = case_when(
+    (number=="none") ~ "no", # if number is "none", make number_yn "no"
+    (number!="none") ~ "yes"  # if number is not "none", make number_yn "yes"
+    )
+  )
+  
+  
+  
+# Count number of male and female applicants admitted
+ucb_admit %>%
+  count(Gender, Admit)
+  
+  # Simple random sample: states_srs
+states_srs <- us_regions %>%
+  sample_n(8)
+
+
+Stratified sample in R
+In the previous exercise, we took a simple random sample of eight states. However, we did not have any control over how many states from each region got sampled. The goal of stratified sampling in this context is to have control over the number of states sampled from each region. Our goal for this exercise is to sample an equal number of states from each region.
+
+Exercise
+Exercise
+Stratified sample in R
+In the previous exercise, we took a simple random sample of eight states. However, we did not have any control over how many states from each region got sampled. The goal of stratified sampling in this context is to have control over the number of states sampled from each region. Our goal for this exercise is to sample an equal number of states from each region.
+
+
+The dplyr package has been loaded and us_regions is still available in your workspace.
+
+# Stratified sample
+states_str <- us_regions %>%
+  group_by(region) %>%
+  sample_n(2)
+  
+   
+***
+***
+***
+***
+*************
+# exploratory data analysis
+*************
+***
+***
+***
+***
+***
+
+
+
+# Check the levels of gender
+levels(comics$gender)
+
+# Create a 2-way contingency table
+table(comics$gender,comics$align)
+
+
+
+
+tab <- table(comics$align, comics$gender)
+options(scipen = 999, digits = 3) # Print fewer digits
+prop.table(tab)     # Joint proportions
+prop.table(tab, 2)  # Conditional on columns
+
+
+  
+# Plot proportion of gender, conditional on align
+ggplot(comics, aes(x = align, fill = gender)) + 
+  geom_bar(position = "fill") +
+  ylab("proportion")
+  
+  # Change the order of the levels in align
+comics$align <- factor(comics$align, 
+                       levels = c("Bad", "Neutral","Good"))
+
+# Create plot of align
+ggplot(comics, aes(x = align)) + 
+  geom_bar()
+  
+  # Create hist of horsepwr for affordable cars
+cars %>% 
+  filter(msrp<25000) %>%
+  ggplot(aes(horsepwr)) +
+  geom_histogram() +
+  xlim(c(90, 550)) +
+  ggtitle("affordable hist")
+  
+  Three binwidths
+Before you take these plots for granted, it's a good idea to see how things change when you alter the binwidth. The binwidth determines how smooth your distribution will appear: the smaller the binwidth, the more jagged your distribution becomes. It's good practice to consider several binwidths in order to detect different types of structure in your data.
+
+cars %>%
+  ggplot(aes(x=horsepwr)) +
+  geom_histogram(binwidth = 30) +
+  ggtitle("30")
+
+# Compute groupwise measures of spread
+gap2007 %>%
+  group_by(continent) %>%
+  summarize(sd(lifeExp),
+            IQR(lifeExp),
+            n())
+            
+            
+Here you'll focus on the population variable, which exhibits strong right skew, and transform it with the natural logarithm function (log() in R).
+
+# Create density plot of old variable
+gap2007 %>%
+  ggplot(aes(x = pop)) +
+  geom_density()
+
+# Transform the skewed pop variable
+gap2007 <- gap2007 %>%
+  mutate(log_pop=log(pop))
+
+   
+***
+***
+***
+***
+*************
+# exploratory data analysis in R case study
+*************
+***
+***
+***
+***
+***
+
+
+# Perform a linear regression of percent_yes by year: US_fit
+US_fit<-lm(percent_yes~ year,US_by_year)
+
+# Perform summary() on the US_fit object
+summary(US_fit)
+
+
+Tidying a linear regression model
+In the last section, you fit a linear model. Now, you'll use the tidy() function in the broom package to turn that model into a tidy data frame.
+
+# Load the broom package
+library(broom)
+
+# Call the tidy() function on the US_fit object
+tidy(US_fit)
+
+Combining models for multiple countries
+One important advantage of changing models to tidied data frames is that they can be combined.
+
+In an earlier section, you fit a linear model to the percentage of "yes" votes for each year in the United States. Now you'll fit the same model for the United Kingdom and combine the results from both countries.
+
+# Linear regression of percent_yes by year for US
+US_by_year <- by_year_country %>%
+  filter(country == "United States")
+US_fit <- lm(percent_yes ~ year, US_by_year)
+
+# Fit model for the United Kingdom
+UK_by_year <- by_year_country %>%
+  filter(country == "United Kingdom")
+UK_fit <- lm(percent_yes ~ year, UK_by_year)
+
+
+# Create US_tidied and UK_tidied
+US_tidied=tidy(US_fit)
+UK_tidied=tidy(UK_fit)
+
+# Combine the two tidied models
+bind_rows(US_tidied,UK_tidied)
+
+Nesting a data frame
+Right now, the by_year_country data frame has one row per country-vote pair. So that you can model each country individually, you're going to "nest" all columns besides country, which will result in a data frame with one row per country. The data for each individual country will then be stored in a list column called data
+
+# Load the tidyr package
+library(tidyr)
+
+by_year_country
+# Nest all columns besides country
+by_year_country %>% nest(-country)
+
+
+
+List columns
+This "nested" data has an interesting structure. The second column, data, is a list, a type of R object that hasn't yet come up in this course that allows complicated objects to be stored within each row. This is because each item of the data column is itself a data frame.
+
+# A tibble: 200 

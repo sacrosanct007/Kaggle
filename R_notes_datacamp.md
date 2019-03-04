@@ -436,7 +436,7 @@ unclass(now)
 ```
 
 ```
-## [1] 1551681496
+## [1] 1551681781
 ```
 
 Create and format dates
@@ -2324,17 +2324,17 @@ map(n,rnorm)
 
 ```
 ## [[1]]
-## [1] -0.9728645  0.4425917 -1.2892499  0.6149665 -0.3633317
+## [1] -0.8146572  0.4306626 -0.7602334 -1.8528524  0.3306913
 ## 
 ## [[2]]
-##  [1]  1.3647653 -0.3595058 -1.0374293 -0.4258191  1.5316664  0.3863813
-##  [7]  0.4274028 -0.7773659 -0.8888093  0.2265935
+##  [1]  2.11800399 -1.04060310  0.39447145 -0.05595868 -1.87393772
+##  [6]  0.29320441  0.71217198  0.61318951 -1.09384814 -1.07541536
 ## 
 ## [[3]]
-##  [1] -0.84808076 -0.07251390 -1.49921477 -0.12468959  0.66419056
-##  [6]  2.23847280  0.03826905 -0.60848377 -0.71809917 -0.83187869
-## [11]  0.49107499  0.62668232  0.55672858 -1.26266961 -0.84867088
-## [16]  0.63613624 -0.13946774 -0.74375349 -0.22337896 -1.78655020
+##  [1]  1.26580293 -0.01914626  1.01995766  0.93071917  0.52894195
+##  [6] -1.29838798  0.31634112 -0.24462877  0.92666096 -0.01087474
+## [11]  0.08171943 -1.05545910  0.88051614  1.20579173  2.67229588
+## [16] -0.60699628 -0.52651928  0.65645134 -1.42733420 -1.07268118
 ```
 
 
@@ -2359,16 +2359,16 @@ map2(n,mu, rnorm)
 
 ```
 ## [[1]]
-## [1]  0.5274836  1.7188571 -0.9368527  1.3423366  0.4139206
+## [1] 2.08072824 1.48162551 1.19289502 0.06289128 0.96011681
 ## 
 ## [[2]]
-##  [1] 2.730597 4.444823 5.639543 4.580485 6.221202 3.898713 4.807997
-##  [8] 7.042658 5.678519 5.626140
+##  [1] 4.617664 6.028483 3.345226 5.336207 4.980427 3.089145 4.874754
+##  [8] 5.458983 6.491785 5.197507
 ## 
 ## [[3]]
-##  [1]  9.942699  9.436667 12.053470  9.947464 10.822020  9.049786  9.945485
-##  [8] 10.038709  9.631275 10.438787  8.888608  9.170726  9.286786 10.304534
-## [15] 10.528856  8.978667  9.989225  8.968055 10.429099 11.196336
+##  [1] 13.332306  9.539118 12.055561 11.368970  8.163636 10.897241  9.019874
+##  [8]  8.329985 10.836209  9.679986 10.715320  8.696863 11.692444 10.166439
+## [15]  8.803913 12.835507  8.437725  9.575495  9.953349  8.114294
 ```
 
 *Mapping over more than two arguments*
@@ -2400,16 +2400,16 @@ pmap(list(n, mu,sd), rnorm)
 
 ```
 ## [[1]]
-## [1] 0.9523341 1.0221567 0.8883189 1.0738107 1.0165388
+## [1] 0.9629814 0.9817158 0.9527544 0.9381047 0.9350844
 ## 
 ## [[2]]
-##  [1] 5.663966 3.770578 4.505499 4.268507 6.024813 3.341942 4.474288
-##  [8] 3.580896 6.629194 4.326493
+##  [1] 5.982343 5.225122 4.177322 6.580279 6.379435 4.305494 6.176472
+##  [8] 6.580406 5.325180 5.025415
 ## 
 ## [[3]]
-##  [1]  9.885161 10.113068  9.997426 10.093910 10.100190 10.298230  9.831162
-##  [8] 10.166276  9.903217  9.847665  9.943042 10.125281  9.949697 10.081704
-## [15] 10.096308  9.895229  9.897866 10.093890  9.936105 10.047277
+##  [1]  9.990426  9.765221 10.126225 10.172441  9.966951 10.115069 10.005274
+##  [8]  9.934765 10.016426 10.050069  9.970867 10.022359  9.962205  9.905622
+## [15] 10.235909  9.938713 10.040585 10.180344  9.868060  9.967735
 ```
 
 ```r
@@ -2419,16 +2419,16 @@ pmap(list(mean=mu, n=n,sd= sd), rnorm)
 
 ```
 ## [[1]]
-## [1] 1.007131 1.013622 0.886320 0.889111 0.922846
+## [1] 0.9600047 0.9260742 1.0637807 0.9394527 0.8897264
 ## 
 ## [[2]]
-##  [1] 5.606829 4.675418 6.456480 6.077477 3.708307 4.491423 5.846769
-##  [8] 4.881985 4.191069 4.975156
+##  [1] 5.651345 5.308204 4.814961 4.700946 4.729248 6.246587 1.823249
+##  [8] 5.692876 4.971688 4.328582
 ## 
 ## [[3]]
-##  [1] 10.186523 10.006012 10.165155  9.965696 10.247884  9.924335 10.003611
-##  [8]  9.989274  9.897193 10.075180 10.094278 10.009688  9.860797 10.026709
-## [15]  9.856760 10.033039  9.930194 10.153094  9.895780  9.857097
+##  [1] 10.058159 10.044078  9.841580  9.983247  9.785144  9.917639 10.150795
+##  [8]  9.928468  9.943391  9.885970  9.894995  9.868190  9.992369 10.039277
+## [15] 10.094491 10.145595 10.064466  9.755136  9.873186  9.823079
 ```
 
 *Mapping over functions and their arguments*
@@ -2473,13 +2473,13 @@ invoke_map(f,params, n = 5)
 
 ```
 ## [[1]]
-## [1] 8.587549 9.056295 9.065292 5.751119 8.777002
+## [1]  9.239212 11.304035 10.692029 11.410026  9.447666
 ## 
 ## [[2]]
-## [1] 2.5681268 3.8006002 0.4744579 3.1512123 2.3652375
+## [1] 3.6107572 0.4533875 2.5343596 1.1343738 3.4693904
 ## 
 ## [[3]]
-## [1] 0.29531182 0.09490729 0.01617137 0.11054905 0.17907537
+## [1] 0.02216002 0.18080852 0.02921339 0.01901539 0.03363372
 ```
 
 *Walk*
@@ -2514,8 +2514,6 @@ Those histograms were pretty good, but they really needed better breaks for the 
 
 Let's use walk2() to improve those histograms with better breaks.
 
-
-```r
 # Replace "Sturges" with reasonable breaks for each sample
 breaks_list <- list(
   Normal = seq(6,16,0.5),
@@ -2525,9 +2523,7 @@ breaks_list <- list(
 
 # Use walk2() to make histograms with the right breaks
 walk2(sims,breaks_list,hist)
-```
 
-![](R_notes_datacamp_files/figure-html/unnamed-chunk-60-1.png)<!-- -->![](R_notes_datacamp_files/figure-html/unnamed-chunk-60-2.png)<!-- -->![](R_notes_datacamp_files/figure-html/unnamed-chunk-60-3.png)<!-- -->
 Let's start by writing our own function find_breaks(), which copies the default breaks in the ggplot2 package: break the range of the data in 30 bins.
 
 How do we start? Simple, of course! Here's a snippet of code that works for the first sample:
@@ -4352,4 +4348,427 @@ by_year_country %>% nest(-country)
 List columns
 This "nested" data has an interesting structure. The second column, data, is a list, a type of R object that hasn't yet come up in this course that allows complicated objects to be stored within each row. This is because each item of the data column is itself a data frame.
 
-# A tibble: 200 
+# A tibble: 200 ? 2
+                           country              data
+                             <chr>            <list>
+1                      Afghanistan <tibble [34 ? 3]>
+2                        Argentina <tibble [34 ? 3]>
+3                        Australia <tibble [34 ? 3]>
+4                          Belarus <tibble [34 ? 3]>
+5                          Belgium <tibble [34 ? 3]>
+6  Bolivia, Plurinational State of <tibble [34 ? 3]>
+7                           Brazil <tibble [34 ? 3]>
+8                           Canada <tibble [34 ? 3]>
+9                            Chile <tibble [34 ? 3]>
+10                        Colombia <tibble [34 ? 3]>
+You can use nested$data to access this list column and double brackets to access a particular element. For example, nested$data[[1]] would give you the data frame with Afghanistan's voting history (the percent_yes per year), since Afghanistan is the first row of the table.
+
+Unnesting
+The opposite of the nest() operation is the unnest() operation. This takes each of the data frames in the list column and brings those rows back to the main data frame.
+
+In this exercise, you are just undoing the nest() operation. In the next section, you'll learn how to fit a model in between these nesting and unnesting steps that makes this process useful.
+
+
+# All countries are nested besides country
+nested <- by_year_country %>%
+  nest(-country)
+
+# Unnest the data column to return it to its original form
+nested %>%
+unnest(data)
+
+
+Performing linear regression on each nested dataset
+Now that you've divided the data for each country into a separate dataset in the data column, you need to fit a linear model to each of these datasets.
+
+The map() function from purrr works by applying a formula to each item in a list, where . represents the individual item. For example, you could add one to each of a list of numbers:
+
+map(numbers, ~ 1 + .)
+This means that to fit a model to each dataset, you can do:
+
+map(data, ~ lm(percent_yes ~ year, data = .))
+where . represents each individual item from the data column in by_year_country. Recall that each item in the data column is a dataset that pertains to a specific country.
+
+# Load tidyr and purrr
+library(tidyr)
+library(purrr)
+
+
+# Perform a linear regression on each item in the data column
+by_year_country %>%
+  nest(-country) %>%
+  mutate(model=map(data,~ lm(percent_yes ~ year,data=.)))
+
+
+
+  Tidy each linear regression model
+You've now performed a linear regression on each nested dataset and have a linear model stored in the list column model. But you can't recombine the models until you've tidied each into a table of coefficients. To do that, you'll need to use map() one more time and the tidy() function from the broom package.
+
+
+# Load the broom package
+library(broom)
+
+# Add another mutate that applies tidy() to each model
+by_year_country %>%
+  nest(-country) %>%
+  mutate(model = map(data, ~ lm(percent_yes ~ year, data = .)))%>%
+  mutate(tidied=map(model,tidy))
+  
+  Filtering for significant countries
+Not all slopes are significant, and you can use the p-value to guess which are and which are not.
+
+However, when you have lots of p-values, like one for each country, you run into the problem of multiple hypothesis testing, where you have to set a stricter threshold. The p.adjust() function is a simple way to correct for this, where p.adjust(p.value) on a vector of p-values returns a set that you can trust.
+
+Here you'll add two steps to process the slope_terms dataset: use a mutate to create the new, adjusted p-value column, and filter to filter for those below a .05 threshold.
+# Filter for only the slope terms
+slope_terms <- country_coefficients %>%
+  filter(term == "year")
+  
+slope_terms
+
+# Add p.adjusted column, then filter
+slope_terms %>% mutate(p.adjusted=p.adjust(p.value)) %>%
+filter(p.adjusted<0.05)
+
+
+
+Joining datasets with inner_join
+
+# Load dplyr package
+library(dplyr)
+# Join them together based on the "rcid" and "session" columns
+votes_joined <- votes_processed %>% inner_join(descriptions, by=c("rcid","session"))
+
+
+Using gather to tidy a dataset
+In order to represent the joined vote-topic data in a tidy form so we can analyze and graph by topic, we need to transform the data so that each row has one combination of country-vote-topic. This will change the data from having six columns (me, nu, di, hr, co, ec) to having two columns (topic and has_topic).
+
+# Load the tidyr package
+library(tidyr)
+
+# Gather the six me/nu/di/hr/co/ec columns
+votes_joined %>% gather(topic,has_topic,me:ec)
+
+# Perform gather again, then filter
+votes_gathered <- votes_joined %>% gather(topic,has_topic,me:ec) %>%
+filter(has_topic==1)
+
+
+So that you can interpret the data more easily, recode the data to replace these codes with their full name. You can do that with dplyr's recode() function, which replaces values with ones you specify:
+
+example <- c("apple", "banana", "apple", "orange")
+recode(example,
+       apple = "plum",
+       banana = "grape")
+       
+       
+       # Replace the two-letter codes in topic: votes_tidied
+votes_tidied <- votes_gathered %>%
+  mutate(topic = recode(topic,
+                        me = "Palestinian conflict",
+                        nu = "Nuclear weapons and nuclear material",
+                        di = "Arms control and disarmament",
+                        hr = "Human rights",
+                        co = "Colonialism",
+                        ec = "Economic development"))
+                        
+                        
+                        
+  # Print votes_tidied
+votes_tidied
+
+# Summarize the percentage "yes" per country-year-topic
+by_country_year_topic <- votes_tidied %>% 
+group_by(country,year,topic) %>%
+summarise(total=n(),percent_yes=mean(vote==1)) %>% ungroup()
+
+# Print by_country_year_topic
+by_country_year_topic
+
+
+Now, you'll again be modeling change in "percentage" yes over time, but instead of fitting one model for each country, you'll fit one for each combination of country and topic.
+
+# Load purrr, tidyr, and broom
+library(purrr)
+library(tidyr)
+library(broom)
+
+# Print by_country_year_topic
+by_country_year_topic
+
+# Fit model on the by_country_year_topic dataset
+country_topic_coefficients <- by_country_year_topic %>%
+  nest(-country, -topic) %>%
+  mutate(model = map(data, ~ lm(percent_yes ~ year, data = .)),
+         tidied = map(model, tidy)) %>%
+  unnest(tidied)
+# Print country_topic_coefficients
+country_topic_coefficients
+
+  
+
+***
+***
+***
+***
+*************
+# correlation and regression
+*************
+***
+***
+***
+***
+***
+
+Boxplots as discretized/conditioned scatterplots
+If it is helpful, you can think of boxplots as scatterplots for which the variable on the x-axis has been discretized.
+
+The cut() function takes two arguments: the continuous variable you want to discretize and the number of breaks that you want to make in that continuous variable in order to discretize it.
+
+# Boxplot of weight vs. weeks
+ggplot(data = ncbirths, 
+       aes(x = cut(weeks, breaks = 5), y = weight)) + 
+  geom_boxplot()
+  
+  Transformations
+The relationship between two variables may not be linear. In these cases we can sometimes see strange and even inscrutable patterns in a scatterplot of the data. Sometimes there really is no meaningful relationship between the two variables. Other times, a careful transformation of one or both of the variables can reveal a clear relationship.
+
+ggplot2 provides several different mechanisms for viewing transformed relationships. The coord_trans() function transforms the coordinates of the plot. Alternatively, the scale_x_log10() and scale_y_log10() functions perform a base-10 log transformation of each axis. Note the differences in the appearance of the axes.
+
+# Scatterplot with coord_trans()
+ggplot(data = mammals, aes(x = BodyWt, y = BrainWt)) +
+  geom_point() + 
+  coord_trans(x = "log10", y = "log10")
+
+# Scatterplot with scale_x_log10() and scale_y_log10() to get the same thing
+ggplot(data = mammals, aes(x = BodyWt, y = BrainWt)) +
+  geom_point() +
+  scale_x_log10() + scale_y_log10()
+  
+  
+  
+  Computing correlation
+The cor(x, y) function will compute the Pearson product-moment correlation between variables, x and y. Since this quantity is symmetric with respect to x and y, it doesn't matter in which order you put the variables.
+
+At the same time, the cor() function is very conservative when it encounters missing data (e.g. NAs). The use argument allows you to override the default behavior of returning NA whenever any of the values encountered is NA. Setting the use argument to "pairwise.complete.obs" allows cor() to compute the correlation coefficient for those observations where the values of x and y are both not missing.
+
+
+# Compute correlation
+ncbirths %>%
+  summarize(N = n(), r = cor(mage, weight))
+
+# Compute correlation for all non-missing pairs
+ncbirths %>%
+  summarize(N = n(), r = cor(weight, weeks, use ="pairwise.complete.obs"))
+  
+  
+  The "best fit" line
+The simple linear regression model for a numeric response as a function of a numeric explanatory variable can be visualized on the corresponding scatterplot by a straight line. This is a "best fit" line that cuts through the data in a way that minimizes the distance between the line and the data points.
+
+We might consider linear regression to be a specific example of a larger class of smooth models. The geom_smooth() function allows you to draw such models over a scatterplot of the data itself. This technique is known as visualizing the model in the data space. The method argument to geom_smooth() allows you to specify what class of smooth model you want to see. Since we are exploring linear models, we'll set this argument to the value "lm".
+
+Note that geom_smooth() also takes an se argument that controls the standard error, which we will ignore for now.
+
+# Scatterplot with regression line
+ggplot(data = bdims, aes(x = hgt , y = wgt)) + 
+  geom_point() + 
+  geom_smooth(method = "lm", se = FALSE)
+  
+  Fitting a linear model "by hand"
+  
+Recall the simple linear regression model:
+Y=b0+b1???X
+Two facts enable you to compute the slope b1 and intercept b0 of a simple linear regression model from some basic summary statistics.
+
+First, the slope can be defined as:
+
+b1=rX,Y???sYsX
+where rX,Y represents the correlation (cor()) of X and Y and sX and sY represent the standard deviation (sd()) of X and Y, respectively.
+
+Second, the point (x?,y?) is always on the least squares regression line, where x? and y? denote the average of x and y, respectively.
+
+
+
+Fitted values and residuals
+Once you have fit a regression model, you are often interested in the fitted values (y^i) and the residuals (ei), where i indexes the observations. Recall that:
+
+ei=yi???y^i
+The least squares fitting procedure guarantees that the mean of the residuals is zero (n.b., numerical instability may result in the computed values not being exactly zero). At the same time, the mean of the fitted values must equal the mean of the response variable.
+
+In this exercise, we will confirm these two mathematical facts by accessing the fitted values and residuals with the fitted.values() and residuals() functions, respectively, for the following model:
+
+mod <- lm(wgt ~ hgt, data = bdims
+
+# Mean of weights equal to mean of fitted values?
+mean(bdims$wgt) == mean(fitted.values(mod))
+
+# Mean of the residuals
+mean(residuals(mod))
+
+Tidying your linear model
+As you fit a regression model, there are some quantities (e.g. R2) that apply to the model as a whole, while others apply to each observation (e.g. y^i). If there are several of these per-observation quantities, it is sometimes convenient to attach them to the original data as new variables.
+
+The augment() function from the broom package does exactly this. It takes a model object as an argument and returns a data frame that contains the data on which the model was fit, along with several quantities specific to the regression model, including the fitted values, residuals, leverage scores, and standardized residuals.
+
+
+# Load broom
+library(broom)
+
+# Create bdims_tidy
+bdims_tidy=augment(mod)
+
+# Glimpse the resulting data frame
+glimpse(bdims_tidy)
+
+
+
+Standard error of residuals
+One way to assess strength of fit is to consider how far off the model is for a typical case. That is, for some observations, the fitted value will be very close to the actual value, while for others it will not. The magnitude of a typical residual can give us a sense of generally how close our estimates are.
+
+However, recall that some of the residuals are positive, while others are negative. In fact, it is guaranteed by the least squares fitting procedure that the mean of the residuals is zero. Thus, it makes more sense to compute the square root of the mean squared residual, or root mean squared error (RMSE). R calls this quantity the residual standard error.
+
+To make this estimate unbiased, you have to divide the sum of the squared residuals by the degrees of freedom in the model. Thus,
+
+# View summary of model
+summary(mod)
+
+# Compute the mean of the residuals
+mean(residuals(mod))
+
+# Compute RMSE
+sqrt(sum(residuals(mod)^2) / df.residual(mod))
+
+Assessing simple linear model fit
+Recall that the coefficient of determination (R2), can be computed as
+R2=1???(SSE/SST)=1???(Var(e)/Var(y)),
+where e is the vector of residuals and y is the response variable. This gives us the interpretation of R2 as the percentage of the variability in the response that is explained by the model, since the residuals are the part of that variability that remains unexplained by the model.
+
+# View model summary
+summary(mod)
+
+# Compute R-squared
+bdims_tidy %>%
+  summarize(var_y = var(wgt), var_e = var(residuals(mod))) %>%
+  mutate(R_squared = 1-var_e/var_y)
+  
+  Leverage
+The leverage of an observation in a regression model is defined entirely in terms of the distance of that observation from the mean of the explanatory variable. That is, observations close to the mean of the explanatory variable have low leverage, while observations far from the mean of the explanatory variable have high leverage. Points of high leverage may or may not be influential.
+
+The augment() function from the broom package will add the leverage scores (.hat) to a model data frame.
+
+# Rank points of high leverage
+mod %>%
+  augment() %>%
+  arrange(desc(.hat)) %>%
+  head()
+  
+  Influence
+As noted previously, observations of high leverage may or may not be influential. The influence of an observation depends not only on its leverage, but also on the magnitude of its residual. Recall that while leverage only takes into account the explanatory variable (x), the residual depends on the response variable (y) and the fitted value (y^).
+
+Influential points are likely to have high leverage and deviate from the general relationship between the two variables. We measure influence using Cook's distance, which incorporates both the leverage and residual of each observation.
+
+# Rank influential points
+augment(mod) %>% arrange(desc(.cooksd)) %>% head(6)
+
+The linear model, mod, is available in your workspace. Use a combination of augment(), arrange() with two arguments, and head() to find the top 6 observations with the highest leverage but the lowest Cook's distance.
+
+# Rank high leverage points
+mod %>% augment() %>%
+arrange(desc(.hat),.cooksd) %>%
+head(6)
+
+
+***
+***
+***
+***
+*************
+# cluster analysis in R
+*************
+***
+***
+***
+***
+***
+
+
+
+# Plot the positions of the players
+ggplot(two_players, aes(x = x, y = y)) + 
+  geom_point() +
+  # Assuming a 40x60 field
+  lims(x = c(-30,30), y = c(-20, 20))
+
+# Split the players data frame into two observations
+player1 <- two_players[1, ]
+player2 <- two_players[2, ]
+
+# Calculate and print their distance using the Euclidean Distance formula
+player_distance <- sqrt( (player1$x - player2$x)^2 + (player1$y - player2$y)^2 )
+player_distance
+
+Using the dist() function
+Using the Euclidean formula manually may be practical for 2 observations but can get more complicated rather quickly when measuring the distance between many observations.
+
+The dist() function simplifies this process by calculating distances between our observations (rows) using their features (columns). In this case the observations are the player positions and the dimensions are their x and y coordinates.
+
+Note: The default distance calculation for the dist() function is Euclidean distance
+
+
+# Calculate the Distance Between two_players
+dist_two_players <- dist(two_players)
+dist_two_players
+
+# Calculate the Distance Between three_players
+dist_three_players <- dist(three_players)
+dist_three_players
+
+Effects of scale
+You have learned that when a variable is on a larger scale than other variables in your data it may disproportionately influence the resulting distance calculated between your observations. Lets see this in action by observing a sample of data from the trees data set.
+
+You will leverage the scale() function which by default centers & scales our column features.
+
+Our variables are the following:
+
+Girth - tree diameter in inches
+Height - tree height in inches
+
+
+# Calculate distance for three_trees 
+dist_trees <- dist(three_trees)
+
+# Scale three trees & calculate the distance  
+scaled_three_trees <- scale(three_trees)
+dist_scaled_trees <- dist(scaled_three_trees)
+
+# Output the results of both Matrices
+print('Without Scaling')
+dist_trees
+
+print('With Scaling')
+dist_scaled_trees
+
+Calculating distance between categorical variables
+
+In this exercise you will explore how to calculate binary (Jaccard) distances. In order to calculate distances we will first have to dummify our categories using the dummy.data.frame() from the library dummies
+
+You will use a small collection of survey observations stored in the data frame job_survey with the following columns:
+
+job_satisfaction Possible options: "Hi", "Mid", "Low"
+is_happy Possible options: "Yes", "No"
+
+# Dummify the Survey Data
+dummy_survey <- dummy.data.frame(job_survey)
+
+
+Generate a Jaccard distance matrix for the dummified survey data dist_survey using the dist() function using the parameter method = 'binary'
+
+
+# Calculate the Distance
+dist_survey <- dist(dummy_survey,method="binary")
+
+# Print the Original Data
+job_survey
+
+# Print the Distance Matrix
+dist_survey

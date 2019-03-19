@@ -424,7 +424,7 @@ unclass(today)
 ```
 
 ```
-## [1] 17958
+## [1] 17973
 ```
 
 ```r
@@ -436,7 +436,7 @@ unclass(now)
 ```
 
 ```
-## [1] 1551681781
+## [1] 1552971694
 ```
 
 Create and format dates
@@ -2324,17 +2324,17 @@ map(n,rnorm)
 
 ```
 ## [[1]]
-## [1] -0.8146572  0.4306626 -0.7602334 -1.8528524  0.3306913
+## [1] -1.3687182 -0.4053308 -0.5577690 -0.7827517  0.2638927
 ## 
 ## [[2]]
-##  [1]  2.11800399 -1.04060310  0.39447145 -0.05595868 -1.87393772
-##  [6]  0.29320441  0.71217198  0.61318951 -1.09384814 -1.07541536
+##  [1]  1.0646690  0.8315893 -0.2517928  1.6505228  2.6640989  0.3881390
+##  [7]  0.8803012 -0.5009443  1.1178837 -1.2505636
 ## 
 ## [[3]]
-##  [1]  1.26580293 -0.01914626  1.01995766  0.93071917  0.52894195
-##  [6] -1.29838798  0.31634112 -0.24462877  0.92666096 -0.01087474
-## [11]  0.08171943 -1.05545910  0.88051614  1.20579173  2.67229588
-## [16] -0.60699628 -0.52651928  0.65645134 -1.42733420 -1.07268118
+##  [1]  0.94075514 -0.64795461  0.57595068 -0.32346801 -1.06776958
+##  [6] -1.38102685 -2.52002542 -0.70419365  1.14866509 -0.60060143
+## [11] -0.05207983 -0.06649148  1.43876608  1.54748299 -0.31303098
+## [16]  0.03896742 -1.66748993  0.18446441  1.48332859  0.71250916
 ```
 
 
@@ -2359,16 +2359,16 @@ map2(n,mu, rnorm)
 
 ```
 ## [[1]]
-## [1] 2.08072824 1.48162551 1.19289502 0.06289128 0.96011681
+## [1]  0.69746517  1.40282114 -0.32745178 -0.01497807  1.89741956
 ## 
 ## [[2]]
-##  [1] 4.617664 6.028483 3.345226 5.336207 4.980427 3.089145 4.874754
-##  [8] 5.458983 6.491785 5.197507
+##  [1] 3.335916 2.834326 3.302699 3.859899 5.904553 3.627172 3.965744
+##  [8] 4.535869 5.947795 7.137805
 ## 
 ## [[3]]
-##  [1] 13.332306  9.539118 12.055561 11.368970  8.163636 10.897241  9.019874
-##  [8]  8.329985 10.836209  9.679986 10.715320  8.696863 11.692444 10.166439
-## [15]  8.803913 12.835507  8.437725  9.575495  9.953349  8.114294
+##  [1] 10.395075 10.817330  9.741738  8.957837 10.143043 11.856707 11.789839
+##  [8]  9.907418  8.608094  9.703391 11.546966 11.625341  9.340313 10.666944
+## [15] 10.665153  8.611623 12.126725  7.161053 12.237692 10.410198
 ```
 
 *Mapping over more than two arguments*
@@ -2400,16 +2400,16 @@ pmap(list(n, mu,sd), rnorm)
 
 ```
 ## [[1]]
-## [1] 0.9629814 0.9817158 0.9527544 0.9381047 0.9350844
+## [1] 1.1223378 0.8192655 1.1092663 0.9745476 1.0202612
 ## 
 ## [[2]]
-##  [1] 5.982343 5.225122 4.177322 6.580279 6.379435 4.305494 6.176472
-##  [8] 6.580406 5.325180 5.025415
+##  [1] 6.823467 4.297822 4.902098 5.347709 6.690443 5.867130 4.981322
+##  [8] 5.293665 5.134214 7.662973
 ## 
 ## [[3]]
-##  [1]  9.990426  9.765221 10.126225 10.172441  9.966951 10.115069 10.005274
-##  [8]  9.934765 10.016426 10.050069  9.970867 10.022359  9.962205  9.905622
-## [15] 10.235909  9.938713 10.040585 10.180344  9.868060  9.967735
+##  [1]  9.863425 10.026418  9.984046 10.001339  9.964853  9.858161 10.175978
+##  [8]  9.935091 10.046953 10.056106 10.117214  9.951885  9.798118  9.994355
+## [15] 10.026120  9.927273  9.983088  9.896314 10.028154  9.989618
 ```
 
 ```r
@@ -2419,16 +2419,16 @@ pmap(list(mean=mu, n=n,sd= sd), rnorm)
 
 ```
 ## [[1]]
-## [1] 0.9600047 0.9260742 1.0637807 0.9394527 0.8897264
+## [1] 1.086044 1.107410 1.031005 1.097374 1.089910
 ## 
 ## [[2]]
-##  [1] 5.651345 5.308204 4.814961 4.700946 4.729248 6.246587 1.823249
-##  [8] 5.692876 4.971688 4.328582
+##  [1] 5.444462 3.830284 2.543095 5.856722 5.829137 4.486997 6.668025
+##  [8] 4.525202 3.610164 4.229807
 ## 
 ## [[3]]
-##  [1] 10.058159 10.044078  9.841580  9.983247  9.785144  9.917639 10.150795
-##  [8]  9.928468  9.943391  9.885970  9.894995  9.868190  9.992369 10.039277
-## [15] 10.094491 10.145595 10.064466  9.755136  9.873186  9.823079
+##  [1]  9.927141  9.828733  9.793095  9.944082 10.097846 10.091814 10.024837
+##  [8] 10.095202 10.130837 10.026827  9.838594 10.102188  9.984855  9.886200
+## [15]  9.872502  9.970460  9.877268  9.909511 10.135138  9.962179
 ```
 
 *Mapping over functions and their arguments*
@@ -2473,13 +2473,13 @@ invoke_map(f,params, n = 5)
 
 ```
 ## [[1]]
-## [1]  9.239212 11.304035 10.692029 11.410026  9.447666
+## [1]  9.520490 10.416500 12.081448  8.626903 10.496310
 ## 
 ## [[2]]
-## [1] 3.6107572 0.4533875 2.5343596 1.1343738 3.4693904
+## [1] 4.8051082 1.4861234 2.0736857 0.1674714 2.0227364
 ## 
 ## [[3]]
-## [1] 0.02216002 0.18080852 0.02921339 0.01901539 0.03363372
+## [1] 0.37986579 0.22149746 0.04735541 0.14923116 0.20055173
 ```
 
 *Walk*
@@ -3710,35 +3710,40 @@ ggplot(Vocab, aes(x = education, y = vocabulary)) +
   
   Another useful stat function is stat_sum(). This function calculates the total number of overlapping observations and is another good alternative to overplotting.
   
-  # Plot 1: Jittering only
+*Plot 1: Jittering only*
+
 p <- ggplot(Vocab, aes(x = education, y = vocabulary)) +
   geom_jitter(alpha = 0.2)
 
-# Plot 2: Add stat_sum
-p +
- stat_sum() # sum statistic
+*Plot 2: Add stat_sum*
 
-# Basic ggplot() command, coded for you
+p + stat_sum() # sum statistic
+
+> Basic ggplot() command, coded for you
+
 p <- ggplot(mtcars, aes(x = wt, y = hp, col = am)) + geom_point() + geom_smooth()
 
-# Add scale_x_continuous()
+> Add scale_x_continuous()
+
 p+scale_x_continuous(limits=c(3,6),expand=c(0,0))
 
-# Add coord_cartesian(): the proper way to zoom in
+> Add coord_cartesian(): the proper way to zoom in
+
 p+coord_cartesian(xlim=c(3,6))
 
 
-# Basic scatter plot
+> Basic scatter plot
+
 p <- ggplot(mtcars, aes(x = wt, y = mpg)) +
   geom_point()
 
-# 1 - Separate rows according to transmission type, am
-p +
-  facet_grid(am ~ .)
+> 1 - Separate rows according to transmission type, am
 
-# 2 - Separate columns according to cylinders, cyl
-p +
-  facet_grid(. ~ cyl)
+p +  facet_grid(am ~ .)
+
+> 2 - Separate columns according to cylinders, cyl
+
+p +  facet_grid(. ~ cyl)
   
   
 
@@ -3761,32 +3766,39 @@ p +
    R doesn't know something is a date unless you tell it. If you have a character string that represents a date in the ISO 8601 standard you can turn it into a Date using the as.Date() function. Just pass the character string (or a vector of character strings) as the first argument.
    
    
-# Store April 10 2014 as a Date
+*Store April 10 2014 as a Date*
 april_10_2014 <- as.Date("2014-04-10")
 
 Some functions that read in data will automatically recognize and parse dates in a variety of formats. In particular the import functions, like read_csv(), in the readr package will recognize dates in a few common formats.
 
 There is also the anytime() function in the anytime package whose sole goal is to automatically parse strings as dates regardless of the format.
 
-# Load the readr package
+> Load the readr package
+
 library(readr)
 
-# Use read_csv() to import rversions.csv
+> Use read_csv() to import rversions.csv
+
 releases <- read_csv("rversions.csv")
 
-# Examine the structure of the date column
+> Examine the structure of the date column
+
 str(releases$date)
 
-# Load the anytime package
+> Load the anytime package
+
 library(anytime)
 
-# Various ways of writing Sep 10 2009
+> Various ways of writing Sep 10 2009
+
 sep_10_2009 <- c("September 10 2009", "2009-09-10", "10 Sep 2009", "09-10-2009")
 
-# Use anytime() to parse sep_10_2009
+> Use anytime() to parse sep_10_2009
+
 anytime(sep_10_2009)
 
-Plotting
+*Plotting*
+
 If you plot a Date on the axis of a plot, you expect the dates to be in calendar order, and that's exactly what happens with plot() or ggplot().
 
 In this exercise you'll make some plots with the R version releases data from the previous exercises using ggplot2. There are two big differences when a Date is on an axis:
@@ -3797,16 +3809,19 @@ To control the behavior of the scale you use the scale_x_date() function.
 
 library(ggplot2)
 
-# Set the x axis to the date column
+> Set the x axis to the date column
+
 ggplot(releases, aes(x = date, y = type)) +
   geom_line(aes(group = 1, color = factor(major)))
 
-# Limit the axis to between 2010-01-01 and 2014-01-01
+> Limit the axis to between 2010-01-01 and 2014-01-01
+
 ggplot(releases, aes(x = date, y = type)) +
   geom_line(aes(group = 1, color = factor(major))) +
   xlim(as.Date("2010-01-01"), as.Date("2014-01-01"))
 
-# Specify breaks every ten years and labels with "%Y"
+> Specify breaks every ten years and labels with "%Y"
+
 ggplot(releases, aes(x = date, y = type)) +
   geom_line(aes(group = 1, color = factor(major))) +
   scale_x_date(date_breaks = "10 years", date_labels = "%Y")
@@ -3815,38 +3830,48 @@ ggplot(releases, aes(x = date, y = type)) +
   Arithmetic and logical operators
 Since Date objects are internally represented as the number of days since 1970-01-01 you can do basic math and comparisons with dates. You can compare dates with the usual logical operators (<, ==, > etc.), find extremes with min() and max(), and even subtract two dates to find out the time between them.
 
-# Find the largest date
+> Find the largest date
+
 last_release_date <- max(releases$date)
 
-# Filter row for last release
+> Filter row for last release
+
 last_release <- filter(releases, date==last_release_date)
 
-# Print last_release
+> Print last_release
+
 last_release
 
-# How long since last release?
+> How long since last release?
+
 Sys.Date() - last_release_date
 
 
-Getting datetimes into R
+*Getting datetimes into R*
+
 Just like dates without times, if you want R to recognize a string as a datetime you need to convert it, although now you use as.POSIXct(). as.POSIXct() expects strings to be in the format YYYY-MM-DD HH:MM:SS.
 
 The only tricky thing is that times will be interpreted in local time based on your machine's set up. You can check your timezone with Sys.timezone(). If you want the time to be interpreted in a different timezone, you just set the tz argument of as.POSIXct()
 
-# Use as.POSIXct to enter the datetime 
+> Use as.POSIXct to enter the datetime 
+
 as.POSIXct("2010-10-01 12:12:00")
 
-# Use as.POSIXct again but set the timezone to `"America/Los_Angeles"`
+> Use as.POSIXct again but set the timezone to `"America/Los_Angeles"`
+
 as.POSIXct("2010-10-01 12:12:00", tz ="America/Los_Angeles")
 
-# Use read_csv to import rversions.csv
+> Use read_csv to import rversions.csv
+
 releases <- read_csv("rversions.csv")
 
-# Examine structure of datetime column
+> Examine structure of datetime column
+
 str(releases$datetime)
 
 
-Selecting the right parsing function
+*Selecting the right parsing function*
+
 lubridate provides a set of functions for parsing dates of a known order. For example, ymd() will parse dates with year first, followed by month and then day. The parsing is flexible, for example, it will parse the m whether it is numeric (e.g. 9 or 09), a full month name (e.g. September), or an abbreviated month name (e.g. Sep).
 
 All the functions with y, m and d in any order exist. If your dates have times as well, you can use the functions that start with ymd, dmy, mdy or ydm and are followed by any of _h, _hm or _hms.
@@ -3855,19 +3880,23 @@ To see all the functions available look at ymd() for dates and ymd_hms() for dat
 
 library(lubridate)
 
-# Parse x 
+> Parse x 
+
 x <- "2010 September 20th" # 2010-09-20
 ymd(x)
 
-# Parse y 
+> Parse y 
+
 y <- "02.01.2010"  # 2010-01-02
 dmy(y)
 
-# Parse z 
+> Parse z 
+
 z <- "Sep, 12th 2010 14:00"  # 2010-09-12T14:00
 mdy_hm(z)
 
-Specifying an order with `parse_date_time()`
+*Specifying an order with `parse_date_time()`*
+
 What about if you have something in a really weird order like dym_msh? There's no named function just for that order, but that is where parse_date_time() comes in. parse_date_time() takes an additional argument orders where you can specify the order of the components in the date.
 
 For example, to parse "2010 September 20th" you could say parse_date_time("2010 September 20th", orders = "ymd") and that would be equivalent to using the ymd() function from the previous exercise.
@@ -3876,16 +3905,19 @@ One advantage of parse_date_time() is that you can use more format characters. F
 
 Another big advantage is that you can specify a vector of orders, and that allows parsing of dates where multiple formats might be used.
 
-# Specify an order string to parse x
+> Specify an order string to parse x
+
 x <- "Monday June 1st 2010 at 4pm"
 parse_date_time(x, orders = "amdyIp")
 
-# Specify order to include both "mdy" and "dmy"
+> Specify order to include both "mdy" and "dmy"
+
 two_orders <- c("October 7, 2001", "October 13, 2002", "April 13, 2003", 
   "17 April 2005", "23 April 2017")
 parse_date_time(two_orders, orders = c("mdy","dmy"))
 
-# Specify order to include "dOmY", "OmY" and "Y"
+> Specify order to include "dOmY", "OmY" and "Y"
+
 short_dates <- c("11 December 1282", "May 1372", "1253")
 parse_date_time(short_dates, orders = c("dOmY","OmY","Y"))
 
@@ -3895,20 +3927,25 @@ library(readr)
 library(dplyr)
 library(ggplot2)
 
-# Import CSV with read_csv()
+> Import CSV with read_csv()
+
 akl_daily_raw <- read_csv("akl_weather_daily.csv")
 
-# Print akl_daily_raw
+> Print akl_daily_raw
+
 akl_daily_raw
 
-# Parse date 
+> Parse date 
+
 akl_daily <- akl_daily_raw %>%
   mutate(date = ymd(date))
 
-# Print akl_daily
+> Print akl_daily
+
 akl_daily
 
-# Plot to check work
+> Plot to check work
+
 ggplot(akl_daily, aes(x = date, y = max_temp)) +
   geom_line() 
   
@@ -3921,24 +3958,29 @@ library(readr)
 library(dplyr)
 library(ggplot2)
 
-# Import "akl_weather_hourly_2016.csv"
+> Import "akl_weather_hourly_2016.csv"
+
 akl_hourly_raw <- read_csv("akl_weather_hourly_2016.csv")
 
-# Print akl_hourly_raw
+> Print akl_hourly_raw
+
 akl_hourly_raw
 
-# Use make_date() to combine year, month and mday 
+> Use make_date() to combine year, month and mday 
+
 akl_hourly  <- akl_hourly_raw  %>% 
   mutate(date = make_date(year = year, month = month, day = mday))
 
-# Parse datetime_string 
+> Parse datetime_string 
+
 akl_hourly <- akl_hourly  %>% 
   mutate(
     datetime_string = paste(date, time, sep = "T"),
     datetime = ymd_hms(datetime_string)
   )
 
-# Print date, time and datetime columns of akl_hourly
+> Print date, time and datetime columns of akl_hourly
+
 akl_hourly %>% select(date, time, datetime)
 
 
@@ -3947,22 +3989,28 @@ As you saw in the video, components of a datetime can be extracted by lubridate 
 
 There are also a few useful functions that return other aspects of a datetime like if it occurs in the morning am(), during daylight savings dst(), in a leap_year(), or which quarter() or semester() it occurs in.
 
-# Examine the head() of release_time
+> Examine the head() of release_time
+
 head(release_time)
 
-# Examine the head() of the months of release_time
+> Examine the head() of the months of release_time
+
 head(month(release_time))
 
-# Extract the month of releases 
+> Extract the month of releases 
+
 month(release_time) %>% table()
 
-# Extract the year of releases
+> Extract the year of releases
+
 year(release_time) %>% table()
 
-# How often is the hour before 12 (noon)?
+> How often is the hour before 12 (noon)?
+
 mean(hour(release_time) < 12)
 
-# How often is the release in am?
+> How often is the release in am?
+
 mean(am(release_time))
   
   
@@ -3975,14 +4023,17 @@ and received numeric months in return. Sometimes it's nicer (especially for plot
 For example, try running:
 
 head(month(release_time, label = TRUE, abbr = FALSE))
-Practice by examining the popular days of the week for R releases.
+
+*Practice by examining the popular days of the week for R releases.*
 
 library(ggplot2)
 
-# Use wday() to tabulate release by day of the week
+> Use wday() to tabulate release by day of the week
+
 wday(releases$datetime) %>% table()
 
-# Add label = TRUE to make table more readable
+> Add label = TRUE to make table more readable
+
 wday(releases$datetime, label=TRUE) %>% table()
 
  round_date() rounds a date to the nearest value, floor_date() rounds down, and ceiling_date() rounds up.
@@ -3993,16 +4044,20 @@ All three take a unit argument which specifies the resolution of rounding. You c
 
 r_3_4_1 <- ymd_hms("2016-05-03 07:13:28 UTC")
 
-# Round down to day
+> Round down to day
+
 floor_date(r_3_4_1, unit = "day")
 
-# Round to nearest 5 minutes
+> Round to nearest 5 minutes
+
 round_date(r_3_4_1, unit = "5 minutes")
 
-# Round up to week 
+> Round up to week 
+
 ceiling_date(r_3_4_1, unit = "week")
 
-# Subtract r_3_4_1 rounded down to day
+> Subtract r_3_4_1 rounded down to day
+
 r_3_4_1 - round_date(r_3_4_1, unit = "day")
 
 
@@ -4010,18 +4065,22 @@ To get finer control over a difference between datetimes use the base function d
 
 difftime() takes an argument units which specifies the units for the difference. Your options are "secs", "mins", "hours", "days", or "weeks".
 
-# The date of landing and moment of step
+> The date of landing and moment of step
+
 date_landing <- mdy("July 20, 1969")
 moment_step <- mdy_hms("July 20, 1969, 02:56:15", tz = "UTC")
 
-# How many days since the first man on the moon?
+> How many days since the first man on the moon?
+
 difftime(today(),date_landing, units = "days")
 
-# How many seconds since the first man on the moon?
+> How many seconds since the first man on the moon?
+
 difftime(now(),moment_step, units = "secs")
 
 
-Adding or subtracting a time span to a datetime
+*Adding or subtracting a time span to a datetime*
+
 A common use of time spans is to add or subtract them from a moment in time. For, example to calculate the time one day in the future from mar_11 (from the previous exercises), you could do either of:
 
 mar_11 + days(1)
@@ -4040,16 +4099,20 @@ What should ymd("2018-01-31") + months(1) return? Should it be 30, 31 or 28 days
 
 There are alternative addition and subtraction operators: %m+% and %m-% that have different behavior. Rather than returning an NA for a non-existent date, they roll back to the last existing date.
 
-# A sequence of 1 to 12 periods of 1 month
+> A sequence of 1 to 12 periods of 1 month
+
 month_seq <- 1:12 * months(1)
 
-# Add 1 to 12 months to jan_31
+> Add 1 to 12 months to jan_31
+
 jan_31 + month_seq 
 
-# Replace + with %m+%
+> Replace + with %m+%
+
 jan_31 %m+% month_seq
 
-# Replace + with %m-%
+> Replace + with %m-%
+
 jan_31 %m-% month_seq
 
 
@@ -4069,7 +4132,8 @@ Intervals are the most specific way to represent a span of time since they retai
 
 To do so you use the as.period(), and as.duration() functions, parsing in an interval as the only argument.
 
-# New columns for duration and period
+> New columns for duration and period
+
 monarchs <- monarchs %>%
   mutate(
     duration = as.duration(reign),
@@ -4103,29 +4167,35 @@ with_tz(now, "America/Los_Angeles") -
 Fast parsing with `fasttime`
 The fasttime package provides a single function fastPOSIXct(), designed to read in datetimes formatted according to ISO 8601. Because it only reads in one format, and doesn't have to guess a format, it is really fast!
 
-# Use fastPOSIXct() to parse dates
+> Use fastPOSIXct() to parse dates
+
 fastPOSIXct(dates) %>% str()
 
 Fast parsing with `lubridate::fast_strptime`
 lubridate provides its own fast datetime parser: fast_strptime(). Instead of taking an order argument like parse_date_time() it takes a format argument and the format must comply with the strptime() style.
 
-# Parse dates with fast_strptime
+> Parse dates with fast_strptime
+
 fast_strptime(dates, 
     format = "%Y-%m-%dT%H:%M:%SZ") %>% str()
 
 
 An easy way to output dates is to use the stamp() function in lubridate. stamp() takes a string which should be an example of how the date should be formatted, and returns a function that can be used to format dates.
 
-# Create a stamp based on "Sep 20 2017"
+> Create a stamp based on "Sep 20 2017"
+
 date_stamp <- stamp("Sep 20 2017")
 
-# Print date_stamp
+> Print date_stamp
+
 date_stamp
 
-# Call date_stamp on today()
+> Call date_stamp on today()
+
 date_stamp(today())
 
-# Create and call a stamp based on "09/20/2017"
+> Create and call a stamp based on "09/20/2017"
+
 stamp("09/20/2017")(today())
 
 
@@ -4146,25 +4216,30 @@ stamp("09/20/2017")(today())
 ***
 ***
 
-# Load data
+> Load data
+
 data(email50)
 
 The droplevels() function removes unused levels of factor variables from our dataset. As we saw in the video, it's often useful to determine which levels are unused (i.e. contain zero values) with the table() function.
 
-# Table of the number variable
+> Table of the number variable
+
 table(email50_big$number)
 
-# Drop levels
+> Drop levels
+
 email50_big$number <- droplevels(email50_big$number)
 
-# Another table of the number variable
+> Another table of the number variable
+
 table(email50_big$number)
 
 
 Combining levels of a different factor
 Another common way of creating a new variable based on an existing one is by combining levels of a categorical variable. For example, the email50 dataset has a categorical variable called number with levels "none", "small", and "big", but suppose we're only interested in whether an email contains a number. In this exercise, we will create a variable containing this information and also visualize it
 
-# Create number_yn column in email50
+> Create number_yn column in email50
+
 email50_fortified <- email50 %>%
   mutate(number_yn = case_when(
     (number=="none") ~ "no", # if number is "none", make number_yn "no"
@@ -4172,9 +4247,8 @@ email50_fortified <- email50 %>%
     )
   )
   
-  
-  
-# Count number of male and female applicants admitted
+> Count number of male and female applicants admitted
+
 ucb_admit %>%
   count(Gender, Admit)
   
@@ -4186,15 +4260,9 @@ states_srs <- us_regions %>%
 Stratified sample in R
 In the previous exercise, we took a simple random sample of eight states. However, we did not have any control over how many states from each region got sampled. The goal of stratified sampling in this context is to have control over the number of states sampled from each region. Our goal for this exercise is to sample an equal number of states from each region.
 
-Exercise
-Exercise
-Stratified sample in R
-In the previous exercise, we took a simple random sample of eight states. However, we did not have any control over how many states from each region got sampled. The goal of stratified sampling in this context is to have control over the number of states sampled from each region. Our goal for this exercise is to sample an equal number of states from each region.
-
-
 The dplyr package has been loaded and us_regions is still available in your workspace.
 
-# Stratified sample
+*Stratified sample*
 states_str <- us_regions %>%
   group_by(region) %>%
   sample_n(2)
@@ -4215,23 +4283,21 @@ states_str <- us_regions %>%
 
 
 
-# Check the levels of gender
+> Check the levels of gender
+
 levels(comics$gender)
 
-# Create a 2-way contingency table
+> Create a 2-way contingency table
+
 table(comics$gender,comics$align)
-
-
-
 
 tab <- table(comics$align, comics$gender)
 options(scipen = 999, digits = 3) # Print fewer digits
 prop.table(tab)     # Joint proportions
 prop.table(tab, 2)  # Conditional on columns
 
+> Plot proportion of gender, conditional on align
 
-  
-# Plot proportion of gender, conditional on align
 ggplot(comics, aes(x = align, fill = gender)) + 
   geom_bar(position = "fill") +
   ylab("proportion")
@@ -4240,7 +4306,8 @@ ggplot(comics, aes(x = align, fill = gender)) +
 comics$align <- factor(comics$align, 
                        levels = c("Bad", "Neutral","Good"))
 
-# Create plot of align
+> Create plot of align
+
 ggplot(comics, aes(x = align)) + 
   geom_bar()
   
@@ -4260,7 +4327,8 @@ cars %>%
   geom_histogram(binwidth = 30) +
   ggtitle("30")
 
-# Compute groupwise measures of spread
+> Compute groupwise measures of spread
+
 gap2007 %>%
   group_by(continent) %>%
   summarize(sd(lifeExp),
@@ -4270,12 +4338,14 @@ gap2007 %>%
             
 Here you'll focus on the population variable, which exhibits strong right skew, and transform it with the natural logarithm function (log() in R).
 
-# Create density plot of old variable
+>Create density plot of old variable
+
 gap2007 %>%
   ggplot(aes(x = pop)) +
   geom_density()
 
-# Transform the skewed pop variable
+> Transform the skewed pop variable
+
 gap2007 <- gap2007 %>%
   mutate(log_pop=log(pop))
 
@@ -4294,20 +4364,24 @@ gap2007 <- gap2007 %>%
 ***
 
 
-# Perform a linear regression of percent_yes by year: US_fit
+> Perform a linear regression of percent_yes by year: US_fit
+
 US_fit<-lm(percent_yes~ year,US_by_year)
 
-# Perform summary() on the US_fit object
+> Perform summary() on the US_fit object
+
 summary(US_fit)
 
 
 Tidying a linear regression model
 In the last section, you fit a linear model. Now, you'll use the tidy() function in the broom package to turn that model into a tidy data frame.
 
-# Load the broom package
+> Load the broom package
+
 library(broom)
 
-# Call the tidy() function on the US_fit object
+> Call the tidy() function on the US_fit object
+
 tidy(US_fit)
 
 Combining models for multiple countries
@@ -4315,32 +4389,39 @@ One important advantage of changing models to tidied data frames is that they ca
 
 In an earlier section, you fit a linear model to the percentage of "yes" votes for each year in the United States. Now you'll fit the same model for the United Kingdom and combine the results from both countries.
 
-# Linear regression of percent_yes by year for US
+> Linear regression of percent_yes by year for US
+
 US_by_year <- by_year_country %>%
   filter(country == "United States")
 US_fit <- lm(percent_yes ~ year, US_by_year)
 
-# Fit model for the United Kingdom
+> Fit model for the United Kingdom
+
 UK_by_year <- by_year_country %>%
   filter(country == "United Kingdom")
 UK_fit <- lm(percent_yes ~ year, UK_by_year)
 
 
-# Create US_tidied and UK_tidied
+> Create US_tidied and UK_tidied
+
 US_tidied=tidy(US_fit)
 UK_tidied=tidy(UK_fit)
 
-# Combine the two tidied models
+> Combine the two tidied models
+
 bind_rows(US_tidied,UK_tidied)
 
 Nesting a data frame
 Right now, the by_year_country data frame has one row per country-vote pair. So that you can model each country individually, you're going to "nest" all columns besides country, which will result in a data frame with one row per country. The data for each individual country will then be stored in a list column called data
 
-# Load the tidyr package
+> Load the tidyr package
+
 library(tidyr)
 
 by_year_country
-# Nest all columns besides country
+
+*Nest all columns besides country*
+
 by_year_country %>% nest(-country)
 
 
@@ -4348,7 +4429,7 @@ by_year_country %>% nest(-country)
 List columns
 This "nested" data has an interesting structure. The second column, data, is a list, a type of R object that hasn't yet come up in this course that allows complicated objects to be stored within each row. This is because each item of the data column is itself a data frame.
 
-# A tibble: 200 ? 2
+ A tibble: 200 ? 2
                            country              data
                              <chr>            <list>
 1                      Afghanistan <tibble [34 ? 3]>
@@ -4361,19 +4442,23 @@ This "nested" data has an interesting structure. The second column, data, is a l
 8                           Canada <tibble [34 ? 3]>
 9                            Chile <tibble [34 ? 3]>
 10                        Colombia <tibble [34 ? 3]>
+
+
 You can use nested$data to access this list column and double brackets to access a particular element. For example, nested$data[[1]] would give you the data frame with Afghanistan's voting history (the percent_yes per year), since Afghanistan is the first row of the table.
 
-Unnesting
+*Unnesting*
 The opposite of the nest() operation is the unnest() operation. This takes each of the data frames in the list column and brings those rows back to the main data frame.
 
 In this exercise, you are just undoing the nest() operation. In the next section, you'll learn how to fit a model in between these nesting and unnesting steps that makes this process useful.
 
 
-# All countries are nested besides country
+> All countries are nested besides country
+
 nested <- by_year_country %>%
   nest(-country)
 
-# Unnest the data column to return it to its original form
+> Unnest the data column to return it to its original form
+
 nested %>%
 unnest(data)
 
@@ -4389,26 +4474,31 @@ This means that to fit a model to each dataset, you can do:
 map(data, ~ lm(percent_yes ~ year, data = .))
 where . represents each individual item from the data column in by_year_country. Recall that each item in the data column is a dataset that pertains to a specific country.
 
-# Load tidyr and purrr
+> Load tidyr and purrr
+
 library(tidyr)
 library(purrr)
 
 
-# Perform a linear regression on each item in the data column
+> Perform a linear regression on each item in the data column
+
 by_year_country %>%
   nest(-country) %>%
   mutate(model=map(data,~ lm(percent_yes ~ year,data=.)))
 
 
 
-  Tidy each linear regression model
+*Tidy each linear regression model*
+
 You've now performed a linear regression on each nested dataset and have a linear model stored in the list column model. But you can't recombine the models until you've tidied each into a table of coefficients. To do that, you'll need to use map() one more time and the tidy() function from the broom package.
 
 
-# Load the broom package
+> Load the broom package
+
 library(broom)
 
-# Add another mutate that applies tidy() to each model
+> Add another mutate that applies tidy() to each model
+
 by_year_country %>%
   nest(-country) %>%
   mutate(model = map(data, ~ lm(percent_yes ~ year, data = .)))%>%
@@ -4420,13 +4510,16 @@ Not all slopes are significant, and you can use the p-value to guess which are a
 However, when you have lots of p-values, like one for each country, you run into the problem of multiple hypothesis testing, where you have to set a stricter threshold. The p.adjust() function is a simple way to correct for this, where p.adjust(p.value) on a vector of p-values returns a set that you can trust.
 
 Here you'll add two steps to process the slope_terms dataset: use a mutate to create the new, adjusted p-value column, and filter to filter for those below a .05 threshold.
-# Filter for only the slope terms
+
+> Filter for only the slope terms
+
 slope_terms <- country_coefficients %>%
   filter(term == "year")
   
 slope_terms
 
-# Add p.adjusted column, then filter
+> Add p.adjusted column, then filter
+
 slope_terms %>% mutate(p.adjusted=p.adjust(p.value)) %>%
 filter(p.adjusted<0.05)
 
@@ -4434,22 +4527,28 @@ filter(p.adjusted<0.05)
 
 Joining datasets with inner_join
 
-# Load dplyr package
+> Load dplyr package
+
 library(dplyr)
-# Join them together based on the "rcid" and "session" columns
+
+> Join them together based on the "rcid" and "session" columns
+
 votes_joined <- votes_processed %>% inner_join(descriptions, by=c("rcid","session"))
 
 
 Using gather to tidy a dataset
 In order to represent the joined vote-topic data in a tidy form so we can analyze and graph by topic, we need to transform the data so that each row has one combination of country-vote-topic. This will change the data from having six columns (me, nu, di, hr, co, ec) to having two columns (topic and has_topic).
 
-# Load the tidyr package
+> Load the tidyr package
+
 library(tidyr)
 
-# Gather the six me/nu/di/hr/co/ec columns
+> Gather the six me/nu/di/hr/co/ec columns
+
 votes_joined %>% gather(topic,has_topic,me:ec)
 
-# Perform gather again, then filter
+> Perform gather again, then filter
+
 votes_gathered <- votes_joined %>% gather(topic,has_topic,me:ec) %>%
 filter(has_topic==1)
 
@@ -4477,32 +4576,39 @@ votes_tidied <- votes_gathered %>%
   # Print votes_tidied
 votes_tidied
 
-# Summarize the percentage "yes" per country-year-topic
+> Summarize the percentage "yes" per country-year-topic
+
 by_country_year_topic <- votes_tidied %>% 
 group_by(country,year,topic) %>%
 summarise(total=n(),percent_yes=mean(vote==1)) %>% ungroup()
 
-# Print by_country_year_topic
+> Print by_country_year_topic
+
 by_country_year_topic
 
 
 Now, you'll again be modeling change in "percentage" yes over time, but instead of fitting one model for each country, you'll fit one for each combination of country and topic.
 
-# Load purrr, tidyr, and broom
+> Load purrr, tidyr, and broom
+
 library(purrr)
 library(tidyr)
 library(broom)
 
-# Print by_country_year_topic
+> Print by_country_year_topic
+
 by_country_year_topic
 
-# Fit model on the by_country_year_topic dataset
+> Fit model on the by_country_year_topic dataset
+
 country_topic_coefficients <- by_country_year_topic %>%
   nest(-country, -topic) %>%
   mutate(model = map(data, ~ lm(percent_yes ~ year, data = .)),
          tidied = map(model, tidy)) %>%
   unnest(tidied)
-# Print country_topic_coefficients
+
+> Print country_topic_coefficients
+
 country_topic_coefficients
 
   
@@ -4525,7 +4631,8 @@ If it is helpful, you can think of boxplots as scatterplots for which the variab
 
 The cut() function takes two arguments: the continuous variable you want to discretize and the number of breaks that you want to make in that continuous variable in order to discretize it.
 
-# Boxplot of weight vs. weeks
+> Boxplot of weight vs. weeks
+
 ggplot(data = ncbirths, 
        aes(x = cut(weeks, breaks = 5), y = weight)) + 
   geom_boxplot()
@@ -4535,29 +4642,34 @@ The relationship between two variables may not be linear. In these cases we can 
 
 ggplot2 provides several different mechanisms for viewing transformed relationships. The coord_trans() function transforms the coordinates of the plot. Alternatively, the scale_x_log10() and scale_y_log10() functions perform a base-10 log transformation of each axis. Note the differences in the appearance of the axes.
 
-# Scatterplot with coord_trans()
+*Scatterplot with coord_trans()*
+
 ggplot(data = mammals, aes(x = BodyWt, y = BrainWt)) +
   geom_point() + 
   coord_trans(x = "log10", y = "log10")
 
-# Scatterplot with scale_x_log10() and scale_y_log10() to get the same thing
+*Scatterplot with scale_x_log10() and scale_y_log10() to get the same thing*
+
 ggplot(data = mammals, aes(x = BodyWt, y = BrainWt)) +
   geom_point() +
   scale_x_log10() + scale_y_log10()
   
   
   
-  Computing correlation
+*Computing correlation*
+
 The cor(x, y) function will compute the Pearson product-moment correlation between variables, x and y. Since this quantity is symmetric with respect to x and y, it doesn't matter in which order you put the variables.
 
 At the same time, the cor() function is very conservative when it encounters missing data (e.g. NAs). The use argument allows you to override the default behavior of returning NA whenever any of the values encountered is NA. Setting the use argument to "pairwise.complete.obs" allows cor() to compute the correlation coefficient for those observations where the values of x and y are both not missing.
 
 
-# Compute correlation
+> Compute correlation
+
 ncbirths %>%
   summarize(N = n(), r = cor(mage, weight))
 
-# Compute correlation for all non-missing pairs
+> Compute correlation for all non-missing pairs
+
 ncbirths %>%
   summarize(N = n(), r = cor(weight, weeks, use ="pairwise.complete.obs"))
   
@@ -4569,7 +4681,8 @@ We might consider linear regression to be a specific example of a larger class o
 
 Note that geom_smooth() also takes an se argument that controls the standard error, which we will ignore for now.
 
-# Scatterplot with regression line
+> Scatterplot with regression line
+
 ggplot(data = bdims, aes(x = hgt , y = wgt)) + 
   geom_point() + 
   geom_smooth(method = "lm", se = FALSE)
@@ -4599,43 +4712,53 @@ In this exercise, we will confirm these two mathematical facts by accessing the 
 
 mod <- lm(wgt ~ hgt, data = bdims
 
-# Mean of weights equal to mean of fitted values?
+> Mean of weights equal to mean of fitted values?
+
 mean(bdims$wgt) == mean(fitted.values(mod))
 
-# Mean of the residuals
+> Mean of the residuals
+
 mean(residuals(mod))
 
-Tidying your linear model
+*Tidying your linear model*
+
 As you fit a regression model, there are some quantities (e.g. R2) that apply to the model as a whole, while others apply to each observation (e.g. y^i). If there are several of these per-observation quantities, it is sometimes convenient to attach them to the original data as new variables.
 
 The augment() function from the broom package does exactly this. It takes a model object as an argument and returns a data frame that contains the data on which the model was fit, along with several quantities specific to the regression model, including the fitted values, residuals, leverage scores, and standardized residuals.
 
 
-# Load broom
+> Load broom
+
 library(broom)
 
-# Create bdims_tidy
+> Create bdims_tidy
+
 bdims_tidy=augment(mod)
 
-# Glimpse the resulting data frame
+> Glimpse the resulting data frame
+
 glimpse(bdims_tidy)
 
 
 
-Standard error of residuals
+*Standard error of residuals*
+
 One way to assess strength of fit is to consider how far off the model is for a typical case. That is, for some observations, the fitted value will be very close to the actual value, while for others it will not. The magnitude of a typical residual can give us a sense of generally how close our estimates are.
 
 However, recall that some of the residuals are positive, while others are negative. In fact, it is guaranteed by the least squares fitting procedure that the mean of the residuals is zero. Thus, it makes more sense to compute the square root of the mean squared residual, or root mean squared error (RMSE). R calls this quantity the residual standard error.
 
 To make this estimate unbiased, you have to divide the sum of the squared residuals by the degrees of freedom in the model. Thus,
 
-# View summary of model
+> View summary of model
+
 summary(mod)
 
-# Compute the mean of the residuals
+> Compute the mean of the residuals
+
 mean(residuals(mod))
 
-# Compute RMSE
+> Compute RMSE
+
 sqrt(sum(residuals(mod)^2) / df.residual(mod))
 
 Assessing simple linear model fit
@@ -4643,36 +4766,41 @@ Recall that the coefficient of determination (R2), can be computed as
 R2=1???(SSE/SST)=1???(Var(e)/Var(y)),
 where e is the vector of residuals and y is the response variable. This gives us the interpretation of R2 as the percentage of the variability in the response that is explained by the model, since the residuals are the part of that variability that remains unexplained by the model.
 
-# View model summary
+> View model summary
+
 summary(mod)
 
-# Compute R-squared
+> Compute R-squared
+
 bdims_tidy %>%
   summarize(var_y = var(wgt), var_e = var(residuals(mod))) %>%
   mutate(R_squared = 1-var_e/var_y)
   
-  Leverage
+# Leverage
+
 The leverage of an observation in a regression model is defined entirely in terms of the distance of that observation from the mean of the explanatory variable. That is, observations close to the mean of the explanatory variable have low leverage, while observations far from the mean of the explanatory variable have high leverage. Points of high leverage may or may not be influential.
 
 The augment() function from the broom package will add the leverage scores (.hat) to a model data frame.
 
-# Rank points of high leverage
+*Rank points of high leverage*
 mod %>%
   augment() %>%
   arrange(desc(.hat)) %>%
   head()
   
-  Influence
+# Influence
 As noted previously, observations of high leverage may or may not be influential. The influence of an observation depends not only on its leverage, but also on the magnitude of its residual. Recall that while leverage only takes into account the explanatory variable (x), the residual depends on the response variable (y) and the fitted value (y^).
 
 Influential points are likely to have high leverage and deviate from the general relationship between the two variables. We measure influence using Cook's distance, which incorporates both the leverage and residual of each observation.
 
-# Rank influential points
+*Rank influential points*
+
 augment(mod) %>% arrange(desc(.cooksd)) %>% head(6)
 
 The linear model, mod, is available in your workspace. Use a combination of augment(), arrange() with two arguments, and head() to find the top 6 observations with the highest leverage but the lowest Cook's distance.
 
-# Rank high leverage points
+*Rank high leverage points*
+
 mod %>% augment() %>%
 arrange(desc(.hat),.cooksd) %>%
 head(6)
@@ -4693,17 +4821,20 @@ head(6)
 
 
 
-# Plot the positions of the players
+> Plot the positions of the players
+
 ggplot(two_players, aes(x = x, y = y)) + 
   geom_point() +
   # Assuming a 40x60 field
   lims(x = c(-30,30), y = c(-20, 20))
 
-# Split the players data frame into two observations
+> Split the players data frame into two observations
+
 player1 <- two_players[1, ]
 player2 <- two_players[2, ]
 
-# Calculate and print their distance using the Euclidean Distance formula
+> Calculate and print their distance using the Euclidean Distance formula
+
 player_distance <- sqrt( (player1$x - player2$x)^2 + (player1$y - player2$y)^2 )
 player_distance
 
@@ -4715,11 +4846,13 @@ The dist() function simplifies this process by calculating distances between our
 Note: The default distance calculation for the dist() function is Euclidean distance
 
 
-# Calculate the Distance Between two_players
+> Calculate the Distance Between two_players
+
 dist_two_players <- dist(two_players)
 dist_two_players
 
-# Calculate the Distance Between three_players
+> Calculate the Distance Between three_players
+
 dist_three_players <- dist(three_players)
 dist_three_players
 
@@ -4734,21 +4867,24 @@ Girth - tree diameter in inches
 Height - tree height in inches
 
 
-# Calculate distance for three_trees 
+> Calculate distance for three_trees 
+
 dist_trees <- dist(three_trees)
 
-# Scale three trees & calculate the distance  
+> Scale three trees & calculate the distance  
+
 scaled_three_trees <- scale(three_trees)
 dist_scaled_trees <- dist(scaled_three_trees)
 
-# Output the results of both Matrices
+> Output the results of both Matrices
+
 print('Without Scaling')
 dist_trees
 
 print('With Scaling')
 dist_scaled_trees
 
-Calculating distance between categorical variables
+# Calculating distance between categorical variables
 
 In this exercise you will explore how to calculate binary (Jaccard) distances. In order to calculate distances we will first have to dummify our categories using the dummy.data.frame() from the library dummies
 
@@ -4757,18 +4893,1494 @@ You will use a small collection of survey observations stored in the data frame 
 job_satisfaction Possible options: "Hi", "Mid", "Low"
 is_happy Possible options: "Yes", "No"
 
-# Dummify the Survey Data
+*Dummify the Survey Data*
 dummy_survey <- dummy.data.frame(job_survey)
 
 
 Generate a Jaccard distance matrix for the dummified survey data dist_survey using the dist() function using the parameter method = 'binary'
 
 
-# Calculate the Distance
+> Calculate the Distance
+
 dist_survey <- dist(dummy_survey,method="binary")
 
-# Print the Original Data
+> Print the Original Data
+
 job_survey
 
-# Print the Distance Matrix
+> Print the Distance Matrix
+
 dist_survey
+
+
+# Assign cluster membership
+In this exercise you will leverage the hclust() function to calculate the iterative linkage steps and you will use the cutree() function to extract the cluster assignments for the desired number (k) of clusters.
+
+You know that this match has two teams (k = 2), let's use the clustering methods you learned to assign which team each player belongs in based on their position.
+
+Notes:
+
+The linkage method can be passed via the method parameter: hclust(distance_matrix, method = "complete")
+
+> Calculate the Distance
+
+dist_players <- dist(lineup,method="euclidean")
+
+> Perform the hierarchical clustering using the complete linkage
+
+hc_players <- hclust(dist_players,method="complete")
+
+> Calculate the assignment vector with a k of 2
+
+clusters_k2 <- cutree(hc_players,k=2)
+
+> Create a new dataframe storing these results
+
+lineup_k2_complete <- mutate(lineup, cluster = clusters_k2)
+
+
+Using count() from dplyr, count the number of players assigned to each cluster.
+
+> Count the cluster assignments
+
+count(lineup_k2_complete, cluster)
+
+> Plot the positions of the players and color them using their cluster
+
+ggplot(lineup_k2_complete, aes(x = x, y = y, color = factor(cluster))) +
+  geom_point()
+  
+  
+*Comparing average, single & complete linkage*
+  
+  
+  # Prepare the Distance Matrix
+dist_players <- dist(lineup)
+
+> Generate hclust for complete, single & average linkage methods
+
+hc_complete <- hclust(dist_players, method="complete")
+hc_single <- hclust(dist_players, method="single")
+hc_average <- hclust(dist_players, method="average")
+
+> Plot & Label the 3 Dendrograms Side-by-Side
+> Hint: To see these Side-by-Side run the 4 lines together as one command
+
+par(mfrow = c(1,3))
+plot(hc_complete, main = 'Complete Linkage')
+plot(hc_single, main = 'Single Linkage')
+plot(hc_average, main = 'Average Linkage')
+
+
+
+
+
+*Clusters based on height*
+
+In previous exercises you have grouped your observations into clusters using a pre-defined number of clusters (k). In this exercise you will leverage the visual representation of the dendrogram in order to group your observations into clusters using a maximum height (h), below which clusters form.
+
+You will work the color_branches() function from the dendextend library in order to visually inspect the clusters that form at any height along the dendrogram.
+
+The hc_players has been carried over from your previous work with the soccer line-up data.
+
+
+
+library(dendextend)
+dist_players <- dist(lineup, method = 'euclidean')
+hc_players <- hclust(dist_players, method = "complete")
+
+> Create a dendrogram object from the hclust variable
+
+dend_players <- as.dendrogram(hc_players)
+
+> Plot the dendrogram
+
+plot(dend_players)
+
+> Color branches by cluster formed from the cut at a height of 20 & plot
+
+dend_20 <- color_branches(dend_players, h = 20)
+
+> Plot the dendrogram with clusters colored below height 20
+
+plot(dend_20)
+
+> Color branches by cluster formed from the cut at a height of 40 & plot
+
+dend_40 <- color_branches(dend_players,h=40)
+
+> Plot the dendrogram with clusters colored below height 40
+
+plot(dend_40)
+
+
+The cutree() function you used in exercises 5 & 6 can also be used to cut a tree at a given height by using the h parameter.
+
+
+dist_players <- dist(lineup, method = 'euclidean')
+hc_players <- hclust(dist_players, method = "complete")
+
+Build the cluster assignment vector clusters_h20 using cutree() with a h = 20
+
+> Calculate the assignment vector with a h of 20
+
+clusters_h20 <- cutree(hc_players,h=20)
+
+Append the cluster assignments as a column cluster to the lineup data frame and save the results to a new dataframe called lineup_h20_complete
+
+> Create a new dataframe storing these results
+
+lineup_h20_complete <- mutate(lineup, cluster = clusters_h20)
+
+Repeat the above two steps for a height of 40, generating the variables clusters_h40 and lineup_h40_complete
+Use ggplot2 to create a scatter plot, colored by the cluster assignment for both heights
+
+> Calculate the assignment vector with a h of 40
+
+clusters_h40 <- cutree(hc_players,h=40)
+
+> Create a new dataframe storing these results
+
+lineup_h40_complete <- mutate(lineup, cluster= clusters_h40)
+
+> Plot the positions of the players and color them using their cluster for height = 20
+
+ggplot(lineup_h20_complete, aes(x = x, y = y, color = factor(cluster))) +
+  geom_point()
+
+> Plot the positions of the players and color them using their cluster for height = 40
+
+ggplot(lineup_h40_complete, aes(x = x, y = y, color = factor(cluster))) +
+  geom_point()
+
+
+dist_customers <- dist(customers_spend)
+hc_customers <- hclust(dist_customers)
+clust_customers <- cutree(hc_customers, h = 15000)
+segment_customers <- mutate(customers_spend, cluster = clust_customers)
+
+> Count the number of customers that fall into each cluster
+
+count(segment_customers, cluster)
+
+> Color the dendrogram based on the height cutoff
+
+dend_customers <- as.dendrogram(hc_customers)
+dend_colored <- color_branches(dend_customers, h=15000)
+
+> Plot the colored dendrogram
+
+plot(dend_colored)
+
+> Calculate the mean for each category
+
+segment_customers %>% 
+  group_by(cluster) %>% 
+  summarise_all(funs(mean(.)))
+
+
+
+# kmeans
+
+Note that in the kmeans() function k is specified using the centers parameter.
+As a reminder, the lineup dataframe contains the positions of 12 players at the start of a 6v6 soccer match.
+
+
+> Build a kmeans model
+
+model_km2 <- kmeans(lineup, centers = 2)
+
+> Extract the cluster assignment vector from the kmeans model
+
+clust_km2 <- model_km2$cluster
+
+> Create a new dataframe appending the cluster assignment
+
+lineup_km2 <- mutate(lineup, cluster = clust_km2)
+
+> Plot the positions of the players and color them using their cluster
+
+ggplot(lineup_km2, aes(x = x, y = y, color = factor(cluster))) +
+  geom_point()
+
+
+
+In this exercise you will leverage map_dbl() from the purrr library to run k-means using values of k ranging from 1 to 10 and extract the total within-cluster sum of squares metric from each one. This will be the first step towards visualizing the elbow plot.
+
+library(purrr)
+
+> Use map_dbl to run many models with varying value of k (centers)
+
+tot_withinss <- map_dbl(1:10,  function(k){
+  model <- kmeans(x = lineup, centers = k )
+  model$tot.withinss
+})
+
+> Generate a data frame containing both k and tot_withinss
+
+elbow_df <- data.frame(
+  k = 1:10,
+  tot_withinss = tot_withinss
+)
+
+*Elbow (Scree) plot*
+
+In the previous exercises you have calculated the total within-cluster sum of squares for values of k ranging from 1 to 10. You can visualize this relationship using a line plot to create what is known as an elbow plot (or scree plot).
+
+When looking at an elbow plot you want to see a sharp decline from one k to another followed by a more gradual decrease in slope. The last value of k before the slope of the plot levels off suggests a "good" value of k.
+
+
+> Use map_dbl to run many models with varying value of k (centers)
+
+tot_withinss <- map_dbl(1:10,  function(k){
+  model <- kmeans(x = lineup, centers = k)
+  model$tot.withinss
+})
+
+> Generate a data frame containing both k and tot_withinss
+
+elbow_df <- data.frame(
+  k = 1:10,
+  tot_withinss = tot_withinss
+)
+
+> Plot the elbow plot
+
+ggplot(elbow_df, aes(x = k, y = tot_withinss)) +
+  geom_line() +
+  scale_x_continuous(breaks = 1:10)
+  
+  
+# Silhouette analysis
+
+Silhouette analysis allows you to calculate how similar each observations is with the cluster it is assigned relative to other clusters. This metric (silhouette width) ranges from -1 to 1 for each observation in your data and can be interpreted as follows:
+
+Values close to 1 suggest that the observation is well matched to the assigned cluster
+Values close to 0 suggest that the observation is borderline matched between two clusters
+Values close to -1 suggest that the observations may be assigned to the wrong cluster
+In this exercise you will leverage the pam() and the silhouette() functions from the cluster library to perform silhouette analysis to compare the results of models with a k of 2 and a k of 3. You'll continue working with the lineup dataset.
+
+
+library(cluster)
+
+> Generate a k-means model using the pam() function with a k = 2
+
+pam_k2 <- pam(lineup, k = 2)
+
+> Plot the silhouette visual for the pam_k2 model
+
+plot(silhouette(pam_k2))
+
+> Generate a k-means model using the pam() function with a k = 3
+
+pam_k3 <- pam(lineup,k=3)
+
+> Plot the silhouette visual for the pam_k3 model
+
+plot(silhouette(pam_k3))
+
+The first step will be to determine the "best" value of k using average silhouette width.
+
+
+> Use map_dbl to run many models with varying value of k
+
+sil_width <- map_dbl(2:10,  function(k){
+  model <- pam(x = customers_spend, k = k)
+  model$silinfo$avg.width
+})
+
+> Generate a data frame containing both k and sil_width
+
+sil_df <- data.frame(
+  k = 2:10,
+  sil_width = sil_width
+)
+
+
+> Plot the relationship between k and sil_width
+
+ggplot(sil_df, aes(x = k, y = sil_width)) +
+  geom_line() +
+  scale_x_continuous(breaks = 2:10)
+
+
+# Hierarchical clustering: Occupation trees
+
+
+> Calculate Euclidean distance between the occupations
+
+dist_oes <- dist(oes, method = "euclidean")
+
+> Generate an average linkage analysis 
+
+hc_oes <- hclust(dist_oes, method = "average")
+
+# Create a dendrogram object from the hclust variable
+dend_oes <- as.dendrogram(hc_oes)
+
+> Plot the dendrogram
+
+plot(dend_oes)
+
+> Color branches by cluster formed from the cut at a height of 100000
+
+dend_colored <- color_branches(dend_oes, h = 100000)
+
+
+> Plot the colored dendrogram
+
+plot(dend_colored)
+
+
+
+
+> dist_oes <- dist(oes, method = 'euclidean')
+> hc_oes <- hclust(dist_oes, method = 'average')
+> 
+> library(tibble)
+> library(tidyr)
+> 
+> head(oes)
+                           2001  2002  2003  2004  2005  2006  2007   2008
+Management                70800 78870 83400 87090 88450 91930 96150 100310
+Business Operations       50580 53350 56000 57120 57930 60000 62410  64720
+Computer Science          60350 61630 64150 66370 67100 69240 72190  74500
+Architecture/Engineering  56330 58020 60390 63060 63910 66190 68880  71430
+Life/Physical/Social Sci. 49710 52380 54930 57550 58030 59660 62020  64280
+Community Services        34190 34630 35800 37050 37530 39000 40540  41790
+                            2010   2011   2012   2013   2014   2015   2016
+Management                105440 107410 108570 110550 112490 115020 118020
+Business Operations        67690  68740  69550  71020  72410  73800  75070
+Computer Science           77230  78730  80180  82010  83970  86170  87880
+Architecture/Engineering   75550  77120  79000  80100  81520  82980  84300
+Life/Physical/Social Sci.  66390  67470  68360  69400  70070  71220  72930
+Community Services         43180  43830  44240  44710  45310  46160  47200
+> # Use rownames_to_column to move the rownames into a column of the data frame
+> df_oes <- rownames_to_column(as.data.frame(oes), var = 'occupation')
+> 
+> head(df_oes)
+                 occupation  2001  2002  2003  2004  2005  2006  2007   2008
+1                Management 70800 78870 83400 87090 88450 91930 96150 100310
+2       Business Operations 50580 53350 56000 57120 57930 60000 62410  64720
+3          Computer Science 60350 61630 64150 66370 67100 69240 72190  74500
+4  Architecture/Engineering 56330 58020 60390 63060 63910 66190 68880  71430
+5 Life/Physical/Social Sci. 49710 52380 54930 57550 58030 59660 62020  64280
+6        Community Services 34190 34630 35800 37050 37530 39000 40540  41790
+    2010   2011   2012   2013   2014   2015   2016
+1 105440 107410 108570 110550 112490 115020 118020
+2  67690  68740  69550  71020  72410  73800  75070
+3  77230  78730  80180  82010  83970  86170  87880
+4  75550  77120  79000  80100  81520  82980  84300
+5  66390  67470  68360  69400  70070  71220  72930
+6  43180  43830  44240  44710  45310  46160  47200
+> # Create a cluster assignment vector at h = 100,000
+> cut_oes <- cutree(hc_oes, h = 100000)
+> 
+> # Generate the segmented the oes dataframe
+> clust_oes <- mutate(df_oes, cluster = cut_oes)
+> 
+> head(clust_oes)
+                 occupation  2001  2002  2003  2004  2005  2006  2007   2008
+1                Management 70800 78870 83400 87090 88450 91930 96150 100310
+2       Business Operations 50580 53350 56000 57120 57930 60000 62410  64720
+3          Computer Science 60350 61630 64150 66370 67100 69240 72190  74500
+4  Architecture/Engineering 56330 58020 60390 63060 63910 66190 68880  71430
+5 Life/Physical/Social Sci. 49710 52380 54930 57550 58030 59660 62020  64280
+6        Community Services 34190 34630 35800 37050 37530 39000 40540  41790
+    2010   2011   2012   2013   2014   2015   2016 cluster
+1 105440 107410 108570 110550 112490 115020 118020       1
+2  67690  68740  69550  71020  72410  73800  75070       2
+3  77230  78730  80180  82010  83970  86170  87880       2
+4  75550  77120  79000  80100  81520  82980  84300       2
+5  66390  67470  68360  69400  70070  71220  72930       2
+6  43180  43830  44240  44710  45310  46160  47200       3
+> # Create a tidy data frame by gathering the year and values into two columns
+> gathered_oes <- gather(data = clust_oes, 
+                         key = year, 
+                         value = mean_salary, 
+                         -occupation, -cluster)
+> 
+> 
+> head(gathered_oes)
+                 occupation cluster year mean_salary
+1                Management       1 2001       70800
+2       Business Operations       2 2001       50580
+3          Computer Science       2 2001       60350
+4  Architecture/Engineering       2 2001       56330
+5 Life/Physical/Social Sci.       2 2001       49710
+6        Community Services       3 2001       34190
+> 
+
+***
+***
+***
+***
+*************
+# Supervised learning in R (Classification)
+*************
+***
+***
+***
+***
+***
+
+Recognizing a road sign with kNN
+
+> Load the 'class' package
+
+library(class)
+
+> Create a vector of labels
+
+sign_types <-signs$sign_type
+
+> Classify the next sign observed
+
+knn(train = signs[-1], test = next_sign, cl = sign_types)
+
+Exploring the traffic sign dataset
+To better understand how the knn() function was able to classify the stop sign, it may help to examine the training dataset it used.
+
+Each previously observed street sign was divided into a 4x4 grid, and the red, green, and blue level for each of the 16 center pixels is recorded as illustrated here.
+
+The result is a dataset that records the sign_type as well as 16 x 3 = 48 color properties of each sign.
+
+
+> # Examine the structure of the signs dataset
+> str(signs)
+'data.frame':	146 obs. of  49 variables:
+ $ sign_type: chr  "pedestrian" "pedestrian" "pedestrian" "pedestrian" ...
+ $ r1       : int  155 142 57 22 169 75 136 149 13 123 ...
+ $ g1       : int  228 217 54 35 179 67 149 225 34 124 ...
+ $ b1       : int  251 242 50 41 170 60 157 241 28 107 ...
+ $ r2       : int  135 166 187 171 231 131 200 34 5 83 ...
+ $ g2       : int  188 204 201 178 254 89 203 45 21 61 ...
+ $ b2       : int  101 44 68 26 27 53 107 1 11 26 ...
+ $ r3       : int  156 142 51 19 97 214 150 155 123 116 ...
+ $ g3       : int  227 217 51 27 107 144 167 226 154 124 ...
+ $ b3       : int  245 242 45 29 99 75 134 238 140 115 ...
+ $ r4       : int  145 147 59 19 123 156 171 147 21 67 ...
+ $ g4       : int  211 219 62 27 147 169 218 222 46 67 ...
+ $ b4       : int  228 242 65 29 152 190 252 242 41 52 ...
+ $ r5       : int  166 164 156 42 221 67 171 170 36 70 ...
+ $ g5       : int  233 228 171 37 236 50 158 191 60 53 ...
+ $ b5       : int  245 229 50 3 117 36 108 113 26 26 ...
+ $ r6       : int  212 84 254 217 205 37 157 26 75 26 ...
+ $ g6       : int  254 116 255 228 225 36 186 37 108 26 ...
+ $ b6       : int  52 17 36 19 80 42 11 12 44 21 ...
+ $ r7       : int  212 217 211 221 235 44 26 34 13 52 ...
+ $ g7       : int  254 254 226 235 254 42 35 45 27 45 ...
+ $ b7       : int  11 26 70 20 60 44 10 19 25 27 ...
+ $ r8       : int  188 155 78 181 90 192 180 221 133 117 ...
+ $ g8       : int  229 203 73 183 110 131 211 249 163 109 ...
+ $ b8       : int  117 128 64 73 9 73 236 184 126 83 ...
+ $ r9       : int  170 213 220 237 216 123 129 226 83 110 ...
+ $ g9       : int  216 253 234 234 236 74 109 246 125 74 ...
+ $ b9       : int  120 51 59 44 66 22 73 59 19 12 ...
+ $ r10      : int  211 217 254 251 229 36 161 30 13 98 ...
+ $ g10      : int  254 255 255 254 255 34 190 40 27 70 ...
+ $ b10      : int  3 21 51 2 12 37 10 34 25 26 ...
+ $ r11      : int  212 217 253 235 235 44 161 34 9 20 ...
+ $ g11      : int  254 255 255 243 254 42 190 44 23 21 ...
+ $ b11      : int  19 21 44 12 60 44 6 35 18 20 ...
+ $ r12      : int  172 158 66 19 163 197 187 241 85 113 ...
+ $ g12      : int  235 225 68 27 168 114 215 255 128 76 ...
+ $ b12      : int  244 237 68 29 152 21 236 54 21 14 ...
+ $ r13      : int  172 164 69 20 124 171 141 205 83 106 ...
+ $ g13      : int  235 227 65 29 117 102 142 229 125 69 ...
+ $ b13      : int  244 237 59 34 91 26 140 46 19 9 ...
+ $ r14      : int  172 182 76 64 188 197 189 226 85 102 ...
+ $ g14      : int  228 228 84 61 205 114 171 246 128 67 ...
+ $ b14      : int  235 143 22 4 78 21 140 59 21 6 ...
+ $ r15      : int  177 171 82 211 125 123 214 235 85 106 ...
+ $ g15      : int  235 228 93 222 147 74 221 252 128 69 ...
+ $ b15      : int  244 196 17 78 20 22 201 67 21 9 ...
+ $ r16      : int  22 164 58 19 160 180 188 237 83 43 ...
+ $ g16      : int  52 227 60 27 183 107 211 254 125 29 ...
+ $ b16      : int  53 237 60 29 187 26 227 53 19 11 ...
+> 
+> # Count the number of signs of each type
+> table(signs$sign_type)
+
+pedestrian      speed       stop 
+        46         49         51
+> 
+> # Check r10's average red level by sign type
+> aggregate(r10 ~ sign_type, data = signs, mean)
+   sign_type       r10
+1 pedestrian 113.71739
+2      speed  80.63265
+3       stop 132.39216
+
+
+
+> Use kNN to identify the test road signs
+
+sign_types <- signs$sign_type
+signs_pred <- knn(train = signs[-1], test = test_signs[-1], cl = sign_types)
+
+> Create a confusion matrix of the actual versus predicted values
+
+signs_actual <- test_signs$sign_type
+table(signs_pred, signs_actual)
+
+> Compute the accuracy
+
+mean(signs_actual == signs_pred)
+
+Testing other 'k' values
+
+By default, the knn() function in the class package uses only the single nearest neighbor.
+
+
+> Compute the accuracy of the baseline model (default k = 1)
+
+k_1 <- knn(train = signs[-1], test = signs_test[-1], cl = sign_types)
+mean(signs_actual==k_1)
+
+> Modify the above to set k = 7
+
+k_7 <- knn(train = signs[-1], test = signs_test[-1], cl = sign_types,k=7)
+mean(signs_actual==k_7)
+
+> Set k = 15 and compare to the above
+
+k_15 <- knn(train = signs[-1], test = signs_test[-1], cl = sign_types,k=15)
+mean(signs_actual==k_15)
+
+
+Seeing how the neighbors voted
+When multiple nearest neighbors hold a vote, it can sometimes be useful to examine whether the voters were unanimous or widely separated.
+
+> Use the prob parameter to get the proportion of votes for the winning class
+
+sign_pred <- knn(train=signs[-1],test=signs_test[-1], cl = sign_types,k=7,prob=TRUE)
+
+> Get the "prob" attribute from the predicted classes
+
+sign_prob <- attr(sign_pred, "prob")
+
+> Examine the first several predictions
+
+head(sign_pred)
+
+
+
+
+# Naive Bayes
+
+
+> Compute P(A) 
+
+p_A <- nrow(subset(where9am,where9am$location=="office"))/nrow(where9am)
+
+> Compute P(B)
+
+p_B <-  nrow(subset(where9am,where9am$daytype=="weekday"))/nrow(where9am)
+
+> Compute the observed P(A and B)
+
+p_AB <- nrow(subset(where9am,where9am$location=="office" & where9am$daytype=="weekday"))/nrow(where9am)
+
+> Compute P(A | B) and print its value
+
+p_A_given_B <-p_AB/p_B 
+
+p_A_given_B
+
+
+# A simple Naive Bayes location model
+
+> Load the naivebayes package
+
+library(naivebayes)
+
+> Build the location prediction model
+
+locmodel <- naive_bayes(location~daytype, data = where9am)
+
+> Predict Thursday's 9am location
+
+predict(locmodel, thursday9am)
+
+> Predict Saturdays's 9am location
+
+predict(locmodel, saturday9am)
+
+
+Examining "raw" probabilities
+The naivebayes package offers several ways to peek inside a Naive Bayes model.
+
+Typing the name of the model object provides the a priori (overall) and conditional probabilities of each of the model's predictors. If one were so inclined, you might use these for calculating posterior (predicted) probabilities by hand.
+
+Alternatively, R will compute the posterior probabilities for you if the type = "prob" parameter is supplied to the predict() function.
+
+Using these methods, examine how the model's predicted 9am location probability varies from day-to-day. The model locmodel that you fit in the previous exercise is in your workspace.
+
+The 'naivebayes' package is loaded into the workspace
+and the Naive Bayes 'locmodel' has been built
+
+> Examine the location prediction model
+
+locmodel
+
+> Obtain the predicted probabilities for Thursday at 9am
+
+predict(locmodel, thursday9am , type = "prob")
+
+> Obtain the predicted probabilities for Saturday at 9am
+
+predict(locmodel, saturday9am , type = "prob")
+
+build a more sophisticated model to see how Brett's predicted location not only varies by the day of week but also by the time of day. The dataset locations is already loaded in your workspace.
+
+The 'naivebayes' package is loaded into the workspace already
+
+> Build a NB model of location
+
+locmodel <- naive_bayes(location~ daytype+hourtype, locations)
+
+> Predict Brett's location on a weekday afternoon
+
+predict(locmodel,weekday_afternoon)
+
+> Predict Brett's location on a weekday evening
+
+predict(locmodel,weekday_evening)
+
+
+Preparing for unforeseen circumstances
+While Brett was tracking his location over 13 weeks, he never went into the office during the weekend. Consequently, the joint probability of P(office and weekend) = 0.
+
+Explore how this impacts the predicted probability that Brett may go to work on the weekend in the future. Additionally, you can see how using the Laplace correction will allow a small chance for these types of unforeseen circumstances.
+
+The 'naivebayes' package is loaded into the workspace already
+The Naive Bayes location model (locmodel) has already been built
+
+> Observe the predicted probabilities for a weekend afternoon
+
+predict(locmodel,weekend_afternoon,type="prob")
+
+> Build a new model using the Laplace correction
+
+locmodel2 <- naive_bayes(location~ hourtype+daytype,locations,laplace=1)
+
+> Observe the new predicted probabilities for a weekend afternoon
+
+predict(locmodel2,weekend_afternoon,type="prob")
+
+
+
+# Building simple logistic regression models
+
+> Examine the dataset to identify potential independent variables
+
+str(donors)
+
+> Explore the dependent variable
+
+table(donors$donated)
+
+> Build the donation model
+
+donation_model <- glm(donated~ bad_address+interest_religion+interest_veterans , 
+                      data = donors, family = "binomial")
+
+> Summarize the model results
+
+summary(donation_model)
+
+
+ By default, predict() outputs predictions in terms of log odds unless type = "response" is specified. This converts the log odds to probabilities.
+ 
+> Estimate the donation probability
+
+donors$donation_prob <- predict(donation_model,donors, type = "response")
+
+> Find the donation probability of the average prospect
+
+mean(donors$donated)
+
+> Predict a donation if probability of donation is greater than average (0.0504)
+
+donors$donation_pred <- ifelse(donors$donation_prob > 0.0504, 1, 0)
+
+> Calculate the model's accuracy
+
+mean(donors$donated == donors$donation_pred)
+
+
+# Calculating ROC Curves and AUC
+
+
+The previous exercises have demonstrated that accuracy is a very misleading measure of model performance on imbalanced datasets. Graphing the model's performance better illustrates the tradeoff between a model that is overly agressive and one that is overly passive.
+
+> Load the pROC package
+
+library(pROC)
+
+> Create a ROC curve
+
+ROC <- roc(donors$donated,donors$donation_prob)
+
+> Plot the ROC curve
+
+plot(ROC, col = "blue")
+
+> Calculate the area under the curve (AUC)
+
+auc(ROC)
+
+*Coding categorical features*
+
+> Convert the wealth rating to a factor
+
+donors$wealth_rating <- factor(donors$wealth_rating, levels = c(0, 1, 2, 3), labels = c("Unknown", "Low", "Medium", "High"))
+summary(donors$wealth_rating)
+
+> Use relevel() to change reference category
+
+donors$wealth_rating <- relevel(donors$wealth_rating, ref = "Medium")
+summary(donors$wealth_rating)
+
+
+> See how our factor coding impacts the model
+
+summary(glm(donated ~ wealth_rating, data = donors, family = "binomial"))
+
+
+*Handling missing data*
+
+Some of the prospective donors have missing age data. Unfortunately, R will exclude any cases with NA values when building a regression model.
+
+One workaround is to replace, or impute, the missing values with an estimated value. After doing so, you may also create a missing data indicator to model the possibility that cases with missing data are different in some way from those without.
+
+> Find the average age among non-missing values
+
+summary(donors$age)
+
+> Impute missing age values with mean(age)
+
+donors$imputed_age <- ifelse(is.na(donors$age),61.65,donors$age)
+
+> Create missing value indicator for age
+
+donors$missing_age <- ifelse(is.na(donors$age),1,0)
+
+
+
+
+ Build a recency, frequency, and money (RFM) model
+rfm_model <- glm(donated~money+recency*frequency,donors,family="binomial")
+
+> Summarize the RFM model to see how the parameters were coded
+
+summary(rfm_model)
+
+> Compute predicted probabilities for the RFM model
+
+rfm_prob <- predict(rfm_model,donors,type="response")
+
+> Plot the ROC curve and find AUC for the new model
+
+library(pROC)
+ROC <-roc(donors$donated,rfm_prob)
+plot(ROC, col = "red")
+auc(ROC)
+
+
+# Building a stepwise regression model
+
+In the absence of subject-matter expertise, stepwise regression can assist with the search for the most important predictors of the outcome of interest.
+
+> Specify a null model with no predictors
+
+null_model <- glm(donated~1, data = donors, family = "binomial")
+
+> Specify the full model using all of the potential predictors
+
+full_model <- glm(donated~.,data = donors, family = "binomial")
+
+> Use a forward stepwise algorithm to build a parsimonious model
+
+step_model <- step(null_model, scope = list(lower = null_model, upper = full_model), direction = "forward")
+
+> Estimate the stepwise donation probability
+
+step_prob <- predict(step_model,donors,type="response")
+
+> Plot the ROC of the stepwise model
+
+library(pROC)
+ROC <- roc(donors$donated,step_prob)
+plot(ROC, col = "red")
+auc(ROC)
+
+
+
+# Classification trees
+
+> Load the rpart package
+
+library(rpart)
+
+> Build a lending model predicting loan outcome versus loan amount and credit score
+
+loan_model <- rpart(outcome~loan_amount+credit_score, data = loans, method = "class", control = rpart.control(cp = 0))
+
+> Make a prediction for someone with good credit
+
+predict(loan_model, good_credit, type = "class")
+
+> Make a prediction for someone with bad credit
+
+predict(loan_model,bad_credit,type="class")
+
+
+
+# Visualizing classification trees
+
+> Examine the loan_model object
+
+loan_model
+
+> Load the rpart.plot package
+
+library(rpart.plot)
+
+> Plot the loan_model with default settings
+
+rpart.plot(loan_model)
+
+> Plot the loan_model with customized settings
+
+rpart.plot(loan_model, type = 3, box.palette = c("red", "green"), fallen.leaves = TRUE)
+
+# Creating random test datasets
+
+Before building a more sophisticated lending model, it is important to hold out a portion of the loan data to simulate how well it will predict the outcomes of future loan applicants.
+
+
+> Determine the number of rows for training
+
+nrow(loans)*0.75
+
+> Create a random sample of row IDs
+
+sample_rows <- sample(11312, 8484)
+
+> Create the training dataset
+
+loans_train <- loans[sample_rows,]
+
+> Create the test dataset
+
+loans_test <- loans[-sample_rows,]
+
+
+
+> Grow a tree using all of the available applicant data
+
+loan_model <- rpart(outcome ~ ., data = loans_train, method = "class", control = rpart.control(cp = 0))
+
+> Make predictions on the test dataset
+
+loans_test$pred <- predict(loan_model,loans_test,type="class")
+
+> Examine the confusion matrix
+
+table(loans_test$outcome,loans_test$pred)
+
+> Compute the accuracy on the test dataset
+
+mean(loans_test$outcome==loans_test$pred)
+
+*Preventing overgrown trees*
+
+The tree grown on the full set of applicant data grew to be extremely large and extremely complex, with hundreds of splits and leaf nodes containing only a handful of applicants. This tree would be almost impossible for a loan officer to interpret.
+
+Using the pre-pruning methods for early stopping, you can prevent a tree from growing too large and complex. See how the rpart control options for maximum tree depth and minimum split count impact the resulting tree.
+
+> Grow a tree with maxdepth of 6
+
+loan_model <- rpart(outcome~.,data=loans_train,method="class",control=rpart.control(cp=0,maxdepth=6))
+
+> Make a class prediction on the test set
+
+loans_test$pred <- predict(loan_model,loans_test,type="class")
+
+> Compute the accuracy of the simpler tree
+
+mean(loans_test$pred==loans_test$outcome)
+
+By using post-pruning, you can intentionally grow a large and complex tree then prune it to be smaller and more efficient later on.
+
+Use all of the applicant variables and no pre-pruning to create an overly complex tree. Make sure to set cp = 0 in rpart.control() to prevent pre-pruning.
+Create a complexity plot by using plotcp() on the model.
+Based on the complexity plot, prune the tree to a complexity of 0.0014 using the prune() function with the tree and the complexity parameter.
+
+
+> Grow an overly complex tree
+
+loan_model <- rpart(outcome~.,data=loans_train,method="class",control=rpart.control(cp=0))
+
+> Examine the complexity plot
+
+plotcp(loan_model)
+
+> Prune the tree
+
+loan_model_pruned <- prune(loan_model,cp = 0.0014)
+
+> Compute the accuracy of the pruned tree
+
+loans_test$pred <- predict(loan_model_pruned,loans_test,type="class")
+mean(loans_test$pred==loans_test$outcome)
+
+# Building a random forest model
+
+Using the randomForest package, build a random forest and see how it compares to the single trees you built previously.
+
+Keep in mind that due to the random nature of the forest, the results may vary slightly each time you create the forest.
+
+> Load the randomForest package
+
+library(randomForest)
+
+> Build a random forest model
+
+loan_model <- randomForest(outcome~., data = loans_train)
+
+> Compute the accuracy of the random forest
+
+loans_test$pred <- predict(loan_model,loans_test)
+mean(loans_test$pred==loans_test$outcome)
+
+
+
+
+***
+***
+***
+***
+*************
+# UnSupervised learning in R (Classification)
+*************
+***
+***
+***
+***
+***
+
+# k-means clustering
+
+> Create the k-means model: km.out
+
+km.out<- kmeans(x,centers=3,nstart=20)
+
+> Inspect the result
+
+summary(km.out)
+
+> Print the cluster membership component of the model
+
+km.out$cluster
+
+> Print the km.out object
+
+print(km.out)
+
+Visualizing and interpreting results of kmeans()
+
+> Scatter plot of x
+
+plot(x,col=km.out$cluster,main="k-means with 3 clusters",xlab="",ylab="")
+
+
+*Handling random algorithms*
+
+> Set up 2 x 3 plotting grid
+
+par(mfrow = c(2, 3))
+
+> Set seed
+
+set.seed(1)
+
+for(i in 1:6) {
+  set.seed(1)
+
+  # Run kmeans() on x with three clusters and one start
+  km.out <- kmeans(x, nstart=1, centers=3)
+  
+  # Plot clusters
+  plot(x, col = km.out$cluster, 
+       main = km.out$tot.withinss, 
+       xlab = "", ylab = "")
+}
+
+
+
+# Selecting number of clusters
+
+> Initialize total within sum of squares error: wss
+
+wss <- 0
+
+> For 1 to 15 cluster centers
+
+for (i in 1:15) {
+  km.out <- kmeans(x, centers = i, nstart=20)
+  # Save total within sum of squares to wss variable
+  wss[i] <- km.out$tot.withinss
+}
+
+> Plot total within sum of squares vs. number of clusters
+
+plot(1:15, wss, type = "b", 
+     xlab = "Number of Clusters", 
+     ylab = "Within groups sum of squares")
+
+> Set k equal to the number of clusters corresponding to the elbow location
+
+k <- 2
+
+Practical matters: working with real data
+
+
+> Initialize total within sum of squares error: wss
+
+wss <- 0
+
+> Look over 1 to 15 possible clusters
+
+for (i in 1:15) {
+  # Fit the model: km.out
+  km.out <- kmeans(pokemon, centers = i, nstart = 20, iter.max = 50)
+  # Save the within cluster sum of squares
+  wss[i] <- km.out$tot.withinss
+}
+
+> Produce a scree plot
+
+plot(1:15, wss, type = "b", 
+     xlab = "Number of Clusters", 
+     ylab = "Within groups sum of squares")
+
+> Select number of clusters
+
+k <- 3
+
+> Build model with k clusters: km.out
+
+km.out <- kmeans(pokemon, centers = 3, nstart = 20, iter.max = 50)
+
+> View the resulting model
+
+km.out
+
+> Plot of Defense vs. Speed by cluster membership
+
+plot(pokemon[, c("Defense", "Speed")],
+     col = km.out$cluster,
+     main = paste("k-means clustering of Pokemon with", k, "clusters"),
+     xlab = "Defense", ylab = "Speed")
+
+
+
+# Hierarchical clustering with results
+
+
+> Create hierarchical clustering model: hclust.out
+
+hclust.out <- hclust(dist(x))
+
+> Inspect the result
+
+summary(hclust.out)
+
+*Cutting the tree*
+
+> Cut by height
+
+cutree(hclust.out,h=7)
+
+> Cut by number of clusters
+
+cutree(hclust.out,k=3)
+
+
+# Linkage methods
+
+In this exercise, you will produce hierarchical clustering models using different linkages and plot the dendrogram for each, observing the overall structure of the trees.
+
+> Cluster using complete linkage: hclust.complete
+
+hclust.complete <- hclust(dist(x), method = "complete")
+
+> Cluster using average linkage: hclust.average
+
+hclust.average <- hclust(dist(x),method="average")
+
+> Cluster using single linkage: hclust.single
+
+hclust.single <- hclust(dist(x),method="single")
+
+> Plot dendrogram of hclust.complete
+
+plot(hclust.complete,main="Complete")
+
+> Plot dendrogram of hclust.average
+
+plot(hclust.average,main="Average")
+
+> Plot dendrogram of hclust.single
+
+plot(hclust.single,main="Single")
+
+
+*Practical matters: scaling*
+
+> View column means
+
+colMeans(pokemon)
+
+> View column standard deviations
+
+apply(pokemon,2,sd)
+
+> Scale the data
+
+pokemon.scaled=scale(pokemon)
+
+> Create hierarchical clustering model: hclust.pokemon
+
+hclust.pokemon=hclust(dist(pokemon.scaled), method="complete")
+
+
+*Comparing kmeans() and hclust()*
+
+
+Comparing k-means and hierarchical clustering, you'll see the two methods produce different cluster memberships. This is because the two algorithms make different assumptions about how the data is generated.
+
+The results from running k-means clustering on the pokemon data (for 3 clusters) are stored as km.pokemon. The hierarchical clustering model you created in the previous exercise is still available as hclust.pokemon.
+
+Using cutree() on hclust.pokemon, assign cluster membership to each observation. Assume three clusters and assign the result to a vector called cut.pokemon.
+Using table(), compare cluster membership between the two clustering methods. Recall that the different components of k-means model objects can be accessed with the $ operator.
+
+
+
+> Apply cutree() to hclust.pokemon: cut.pokemon
+
+cut.pokemon<- cutree(hclust.pokemon,k=3)
+
+> Compare methods
+
+table(cut.pokemon, km.pokemon$cluster)
+
+
+# PCA using prcomp()
+
+In this exercise, you will create your first PCA model and observe the diagnostic results.
+
+> Perform scaled PCA: pr.out
+
+pr.out <- prcomp(pokemon,scale=TRUE,center=TRUE) 
+
+> Inspect model output
+
+summary(pr.out)
+
+
+# Additional results of PCA
+
+PCA models in R produce additional diagnostic and output components:
+
+center: the column means used to center to the data, or FALSE if the data weren't centered
+scale: the column standard deviations used to scale the data, or FALSE if the data weren't scaled
+rotation: the directions of the principal component vectors in terms of the original features/variables. This information allows you to define new data in terms of the original principal components
+x: the value of each observation in the original dataset projected to the principal components
+You can access these the same as other model components. For example, use pr.out$rotation to access the rotation component
+
+Interpreting biplots (1)
+As stated in the video, the biplot() function plots both the principal components loadings and the mapping of the observations to their first two principal component values
+
+Variance explained
+The second common plot type for understanding PCA models is a scree plot. A scree plot shows the variance explained as the number of principal components increases. Sometimes the cumulative variance explained is plotted as well.
+
+> Variability of each principal component: pr.var
+
+pr.var <- pr.out$sdev^2
+
+> Variance explained by each principal component: pve
+
+pve <- pr.var / sum(pr.var)
+
+Visualize variance explained
+Now you will create a scree plot showing the proportion of variance explained by each principal component, as well as the cumulative proportion of variance explained.
+
+> Plot variance explained for each principal component
+
+plot(pve, xlab = "Principal Component",
+     ylab = "Proportion of Variance Explained",
+     ylim = c(0, 1), type = "b")
+
+> Plot cumulative proportion of variance explained
+
+plot(cumsum(pve), xlab = "Principal Component",
+     ylab = "Cumulative Proportion of Variance Explained",
+     ylim = c(0, 1), type = "b")
+     
+     
+     
+
+*Practical issues: scaling*
+
+You saw in the video that scaling your data before doing PCA changes the results of the PCA modeling. Here, you will perform PCA with and without scaling, then visualize the results using biplots
+
+> Mean of each variable
+
+colMeans(pokemon)
+
+> Standard deviation of each variable
+
+apply(pokemon, 2, sd)
+
+> PCA model with scaling: pr.with.scaling
+
+pr.with.scaling <- prcomp(pokemon,scale=TRUE) 
+
+> PCA model without scaling: pr.without.scaling
+
+pr.without.scaling <- prcomp(pokemon,scale=FALSE)
+
+> Create biplots of both for comparison
+
+biplot(pr.with.scaling)
+biplot(pr.without.scaling)
+
+
+
+Case study
+
+Preparing the data
+
+
+url <- "http://s3.amazonaws.com/assets.datacamp.com/production/course_1903/datasets/WisconsinCancer.csv"
+
+> Download the data: wisc.df
+
+wisc.df<-read.csv(url)
+str(wisc.df)
+
+> Convert the features of the data: wisc.data
+
+wisc.data<- as.matrix(wisc.df[,3:32])
+str(wisc.data)
+
+> Set the row names of wisc.data
+
+row.names(wisc.data) <- wisc.df$id
+
+> Create diagnosis vector
+
+diagnosis <- as.numeric(wisc.df$diagnosis == "M")
+
+# Performing PCA
+
+> Check column means and standard deviations
+
+colMeans(wisc.data)
+apply(wisc.data,2,sd)
+
+> Execute PCA, scaling if appropriate: wisc.pr
+
+wisc.pr<-prcomp(wisc.data,scale=TRUE)
+
+> Look at summary of results
+
+summary(wisc.pr)
+
+*Interpreting PCA results*
+
+> Create a biplot of wisc.pr
+
+biplot(wisc.pr)
+
+> Scatter plot observations by components 1 and 2
+
+plot(wisc.pr$x[, c(1, 2)], col = (diagnosis + 1), 
+     xlab = "PC1", ylab = "PC2")
+
+> Repeat for components 1 and 3
+
+plot(wisc.pr$x[,c(1,3)], col = (diagnosis + 1), 
+     xlab = "PC1", ylab = "PC3")
+     
+In this exercise, you will produce scree plots showing the proportion of variance explained as the number of principal components increases. The data from PCA must be prepared for these plots, as there is not a built-in function in R to create them directly from the PCA model.
+
+As you look at these plots, ask yourself if there's an elbow in the amount of variance explained that might lead you to pick a natural number of principal components.
+
+> Set up 1 x 2 plotting grid
+
+par(mfrow = c(1, 2))
+
+> Calculate variability of each component
+
+pr.var <- wisc.pr$sdev^2
+
+> Variance explained by each principal component: pve
+
+pve<- pr.var/sum(pr.var)
+
+> Plot variance explained for each principal component
+
+plot(pve, xlab = "Principal Component", 
+     ylab = "Proportion of Variance Explained", 
+     ylim = c(0, 1), type = "b")
+
+> Plot cumulative proportion of variance explained
+
+plot(cumsum(pve), xlab = "Principal Component", 
+     ylab = "Cumulative Proportion of Variance Explained", 
+     ylim = c(0, 1), type = "b")
+
+*Hierarchical clustering of case data*
+
+> Scale the wisc.data data: data.scaled
+
+data.scaled<-scale(wisc.data)
+
+> Calculate the (Euclidean) distances: data.dist
+
+data.dist<-dist(data.scaled)
+
+> Create a hierarchical clustering model: wisc.hclust
+
+wisc.hclust<-hclust(data.dist,method="complete")
+
+*Selecting number of clusters*
+
+> Cut tree so that it has 4 clusters: wisc.hclust.clusters
+
+wisc.hclust.clusters<-cutree(wisc.hclust,k=4)
+
+> Compare cluster membership to actual diagnoses
+
+table(wisc.hclust.clusters,diagnosis)
+
+*k-means clustering and comparing results*
+
+> Create a k-means model on wisc.data: wisc.km
+
+wisc.km <- kmeans(x=scale(wisc.data),centers=2,nstart=20)
+str(wisc.km)
+
+> Compare k-means to actual diagnoses
+
+table(wisc.km$cluster,diagnosis)
+
+> Compare k-means to hierarchical clustering
+
+table(wisc.km$cluster,wisc.hclust.clusters)
+
+
+***
+***
+***
+***
+*************
+# Joining data in SQL
+*************
+***
+***
+***
+***
+***
+
+Inner join 
+
+SELECT c.code AS country_code, name, year, inflation_rate
+FROM countries AS c
+INNER JOIN economies as e
+ON c.code = e.code;
+
+SELECT c.name as country, c.continent, l.name as language,l.official
+FROM countries AS c
+inner JOIN languages AS l
+using (code);
+
+
+Self-join
+
+
+SELECT p1.country_code, 
+       p1.size AS size2010,
+       p2.size AS size2015
+FROM populations AS p1
+inner JOIN populations AS p2
+ON  p1.country_code = p2.country_code;
+
+
+Case when and then
+
+SELECT name, continent, code, surface_area,
+        -- first case
+    CASE WHEN surface_area > 2000000 THEN 'large'
+        -- second case
+        WHEN surface_area > 350000 THEN 'medium'
+        -- else clause + end
+        ELSE 'small' END
+        AS geosize_group
+FROM countries;
+
+-- get the city name (and alias it), the country code,
+-- the country name (and alias it), the region,
+-- and the city proper population
+SELECT c1.name AS city, code, c2.name AS country,
+       region, city_proper_pop
+-- specify left table
+FROM cities AS c1
+-- specify right table and type of join
+INNER JOIN countries AS c2
+-- how should the tables be matched?
+ON c2.code = c1.country_code
+-- sort based on descending country code
+ORDER BY code desc;
+
+SELECT c.name AS city, l.name AS language
+FROM cities AS c        
+cross JOIN languages AS l
+WHERE c.name LIKE 'Hyder%';
+
+SELECT c.name AS city, l.name AS language
+FROM cities AS c        
+cross JOIN languages AS l
+WHERE c.name LIKE 'Hyder%';
+
+Union all
+As you saw, duplicates were removed from the previous two exercises by using UNION.
+
+To include duplicates, you can use UNION ALL.
+
+SELECT code,year
+FROM economies
+union all
+SELECT country_code, year
+FROM populations
+ORDER BY code, year;
+
+
+SELECT code, inflation_rate	, unemployment_rate
+FROM economies
+WHERE year = 2015 AND code not in 
+  (SELECT code
+   FROM countries
+   WHERE (gov_form = 'Constitutional Monarchy' OR gov_form LIKE '%Republic%'))
+ORDER BY inflation_rate ;
+
+
+
+
+
+

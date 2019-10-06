@@ -1,15 +1,3 @@
----
-title: "Titanic_survival"
-output: 
-  html_document: 
-    keep_md: yes
----
-
-
-
-The below code is inspired from kernel:
-https://www.kaggle.com/mrisdal/exploring-survival-on-the-titanic
-
 
 
 ```r
@@ -900,4 +888,8 @@ solution <- data.frame(PassengerID = test$PassengerId, Survived = prediction)
 # Write the solution to file
 write.csv(solution, file = 'rf_mod_Solution.csv', row.names = F)
 ```
+
+
+The above code is inspired from kernel:
+https://www.kaggle.com/mrisdal/exploring-survival-on-the-titanic
 

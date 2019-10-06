@@ -1,14 +1,3 @@
----
-title: "Zillow_eda"
-output: 
-  html_document: 
-    keep_md: yes
----
-
-
-The below code is inspired from kernel:
-https://www.kaggle.com/philippsp/exploratory-analysis-zillow
-
 
 ```r
 #install.packages("data.table")

@@ -1,14 +1,4 @@
----
-title: "Attrition"
-output: 
-  html_document: 
-    keep_md: yes
----
-
-
-
-The below analysis is inspired from Kaggle Kernel below:
-https://www.kaggle.com/janiobachmann/attrition-in-an-organization-why-workers-quit/notebook
+Objective: Analyzing attrition in an organization
 
 ---------------------------------------------------------------------------
 # Importing libraries
